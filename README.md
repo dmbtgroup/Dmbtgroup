@@ -19,7 +19,7 @@ EN / FR / ع switch in the header, which is remembered in a `lang` cookie. Engli
 `index.html`; each translated element has a `data-i18n` key whose French and Arabic text is in
 `assets/site.js`. To change wording, edit both places.
 
-**Contact.** The contact button emails `contact@dmbtgroup.com` (in `index.html`).
+**Contact.** The contact section has no email button for now; add one in `index.html` once the address is confirmed.
 
 Any other address, such as a company link `dmbtgroup.com/cmtb`, forwards to the same address on
 tactime.dmbtgroup.com (see `vercel.json`).
