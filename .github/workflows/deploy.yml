@@ -1,0 +1,32 @@
+# Deploys dmbtgroup.com to Vercel on every push to main.
+# Needs one repository secret: VERCEL_TOKEN (a Vercel access token for the artedelara team).
+name: Deploy to Vercel
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: vercel-production
+  cancel-in-progress: false
+
+env:
+  VERCEL_ORG_ID: team_nXwzNgaNC6ot9TwAgTTYmUkv
+  VERCEL_PROJECT_ID: prj_bzBoMIdVbBlCNevqJ8hzE4ioUrm0
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check for the Vercel token
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+        run: |
+          if [ -z "$VERCEL_TOKEN" ]; then
+            echo "::error::Add a VERCEL_TOKEN repository secret (Settings → Secrets and variables → Actions)."
+            exit 1
+          fi
+      - run: npm install --global vercel@latest
+      - run: vercel deploy --prod --yes --token=${{ secrets.VERCEL_TOKEN }}
