@@ -3,51 +3,224 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>DMBT — Development. Management. Business. Tact.</title>
-  <meta name="description" content="Development Management and Business Tact">
+  <title>DMBT — Industrial engineering &amp; operations</title>
+  <meta name="description" content="DMBT helps manufacturers, workshops and facilities run better: process optimization, plant layout, production planning, quality and digital tools.">
   <link rel="icon" href="/assets/dmbt-icon.png">
   <link rel="apple-touch-icon" href="/assets/dmbt-icon.png">
   <meta name="theme-color" content="#f6f3ef">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="DMBT">
-  <meta property="og:title" content="DMBT — Development. Management. Business. Tact.">
-  <meta property="og:description" content="Development Management and Business Tact">
+  <meta property="og:title" content="DMBT — Industrial engineering &amp; operations">
+  <meta property="og:description" content="Process optimization, plant layout, production planning, quality and digital tools for efficient operations.">
   <meta property="og:url" content="https://dmbtgroup.com">
   <meta property="og:image" content="https://dmbtgroup.com/assets/og-dmbt.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="DMBT logo">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="DMBT — Development. Management. Business. Tact.">
+  <meta name="twitter:title" content="DMBT — Industrial engineering &amp; operations">
   <meta name="twitter:image" content="https://dmbtgroup.com/assets/og-dmbt.jpg">
+  <link rel="canonical" href="https://dmbtgroup.com/">
   <link rel="preload" as="image" href="/assets/dmbt-logo-transparent.png">
   <link rel="stylesheet" href="/assets/site.css">
+  <script>
+    // Runs before the page paints: picks the language direction and decides whether to play the intro
+    // (first visit in this browser session only, and never when the visitor prefers reduced motion).
+    (function () {
+      var d = document.documentElement, lang = "en";
+      d.className += " js";
+      var m = document.cookie.match(/(?:^|; )lang=(en|fr|ar)/);
+      if (m) lang = m[1];
+      else {
+        var prefs = navigator.languages || [navigator.language || "en"];
+        for (var i = 0; i < prefs.length; i++) {
+          var c = String(prefs[i]).slice(0, 2).toLowerCase();
+          if (c === "en" || c === "fr" || c === "ar") { lang = c; break; }
+        }
+      }
+      d.lang = lang;
+      d.dir = lang === "ar" ? "rtl" : "ltr";
+      try {
+        if (!sessionStorage.getItem("dmbt-intro") && !matchMedia("(prefers-reduced-motion: reduce)").matches) d.className += " play-intro";
+      } catch (e) {}
+    })();
+  </script>
 </head>
 <body>
-  <div class="brand-stage" id="stage">
-    <div class="brand-orb brand-orb-1"></div>
-    <div class="brand-orb brand-orb-2"></div>
-    <div class="brand-orb brand-orb-3"></div>
-    <div class="brand-grain"></div>
-    <div class="brand-spot"></div>
-    <main class="brand-center">
-      <h1 class="brand-logo-wrap">
-        <img src="/assets/dmbt-logo-transparent.png" alt="DMBT — Development. Management. Business. Tact." class="brand-logo" width="1523" height="513">
-        <span class="brand-line" aria-hidden="true"></span>
-      </h1>
-      <!-- Our products, revealed once the logo has settled. -->
-      <nav class="brand-products">
-        <a href="https://tactime.dmbtgroup.com" class="brand-product">
-          <span data-i18n="tactlab">Discover <strong class="brand-product-name">TactLab</strong> · lab and shop management for your team</span>
-          <span aria-hidden="true" class="brand-product-arrow">→</span>
-        </a>
-        <a href="https://condo.dmbtgroup.com" class="brand-product">
-          <span data-i18n="domora">Discover <strong class="brand-product-name">Domora</strong> · smarter management for your condominium</span>
-          <span aria-hidden="true" class="brand-product-arrow">→</span>
-        </a>
-      </nav>
-    </main>
+
+
+<!-- Intro: the logo alone, which then flies into the header -->
+<div class="intro" id="intro" aria-hidden="true">
+  <span class="intro-line"></span>
+  <button class="intro-skip" id="skip" type="button" data-i18n="skip">Skip ›</button>
+</div>
+<img class="intro-logo" id="introLogo" src="/assets/dmbt-logo-transparent.png" alt="" aria-hidden="true">
+
+<header class="site-header" id="top">
+  <div class="wrap header-in">
+    <a href="#top" class="brand" aria-label="DMBT home"><img id="brandLogo" src="/assets/dmbt-logo-transparent.png" alt="DMBT" width="1523" height="513"></a>
+    <nav class="nav" id="nav">
+      <a href="#services" data-i18n="nav.services">Services</a>
+      <a href="#approach" data-i18n="nav.approach">Approach</a>
+      <a href="#industries" data-i18n="nav.industries">Industries</a>
+      <a href="#products" data-i18n="nav.products">Products</a>
+      <a href="#contact" class="btn btn-primary btn-sm" data-i18n="nav.contact">Contact us</a>
+    </nav>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" data-lang="en" aria-pressed="true">EN</button><button type="button" data-lang="fr" aria-pressed="false" lang="fr">FR</button><button type="button" data-lang="ar" aria-pressed="false" lang="ar" aria-label="العربية">ع</button>
+    </div>
+    <button class="menu-toggle" id="menuToggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
   </div>
-  <script src="/assets/site.js" defer></script>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow reveal" style="--d:0" data-i18n="hero.eyebrow">Industrial engineering &amp; operations</span>
+        <h1 class="reveal" style="--d:1"><span data-i18n="hero.t1">Engineering</span> <em data-i18n="hero.t2">efficient</em> <span data-i18n="hero.t3">operations.</span></h1>
+        <p class="lead reveal" style="--d:2" data-i18n="hero.lead">DMBT helps manufacturers, workshops and facilities run better. We measure how work really flows, redesign processes and layouts, and build the digital tools that keep the improvements in place.</p>
+        <div class="cta-row reveal" style="--d:3">
+          <a href="#contact" class="btn btn-primary"><span data-i18n="hero.cta1">Discuss your project</span> <span class="arrow">→</span></a>
+          <a href="#services" class="btn btn-ghost" data-i18n="hero.cta2">Our services</a>
+        </div>
+      </div>
+
+      <!-- Technical drawing: a production line with stations, flow and a takt gauge -->
+      <div class="drawing reveal" style="--d:2">
+        <svg viewBox="0 0 520 340" fill="none" role="img" aria-label="Process flow drawing">
+          <g stroke="#474747" stroke-opacity="0.35" stroke-width="1">
+            <path d="M40 60 H480 M40 56 V64 M480 56 V64" />
+          </g>
+          <text x="260" y="50" text-anchor="middle" font-family="ui-monospace,monospace" font-size="10" fill="#6b6f73" letter-spacing="1.5">LINE LAYOUT · 1:200</text>
+          <!-- conveyor -->
+          <path d="M40 170 H480" stroke="#474747" stroke-width="2" />
+          <path class="flow" d="M40 170 H480" stroke="#f5821f" stroke-width="3" />
+          <!-- stations -->
+          <g font-family="ui-monospace,monospace" font-size="10" fill="#474747" letter-spacing="1">
+            <rect x="52" y="120" width="76" height="100" rx="6" fill="#fff" stroke="#474747" stroke-width="1.5"/>
+            <rect x="166" y="120" width="76" height="100" rx="6" fill="#fff" stroke="#474747" stroke-width="1.5"/>
+            <rect x="280" y="120" width="76" height="100" rx="6" fill="#fff7f0" stroke="#f5821f" stroke-width="2"/>
+            <rect x="394" y="120" width="76" height="100" rx="6" fill="#fff" stroke="#474747" stroke-width="1.5"/>
+            <text x="90" y="140" text-anchor="middle">ST-01</text>
+            <text x="204" y="140" text-anchor="middle">ST-02</text>
+            <text x="318" y="140" text-anchor="middle" fill="#d96a0b">ST-03</text>
+            <text x="432" y="140" text-anchor="middle">ST-04</text>
+          </g>
+          <!-- parts on the line -->
+          <g fill="#474747">
+            <rect x="80" y="163" width="20" height="14" rx="2"/><rect x="194" y="163" width="20" height="14" rx="2"/>
+            <rect x="308" y="163" width="20" height="14" rx="2" fill="#f5821f"/><rect x="422" y="163" width="20" height="14" rx="2"/>
+          </g>
+          <circle class="pulse" cx="318" cy="200" r="5" fill="#f5821f"/>
+          <!-- dimension lines -->
+          <g stroke="#474747" stroke-opacity="0.45" stroke-width="1">
+            <path d="M52 236 V250 M128 236 V250 M52 244 H128" />
+            <path d="M166 236 V250 M242 236 V250 M166 244 H242" />
+          </g>
+          <g font-family="ui-monospace,monospace" font-size="9.5" fill="#6b6f73">
+            <text x="90" y="262" text-anchor="middle">42 s</text><text x="204" y="262" text-anchor="middle">40 s</text>
+            <text x="318" y="262" text-anchor="middle" fill="#d96a0b">BOTTLENECK</text><text x="432" y="262" text-anchor="middle">38 s</text>
+          </g>
+          <!-- takt gauge -->
+          <g transform="translate(70 300)">
+            <circle r="20" stroke="#474747" stroke-opacity="0.15" stroke-width="5" transform="rotate(-90)"/>
+          </g>
+          <circle cx="70" cy="300" r="20" stroke="#f5821f" stroke-width="5" stroke-linecap="round" class="gauge" transform="rotate(-90 70 300)" pathLength="260"/>
+          <g font-family="ui-monospace,monospace" fill="#474747">
+            <text x="104" y="296" font-size="10" letter-spacing="1.2" fill="#6b6f73">TAKT TIME</text>
+            <text x="104" y="312" font-size="14" font-weight="700">40 s / unit</text>
+          </g>
+          <g stroke="#474747" stroke-opacity="0.3"><path d="M260 286 V318" /></g>
+          <g font-family="ui-monospace,monospace" fill="#474747">
+            <text x="280" y="296" font-size="10" letter-spacing="1.2" fill="#6b6f73">FLOW</text>
+            <text x="280" y="312" font-size="14" font-weight="700">Rebalance ST-03</text>
+          </g>
+        </svg>
+        <div class="drawing-meta"><span>DMBT · Line study</span><span>Rev. A</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pillars">
+    <div class="wrap pillars-grid">
+      <div class="pillar inview"><div class="pillar-letter">D</div><h3 data-i18n="p.d.t">Development</h3><p data-i18n="p.d.b">Processes, layouts and software designed around your floor.</p></div>
+      <div class="pillar inview"><div class="pillar-letter">M</div><h3 data-i18n="p.m.t">Management</h3><p data-i18n="p.m.b">Planning, standards and indicators that teams actually use.</p></div>
+      <div class="pillar inview"><div class="pillar-letter">B</div><h3 data-i18n="p.b.t">Business</h3><p data-i18n="p.b.b">Every change tied to cost, lead time and quality.</p></div>
+      <div class="pillar inview"><div class="pillar-letter">T</div><h3 data-i18n="p.t.t">Tact</h3><p data-i18n="p.t.b">Change carried out with the people who do the work.</p></div>
+    </div>
+  </section>
+
+  <section class="section" id="services">
+    <div class="wrap">
+      <div class="section-head inview"><span class="eyebrow" data-i18n="services.kicker">What we do</span><h2 data-i18n="services.title">Industrial engineering services</h2></div>
+      <div class="cards">
+        <article class="card inview"><div class="card-top"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 0 1-15.5 6.2M3 12A9 9 0 0 1 18.5 5.8"/><path d="M18 2v4h-4M6 22v-4h4"/></svg></span><span class="num">01</span></div>
+          <h3 data-i18n="s1.t">Process optimization</h3><p data-i18n="s1.b">Value-stream mapping, time studies and lean methods to remove waste and bottlenecks.</p></article>
+        <article class="card inview"><div class="card-top"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><rect x="3" y="3" width="8" height="8" rx="1"/><rect x="13" y="3" width="8" height="5" rx="1"/><rect x="13" y="10" width="8" height="11" rx="1"/><rect x="3" y="13" width="8" height="8" rx="1"/></svg></span><span class="num">02</span></div>
+          <h3 data-i18n="s2.t">Plant layout &amp; facility design</h3><p data-i18n="s2.b">Layouts, material flow and workstation design for shorter, safer paths.</p></article>
+        <article class="card inview"><div class="card-top"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 5h18M3 19h18"/><path d="M5 9h7M9 12h8M7 15h6" stroke-width="2.6"/></svg></span><span class="num">03</span></div>
+          <h3 data-i18n="s3.t">Production planning</h3><p data-i18n="s3.b">Capacity, scheduling and inventory policies matched to real demand.</p></article>
+        <article class="card inview"><div class="card-top"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><path d="M12 12l6-6"/></svg></span><span class="num">04</span></div>
+          <h3 data-i18n="s4.t">Quality &amp; continuous improvement</h3><p data-i18n="s4.b">Root-cause analysis, standard work and statistical process control so problems stay solved.</p></article>
+        <article class="card inview"><div class="card-top"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M3 7l9-4 9 4v10l-9 4-9-4z"/><path d="M3 7l9 4 9-4M12 11v10"/></svg></span><span class="num">05</span></div>
+          <h3 data-i18n="s5.t">Supply chain &amp; logistics</h3><p data-i18n="s5.b">Warehouse organization, replenishment and distribution flows.</p></article>
+        <article class="card inview"><div class="card-top"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M7 13l3-3 3 2 4-4"/></svg></span><span class="num">06</span></div>
+          <h3 data-i18n="s6.t">Digital tools &amp; data</h3><p data-i18n="s6.b">Dashboards and custom software that capture the data your decisions need.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section dark" id="approach">
+    <div class="wrap">
+      <div class="section-head inview"><span class="eyebrow" data-i18n="approach.kicker">How we work</span><h2 data-i18n="approach.title">From the shop floor to lasting results</h2></div>
+      <div class="steps">
+        <div class="step inview"><div class="step-node">01</div><h3 data-i18n="a1.t">Observe</h3><p data-i18n="a1.b">We go to the floor, map the flow and measure what really happens.</p></div>
+        <div class="step inview"><div class="step-node">02</div><h3 data-i18n="a2.t">Analyze</h3><p data-i18n="a2.b">Data and root causes show where time, cost and quality are lost.</p></div>
+        <div class="step inview"><div class="step-node">03</div><h3 data-i18n="a3.t">Design</h3><p data-i18n="a3.b">We design the new process, layout or tool together with your team.</p></div>
+        <div class="step inview"><div class="step-node">04</div><h3 data-i18n="a4.t">Implement &amp; sustain</h3><p data-i18n="a4.b">We roll it out, train people and track indicators so the gains last.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="industries">
+    <div class="wrap">
+      <div class="section-head inview"><span class="eyebrow" data-i18n="industries.kicker">Where we work</span><h2 data-i18n="industries.title">Built for operations of every size</h2></div>
+      <div class="industries">
+        <div class="industry inview"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M2 21V10l6 4V10l6 4V6h4l1 15z"/><path d="M2 21h20"/></svg></div><h3 data-i18n="i1.t">Manufacturing</h3><p data-i18n="i1.b">Assembly, machining and process plants.</p></div>
+        <div class="industry inview"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 1.7 3h10.6a2 2 0 0 0 1.7-3l-5-9V3"/><path d="M7 15h10"/></svg></div><h3 data-i18n="i2.t">Labs &amp; workshops</h3><p data-i18n="i2.b">Technical labs, repair and production shops.</p></div>
+        <div class="industry inview"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M3 21V8l9-5 9 5v13"/><path d="M7 21v-8h10v8M7 17h10"/></svg></div><h3 data-i18n="i3.t">Warehousing &amp; logistics</h3><p data-i18n="i3.b">Storage, picking and distribution centers.</p></div>
+        <div class="industry inview"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="1"/><path d="M9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2M11 21v-3h2v3"/></svg></div><h3 data-i18n="i4.t">Facilities &amp; property</h3><p data-i18n="i4.b">Building operations, maintenance and condominium management.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section products-bg" id="products">
+    <div class="wrap">
+      <div class="section-head inview"><span class="eyebrow" data-i18n="products.kicker">Our software</span><h2 data-i18n="products.title">Tools we build and run</h2></div>
+      <div class="products">
+        <a class="product inview" href="https://tactime.dmbtgroup.com"><div><small>tactime.dmbtgroup.com</small><div class="product-name">TactLab</div><p data-i18n="tactlab">Lab and shop management for your team.</p></div><span class="arrow">→</span></a>
+        <a class="product inview" href="https://condo.dmbtgroup.com"><div><small>condo.dmbtgroup.com</small><div class="product-name">Domora</div><p data-i18n="domora">Smarter management for your condominium.</p></div><span class="arrow">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap contact-in">
+      <div class="inview"><h2 data-i18n="contact.title">Let's look at your operation together.</h2><p data-i18n="contact.lead">Tell us about your process, site or project. We'll reply with a first assessment and the next steps.</p></div>
+      <a href="mailto:contact@dmbtgroup.com" class="btn btn-dark inview"><span data-i18n="contact.cta">Email us</span> <span class="arrow">→</span></a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap footer-in">
+    <img src="/assets/dmbt-logo-transparent.png" alt="DMBT" width="1523" height="513">
+    <span class="footer-tag" data-i18n="footer.tag">Development. Management. Business. Tact.</span>
+    <span>© <span id="year">2026</span> DMBT. <span data-i18n="footer.rights">All rights reserved.</span></span>
+  </div>
+</footer>
+
+<script src="/assets/site.js" defer></script>
 </body>
 </html>
