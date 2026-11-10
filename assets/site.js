@@ -73,8 +73,10 @@
       "e1.name": "Dr Hadi Shirouyehzad",
       "e1.role": "Professeur associé en génie industriel",
       "e1.org": "Université islamique Azad, campus de Najafabad · Ispahan, Iran",
-      "e.cv": "CV complet",
-      "e.cvHide": "Masquer le CV",
+      "e.cv": "Voir le CV",
+      "e.back": "Retour aux experts",
+      "meta.experts": "Nos experts — DMBT",
+      "experts.lead": "Ingénieurs industriels, chercheurs et consultants qui accompagnent les projets de DMBT, du terrain jusqu'aux résultats.",
       "e1.bio": "Enseignant-chercheur en génie industriel depuis 2001 et responsable du programme de master et doctorat du département, il a aussi occupé des fonctions de direction dans l'industrie, en planification et technologie, en génie industriel et en amélioration de la productivité. Il conseille les entreprises en planification stratégique, structure organisationnelle, gestion des processus et productivité, et a été rédacteur en chef de l'International Journal of Applied Research on Industrial Engineering (2014–2019).",
       "e1.f1": "ans d'expérience en industrie et en enseignement",
       "e1.f2": "articles scientifiques",
@@ -175,8 +177,10 @@
       "e1.name": "د. هادي شيرويه زاد",
       "e1.role": "أستاذ مشارك في الهندسة الصناعية",
       "e1.org": "جامعة آزاد الإسلامية، فرع نجف آباد · أصفهان، إيران",
-      "e.cv": "السيرة الذاتية الكاملة",
-      "e.cvHide": "إخفاء السيرة الذاتية",
+      "e.cv": "عرض السيرة الذاتية",
+      "e.back": "العودة إلى الخبراء",
+      "meta.experts": "خبراؤنا — DMBT",
+      "experts.lead": "مهندسون صناعيون وباحثون ومستشارون يرافقون مشاريع DMBT من موقع العمل حتى النتائج.",
       "e1.bio": "عضو هيئة التدريس في الهندسة الصناعية منذ عام 2001 ومدير برنامج الدراسات العليا في القسم، وشغل أيضًا مناصب إدارية في الصناعة في مجالات التخطيط والتكنولوجيا والهندسة الصناعية وتحسين الإنتاجية. يقدّم الاستشارات للشركات في التخطيط الاستراتيجي والهيكل التنظيمي وإدارة العمليات والإنتاجية، وكان رئيس تحرير المجلة الدولية للبحوث التطبيقية في الهندسة الصناعية (2014–2019).",
       "e1.f1": "عامًا من الخبرة في الصناعة والتدريس",
       "e1.f2": "بحثًا علميًا",
@@ -224,7 +228,7 @@
       var k = el.getAttribute("data-i18n-alt");
       if (k in t) el.alt = t[k];
     });
-    document.title = t["meta.title"];
+    document.title = t[root.getAttribute("data-title") || "meta.title"];
   }
   document.querySelectorAll("[data-lang]").forEach(function (btn) {
     btn.setAttribute("aria-pressed", btn.getAttribute("data-lang") === lang ? "true" : "false");
@@ -238,11 +242,15 @@
   document.getElementById("year").textContent = new Date().getFullYear();
 
   // ---- The logo: in the middle of the first screen at the top, in the header corner once scrolled ----
+  // Only the home page has the logo screen; other pages just show the header logo.
   var stage = document.getElementById("stage");
   var header = document.querySelector(".site-header");
   var logo = document.getElementById("floatLogo");
   var slot = document.getElementById("brandLogo");
   var geo = null;
+  if (stage && logo) homeLogo(); else watchSections();
+
+  function homeLogo() {
   if ("scrollRestoration" in history) history.scrollRestoration = "manual";
 
   // Where the logo sits at both ends, and how far the page scrolls between them.
@@ -349,6 +357,7 @@
     window.addEventListener("load", function () { setTimeout(toContent, 0); });
     showPage();
   }
+  }
 
   // ---- Sections fade in as they scroll into view ----
   function watchSections() {
@@ -365,12 +374,9 @@
     els.forEach(function (el, i) { el.style.transitionDelay = (i % 4) * 80 + "ms"; io.observe(el); });
   }
 
-  // ---- Experts: "Full CV" opens the expert's complete CV (data in assets/cv.js) ----
+  // ---- Experts: building an expert's full CV from assets/cv.js ----
   var LI = { en: 0, fr: 1, ar: 2 }[lang] || 0;
   var PRESENT = ["present", "aujourd'hui", "حتى الآن"];
-  var CV_LABEL = {
-    open: [["Full CV", "Hide CV"], ["CV complet", "Masquer le CV"], ["السيرة الذاتية الكاملة", "إخفاء السيرة الذاتية"]][LI]
-  };
   function tx(v) { return v == null ? "" : typeof v === "string" ? v : v[LI]; }
   function node(tag, cls, text) {
     var n = document.createElement(tag);
@@ -428,20 +434,59 @@
       box.appendChild(wrap);
     });
   }
-  document.querySelectorAll(".cv-toggle").forEach(function (btn) {
-    var box = document.getElementById(btn.getAttribute("aria-controls"));
-    var data = window.DMBT_CV && window.DMBT_CV[btn.getAttribute("data-cv")];
-    if (!box || !data) { btn.hidden = true; return; }
-    var label = btn.querySelector("[data-i18n]");
-    btn.addEventListener("click", function () {
-      var open = btn.getAttribute("aria-expanded") !== "true";
-      if (open && !box.childElementCount) renderCV(data, box);
-      box.hidden = !open;
-      btn.setAttribute("aria-expanded", open ? "true" : "false");
-      label.textContent = CV_LABEL.open[open ? 1 : 0];
-      if (open) box.scrollIntoView({ behavior: "smooth", block: "start" });
+  // ---- Experts page: "View CV" opens the expert's profile and CV in an overlay with a back button ----
+  // Each overlay is <div class="sheet" id="…">; its address is /experts#id, so it can be shared, and the
+  // browser's back button, the overlay's back button and Esc all close it.
+  var sheets = document.querySelectorAll(".sheet");
+  var opener = null, pushed = false;
+  function openSheet(sheet) {
+    var box = sheet.querySelector(".cv[data-cv]");
+    var data = box && window.DMBT_CV && window.DMBT_CV[box.getAttribute("data-cv")];
+    if (data && !box.childElementCount) renderCV(data, box);
+    sheets.forEach(function (s) { if (s !== sheet) s.classList.remove("open"); });
+    sheet.classList.add("open");
+    sheet.scrollTop = 0;
+    root.classList.add("sheet-open");
+    var back = sheet.querySelector(".sheet-back");
+    if (back) back.focus({ preventScroll: true });
+  }
+  function closeSheets() {
+    sheets.forEach(function (s) { s.classList.remove("open"); });
+    root.classList.remove("sheet-open");
+    if (opener) { opener.focus({ preventScroll: true }); opener = null; }
+  }
+  function syncSheet() {
+    var id = decodeURIComponent(location.hash.slice(1));
+    var sheet = id && document.getElementById(id);
+    if (sheet && sheet.classList.contains("sheet")) openSheet(sheet); else closeSheets();
+  }
+  if (sheets.length) {
+    document.querySelectorAll("[data-sheet]").forEach(function (a) {
+      a.addEventListener("click", function (e) {
+        e.preventDefault();
+        opener = a;
+        var id = a.getAttribute("data-sheet");
+        if (location.hash !== "#" + id) { history.pushState(null, "", "#" + id); pushed = true; }
+        syncSheet();
+      });
     });
-  });
+    document.querySelectorAll(".sheet-back").forEach(function (a) {
+      a.addEventListener("click", function (e) {
+        e.preventDefault();
+        if (pushed) { pushed = false; history.back(); }
+        else { history.replaceState(null, "", location.pathname + location.search); closeSheets(); }
+      });
+    });
+    window.addEventListener("popstate", function () { pushed = false; syncSheet(); });
+    window.addEventListener("hashchange", syncSheet);
+    window.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && root.classList.contains("sheet-open")) {
+        var back = document.querySelector(".sheet.open .sheet-back");
+        if (back) back.click();
+      }
+    });
+    syncSheet();
+  }
 
   // ---- Phone menu ----
   var toggle = document.getElementById("menuToggle");

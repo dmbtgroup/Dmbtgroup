@@ -78,7 +78,8 @@ html.js .inview.seen { opacity: 1; transform: none; }
 .header-in { display: flex; align-items: center; gap: 28px; height: 72px; }
 .brand { display: block; flex: none; }
 .brand img { display: block; height: 36px; width: auto; }
-html.js .brand img { visibility: hidden; } /* the travelling logo is drawn over this spot */
+html.js:not(.subpage) .brand img { visibility: hidden; } /* on the home page the travelling logo is drawn over this spot */
+.nav a[aria-current="page"]::after { transform: scaleX(1); }
 html.play-intro:not(.ready) .nav, html.play-intro:not(.ready) .lang, html.play-intro:not(.ready) .menu-toggle { opacity: 0; }
 .nav, .lang, .menu-toggle { transition: opacity 0.6s ease 0.15s; }
 .nav { display: flex; align-items: center; gap: 26px; margin-inline-start: auto; font-size: 15px; font-weight: 500; }
@@ -235,14 +236,8 @@ section[id] { scroll-margin-top: 72px; } /* keep the sticky header from covering
   .facts div:nth-child(n+3) { border-top: 1px solid var(--line); }
 }
 @media (max-width: 760px) { .expert { padding: 24px; } }
-.cv-toggle { display: none; }
-html.js .cv-toggle { display: inline-flex; }
-.cv-toggle .chev { transition: transform 0.25s; }
-.cv-toggle[aria-expanded="true"] .chev { transform: rotate(180deg); }
-
 /* Full CV: sections flow in two columns on wide screens. */
-.cv { grid-column: 1 / -1; border-top: 1px solid var(--line); padding-top: 36px; columns: 2; column-gap: 56px; scroll-margin-top: 88px; }
-.cv[hidden] { display: none; }
+.cv { grid-column: 1 / -1; border-top: 1px solid var(--line); padding-top: 36px; columns: 2; column-gap: 56px; }
 .cv-sec { break-inside: avoid; margin-bottom: 36px; }
 .cv-sec.cv-chips { column-span: all; }
 .cv h4 { padding-bottom: 10px; border-bottom: 2px solid var(--orange); display: inline-block; margin-bottom: 16px; }
@@ -263,6 +258,54 @@ html.js .cv-toggle { display: inline-flex; }
 
 [dir="rtl"] .expert h4 { letter-spacing: 0; font-family: var(--sans); font-size: 14px; }
 [dir="rtl"] .cv-books strong { font-style: normal; }
+
+/* ---------- Experts page ---------- */
+.page-hero { position: relative; overflow: hidden; padding: 80px 0 24px; }
+.page-hero::before { content: ""; position: absolute; inset: 0; pointer-events: none;
+  background-image: linear-gradient(rgba(71,71,71,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(71,71,71,0.07) 1px, transparent 1px);
+  background-size: 24px 24px; mask-image: linear-gradient(180deg, #000, transparent); -webkit-mask-image: linear-gradient(180deg, #000, transparent); }
+.page-hero .wrap { position: relative; }
+.page-hero h1 { font-size: clamp(2.2rem, 4.6vw, 3.6rem); line-height: 1.06; letter-spacing: -0.035em; margin: 16px 0 16px; }
+.experts-list { padding-top: 40px; }
+.expert-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 360px), 1fr)); gap: 24px; }
+.expert-card { display: flex; flex-direction: column; gap: 22px; background: #fff; border: 1px solid var(--line); border-radius: 20px; padding: 30px;
+  transition: box-shadow 0.25s, transform 0.25s; }
+.expert-card:hover { transform: translateY(-3px); box-shadow: 0 24px 44px -26px rgba(35, 39, 42, 0.4); }
+.expert-card-top { display: flex; gap: 18px; align-items: center; }
+.expert-card .avatar { width: 92px; height: 92px; flex: none; border-color: #fff; }
+.expert-card .expert-name { font-size: 20px; margin: 0 0 4px; }
+.expert-card .expert-org { margin: 2px 0 0; font-size: 14px; }
+.expert-card .chips { margin: 0; }
+.expert-card .btn { align-self: flex-start; margin-top: auto; }
+.facts-sm { grid-template-columns: repeat(3, 1fr); margin: 0; }
+.facts-sm div { padding: 14px 12px; }
+.facts-sm dt { font-size: 24px; }
+.facts-sm dd { font-size: 13px; }
+@media (max-width: 960px) {
+  .facts-sm { grid-template-columns: repeat(3, 1fr); }
+  .facts-sm div:nth-child(3) { border-inline-start: 1px solid var(--line); padding-inline-start: 12px; }
+  .facts-sm div:nth-child(n+3) { border-top: 0; }
+}
+
+/* ---------- Expert overlay: full profile and CV over the page, with a back button ---------- */
+.sheet { display: none; position: fixed; inset: 0; z-index: 90; overflow-y: auto; overscroll-behavior: contain; background: var(--paper); }
+.sheet.open { display: block; animation: sheet-in 0.45s var(--ease); }
+html:not(.js) .sheet:target { display: block; }
+html.sheet-open body { overflow: hidden; }
+@keyframes sheet-in { from { opacity: 0; transform: translateY(28px); } }
+.sheet-bar { position: sticky; top: 0; z-index: 2; background: rgba(246, 243, 239, 0.92); border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+.sheet-bar-in { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 68px; }
+.sheet-bar img { height: 30px; width: auto; }
+.sheet-back { display: inline-flex; align-items: center; gap: 10px; padding: 9px 16px; border-radius: 10px; background: #fff;
+  border: 1.5px solid rgba(71, 71, 71, 0.3); font-weight: 650; font-size: 15px; transition: border-color 0.2s; }
+.sheet-back:hover { border-color: var(--ink); }
+.sheet-back .arrow { color: var(--orange); transition: transform 0.2s; }
+.sheet-back:hover .arrow { transform: translateX(-3px); }
+[dir="rtl"] .sheet-back:hover .arrow { transform: scaleX(-1) translateX(-3px); }
+.sheet-body { padding: 36px 0 80px; }
+.sheet .expert { background: #fff; }
+@media (max-width: 760px) { .sheet-body { padding: 20px 0 56px; } .sheet-bar img { height: 24px; } }
 
 /* ---------- Contact ---------- */
 .contact { background: var(--orange); color: #fff; position: relative; overflow: hidden; }

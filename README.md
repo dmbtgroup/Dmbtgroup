@@ -17,12 +17,13 @@ visitors can skip that with "Skip" or Esc. Later page loads in the same session,
 (such as `#products`) and visitors who prefer reduced motion open straight on the content.
 
 **Sections.** Header · logo screen · hero with a line-study drawing · the D-M-B-T principles · services · how we work ·
-experts · industries · products · contact · footer.
+industries · products · contact · footer.
 
-**Experts.** Each expert is one `<article class="expert">` in the `#experts` section of `index.html`, with keys
-`e1.*` for the first expert, `e2.*` for the next, and so on; add their French and Arabic text to `assets/site.js`.
-Photos go in `assets/experts/` as square JPEGs.
-Their full CV (opened with the "Full CV" button) is in `assets/cv.js`, in all three languages.
+**Experts page.** `experts.html` (served at `dmbtgroup.com/experts`) lists the experts as cards. "View CV"
+opens an overlay with the expert's full profile and CV and a "Back to experts" button; each overlay has its own
+address, such as `dmbtgroup.com/experts#hadi-shirouyehzad`. To add an expert, add a card and a
+`<div class="sheet">` overlay in `experts.html` (keys `e2.*` for the second expert, and so on), their French and
+Arabic text in `assets/site.js`, their full CV in `assets/cv.js`, and a square photo in `assets/experts/`.
 Only professional details go on the site (no phone numbers, personal emails or dates of birth).
 
 **Languages.** English, French or Arabic (right to left), following the visitor's browser language or the
@@ -32,7 +33,7 @@ EN / FR / ع switch in the header, which is remembered in a `lang` cookie. Engli
 
 **Contact.** The contact section has no email button for now; add one in `index.html` once the address is confirmed.
 
-`www.dmbtgroup.com` redirects to `dmbtgroup.com` (same path). Any other address, such as a company link `dmbtgroup.com/cmtb`, forwards to the same address on
+`www.dmbtgroup.com` redirects to `dmbtgroup.com` (same path). Any other address (apart from `/experts`), such as a company link `dmbtgroup.com/cmtb`, forwards to the same address on
 tactime.dmbtgroup.com (see `vercel.json`).
 
 Pushing to `main` deploys to Vercel (`.github/workflows/deploy.yml`); it needs a `VERCEL_TOKEN` secret.
