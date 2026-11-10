@@ -288,6 +288,20 @@ section[id] { scroll-margin-top: 72px; } /* keep the sticky header from covering
 .facts-sm div { padding: 14px 12px; }
 .facts-sm dt { font-size: 24px; }
 .facts-sm dd { font-size: 13px; }
+/* Cards line up with each other: the photo, name, title, place, figures, expertise and button of every card in
+   a row sit on shared grid rows, so each line starts at the same height in all cards. */
+@supports (grid-template-rows: subgrid) {
+  .expert-cards { row-gap: 24px; }
+  .expert-card { display: grid; grid-row: span 7; grid-template-rows: subgrid; row-gap: 0; }
+  .expert-card-top, .expert-card-top > div { display: contents; }
+  .expert-card .avatar { margin-bottom: 20px; }
+  .expert-card .expert-name { margin: 0 0 6px; }
+  .expert-card .expert-role { margin: 0 0 4px; }
+  .expert-card .expert-org { margin: 0 0 22px; }
+  .expert-card .facts-sm { margin: 0 0 22px; align-self: start; }
+  .expert-card .chips { margin: 0 0 26px; align-self: start; align-content: flex-start; }
+  .expert-card .btn { margin-top: 0; align-self: end; justify-self: start; }
+}
 @media (max-width: 960px) {
   .facts-sm { grid-template-columns: repeat(3, 1fr); }
   .facts-sm div:nth-child(3) { border-inline-start: 1px solid var(--line); padding-inline-start: 12px; }
