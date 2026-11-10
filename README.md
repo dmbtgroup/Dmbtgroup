@@ -4,7 +4,7 @@ The DMBT website: an industrial engineering company page with links to DMBT's pr
 
 - **TactLab** — lab and shop management: https://tactime.dmbtgroup.com
 - **Domora** — condominium management: https://condo.dmbtgroup.com
-- **TactHR** — HR and payroll management: https://tacthr.dmbtgroup.com
+- **tactHR** — HR and payroll management: https://tacthr.dmbtgroup.com
 
 It is a static site (no build step): `index.html`, with styles, script and images in `assets/`.
 Browsers keep files in `assets/` for a day, so after changing `site.css` or `site.js`, raise the `?v=` number
@@ -39,5 +39,7 @@ the three product sites.
 
 `www.dmbtgroup.com` redirects to `dmbtgroup.com` (same path). Any other address (apart from `/experts`), such as a company link `dmbtgroup.com/cmtb`, forwards to the same address on
 tactime.dmbtgroup.com (see `vercel.json`).
+
+The product cards show each app's logo mark from `assets/products/` (taken from the apps' own repositories).
 
 Pushing to `main` deploys to Vercel (`.github/workflows/deploy.yml`); it needs a `VERCEL_TOKEN` secret.
