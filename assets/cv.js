@@ -343,5 +343,138 @@ window.DMBT_CV = {
         }
       ]
     }
+  ],
+  e3: [
+    {
+      title: ["Industry experience", "Expérience en entreprise", "الخبرة في الصناعة"],
+      type: "timeline",
+      items: [
+        ["2020–present", ["ERP Design · Invera, Montreal, Canada", "Conception d'ERP · Invera, Montréal, Canada", "تصميم أنظمة ERP · Invera، مونتريال، كندا"],
+          ["Production planning and job scheduling; transportation planning module; member of the design team", "Planification de la production et ordonnancement des travaux ; module de planification des transports ; membre de l'équipe de conception", "تخطيط الإنتاج وجدولة الأعمال؛ وحدة تخطيط النقل؛ عضو فريق التصميم"]],
+        ["2018–2020", ["ERP Implementation · Invera, Montreal, Canada", "Déploiement d'ERP · Invera, Montréal, Canada", "تطبيق أنظمة ERP · Invera، مونتريال، كندا"],
+          ["ERP implementation in the steel industry; logistics and inventory management (MRP)", "Déploiement d'ERP dans la sidérurgie ; gestion logistique et des stocks (MRP)", "تطبيق أنظمة ERP في صناعة الصلب؛ إدارة اللوجستيات والمخزون (MRP)"]],
+        ["2011", ["Strategic Management Consultant · DMBT (Development, Management and Business Tact), Isfahan", "Consultant en management stratégique · DMBT (Development, Management and Business Tact), Ispahan", "مستشار الإدارة الاستراتيجية · DMBT (Development, Management and Business Tact)، أصفهان"],
+          ["Online logistics management platform; public transportation data collection and analysis", "Plateforme en ligne de gestion logistique ; collecte et analyse de données sur les transports publics", "منصة إلكترونية لإدارة اللوجستيات؛ جمع بيانات النقل العام وتحليلها"]],
+        ["2009–2010", ["Strategic Transportation Planning Specialist · Deputy of Traffic and Transportation, Municipality of Isfahan", "Spécialiste en planification stratégique des transports · Direction de la circulation et des transports, municipalité d'Ispahan", "أخصائي التخطيط الاستراتيجي للنقل · معاونية المرور والنقل، بلدية أصفهان"],
+          ["Strategic planning: public transport data analysis, SWOT analysis of the infrastructure, long-term and annual planning and budgeting. Collaborative transport design: bus network optimization from demand and routes; fixed-route taxi assignment, routing and scheduling; bicycle station location and routing (presented at a conference); an integrated bus, taxi and bike network",
+           "Planification stratégique : analyse des données de transport public, analyse SWOT des infrastructures, planification et budgets annuels et à long terme. Conception collaborative : optimisation du réseau de bus selon la demande et les itinéraires ; affectation, tournées et horaires des taxis à itinéraire fixe ; localisation et tournées des stations de vélos (présenté en conférence) ; réseau intégré bus, taxi et vélo",
+           "التخطيط الاستراتيجي: تحليل بيانات النقل العام، وتحليل SWOT للبنية التحتية، والتخطيط والموازنات السنوية وطويلة المدى. التصميم التشاركي: تحسين شبكة الحافلات وفق الطلب والمسارات؛ وتوزيع سيارات الأجرة ذات المسار الثابت وجدولتها؛ وتحديد مواقع محطات الدراجات ومساراتها (عُرض في مؤتمر)؛ وشبكة متكاملة للحافلات وسيارات الأجرة والدراجات"]],
+        ["2005–2006", ["Industrial Engineering Specialist · Ideh Tadbir Espadana Co. (industrial consulting)", "Spécialiste en génie industriel · Ideh Tadbir Espadana Co. (conseil industriel)", "أخصائي الهندسة الصناعية · شركة ايده تدبير اسپادانا (استشارات صناعية)"],
+          ["FMEA of ERP failures; CMMS implementation; MRP analysis and requirement planning; layout planning and production optimization", "AMDEC des défaillances d'ERP ; déploiement de GMAO ; analyse MRP et calcul des besoins ; implantation et optimisation de la production", "تحليل أنماط فشل أنظمة ERP؛ تطبيق نظام إدارة الصيانة المحوسب؛ تحليل MRP وتخطيط الاحتياجات؛ تخطيط المخطط وتحسين الإنتاج"]],
+        ["2005", ["Quality Assurance and Supplier Selection · Narin Niroo (automobile starter manufacturer), Isfahan", "Assurance qualité et sélection des fournisseurs · Narin Niroo (fabricant de démarreurs automobiles), Ispahan", "ضمان الجودة واختيار الموردين · شركة نارين نيرو (مصنّعة محركات بدء تشغيل السيارات)، أصفهان"],
+          ["Implementing and auditing ISO 9001 and ISO/TS 16949; FMEA team member; SPC implementation team member", "Mise en œuvre et audit des normes ISO 9001 et ISO/TS 16949 ; membre de l'équipe AMDEC ; membre de l'équipe de maîtrise statistique des procédés", "تطبيق معياري ISO 9001 وISO/TS 16949 وتدقيقهما؛ عضو فريق تحليل أنماط الفشل؛ عضو فريق تطبيق الضبط الإحصائي للعمليات"]]
+      ]
+    },
+    {
+      title: ["Research", "Recherche", "البحث العلمي"],
+      type: "timeline",
+      items: [
+        ["2012–2018", ["Research Assistant · Concordia University, with Defence R&D Canada and MDA Corporation", "Assistant de recherche · Université Concordia, avec R et D pour la défense Canada et MDA Corporation", "مساعد باحث · جامعة كونكورديا، بالتعاون مع هيئة البحث والتطوير الدفاعي الكندية وشركة MDA"],
+          ["Dynamic shortest path problems under disruption events; reliable shared-backup facility location under disruption; location-routing under disruption with facility and route backups; shortest paths for an air logistics network under attacks or events",
+           "Plus courts chemins dynamiques en cas de perturbation ; localisation fiable d'installations avec secours partagés ; localisation-tournées avec secours d'installations et d'itinéraires ; plus courts chemins pour un réseau logistique aérien en cas d'attaques ou d'événements",
+           "مسائل أقصر الطرق الديناميكية عند الاضطرابات؛ تحديد مواقع المنشآت الموثوقة مع الدعم الاحتياطي المشترك؛ مسائل الموقع والمسار مع احتياطي المنشآت والمسارات؛ أقصر الطرق لشبكة لوجستيات جوية عند الهجمات أو الأحداث"]],
+        ["2002–2004", ["Founder and Director · Pooya Journal (industrial engineering journal), Islamic Azad University, Najafabad Branch", "Fondateur et directeur · revue Pooya (revue de génie industriel), Université islamique Azad, campus de Najafabad", "المؤسس والمدير · مجلة پويا (مجلة الهندسة الصناعية)، جامعة آزاد الإسلامية، فرع نجف آباد"], null]
+      ]
+    },
+    {
+      title: ["Education", "Formation", "التعليم"],
+      type: "timeline",
+      items: [
+        ["2019", ["PhD, Industrial Engineering · Concordia University, Canada", "Doctorat en génie industriel · Université Concordia, Canada", "دكتوراه في الهندسة الصناعية · جامعة كونكورديا، كندا"],
+          ["Thesis: Location and Location-Routing Problems with Disruption Risks. Reliable and shared capacitated facility location, and reliable facility location and routing with backup sharing, solved with column generation; it solves much larger instances exactly than earlier work and shows that shared backups are very effective",
+           "Thèse : Location and Location-Routing Problems with Disruption Risks. Localisation fiable et partagée d'installations à capacité limitée, et localisation-tournées fiable avec partage des secours, résolues par génération de colonnes ; la méthode résout exactement des instances bien plus grandes que les travaux antérieurs et montre l'efficacité des secours partagés",
+           "الأطروحة: Location and Location-Routing Problems with Disruption Risks. تحديد مواقع المنشآت الموثوقة والمشتركة محدودة السعة، وتحديد المواقع والمسارات الموثوقة مع مشاركة الاحتياطي، بأسلوب توليد الأعمدة؛ تحلّ بدقة حالات أكبر بكثير مما في الدراسات السابقة وتُظهر فعالية الاحتياطي المشترك"]],
+        ["2009", ["MSc, Industrial and Systems Engineering · Universiti Putra Malaysia", "Master en génie industriel et des systèmes · Université Putra Malaysia", "ماجستير في الهندسة الصناعية وهندسة النظم · جامعة بوترا الماليزية"],
+          ["Thesis: Optimization of Simultaneous Scheduling and Routing of Automated Guided Vehicles in Flexible Manufacturing Systems: Application of FLC in GA. A fuzzy logic controller guides a genetic algorithm that schedules machines and AGVs together",
+           "Mémoire : Optimization of Simultaneous Scheduling and Routing of Automated Guided Vehicles in Flexible Manufacturing Systems: Application of FLC in GA. Un contrôleur à logique floue pilote un algorithme génétique qui ordonnance ensemble machines et véhicules à guidage automatique",
+           "الرسالة: Optimization of Simultaneous Scheduling and Routing of Automated Guided Vehicles in Flexible Manufacturing Systems: Application of FLC in GA. وحدة تحكم بالمنطق الضبابي توجّه خوارزمية جينية تجدول الآلات والمركبات الموجّهة آليًا معًا"]],
+        ["2004", ["BSc, Industrial Engineering · Islamic Azad University, Najafabad Branch, Iran", "Licence en génie industriel · Université islamique Azad, campus de Najafabad, Iran", "بكالوريوس في الهندسة الصناعية · جامعة آزاد الإسلامية، فرع نجف آباد، إيران"], null]
+      ]
+    },
+    {
+      title: ["Journal papers", "Articles de revues", "أبحاث في مجلات علمية"],
+      type: "list",
+      items: [
+        "Badakhshian, M., Sulaiman, S. B., Ariffin, M. K. (2012). Performance optimization of simultaneous machine and automated guided vehicle scheduling using fuzzy logic controller based genetic algorithm. International Journal of Physical Sciences, 7(9), 1461–1471.",
+        "Shirouyehzad, H., Dabestani, R., Badakhshian, M. (2011). The FMEA approach to identification of critical failure factors in ERP implementation. International Journal of Business Research, 4(3).",
+        "Shirouyehzad, H., Panjehfouladgaran, H. R., Dabestani, R., Badakhshian, M. (2011). Vendor performance measurement using fuzzy logic controller. The Journal of Mathematics and Computer Science, 2(2), 311–318.",
+        "Shirouyehzad, H., Badakhshian, M., Dabestani, R., Panjehfouladgaran, H. R. (2010). Fuzzy FMEA analysis for identification and control of failure preferences in ERP implementation. The Journal of Mathematics and Computer Science, 1(4), 366–376.",
+        "Sadatpour, M., Badakhshian, M. (2005). EFQM concepts and terms in organization improvements. Pooya, Journal of Industrial Engineering, IAU Najafabad, 2, 12–18."
+      ],
+      links: [
+        ["Google Scholar", "https://scholar.google.ca/citations?user=NhC6YWEAAAAJ&hl=en"]
+      ]
+    },
+    {
+      title: ["Conference papers (selected)", "Communications en conférence (sélection)", "أبحاث المؤتمرات (مختارة)"],
+      type: "list",
+      items: [
+        "Jaumard, B., Badakhshian, M. (2015). Capacitated p-median facility location problem. CORS/INFORMS Meeting, Montreal, Canada.",
+        "Awasthi, A., Adetiloye, T., Badakhshian, M. (2015). Collaboration planning of stakeholders for sustainable city logistics. CORS/INFORMS Meeting, Montreal, Canada.",
+        "Badakhshian, M., Awasthi, A. (2013). Failure modes and effect analysis of ITS implementation in city logistics. Optimization Days, Montreal, Canada.",
+        "Badakhshian, M., Awasthi, A. (2013). The stochastic shortest path problem based on availability of arcs in logistic systems. 55th CORS Conference, Vancouver, Canada.",
+        "Tahanian, A. R., Pakbaz, A., Badakhshian, M. (2012). Bike stands performance ranking using TOPSIS. 1st Conference on Industrial and Systems Engineering, IAU Najafabad, Iran.",
+        "Shirouyehzad, H., Badakhshian, M., Dabestani, R. (2010). The relationship between TQM factors and successful ERP implementation. 40th International Conference on Computers and Industrial Engineering, Awaji, Japan.",
+        "Shirouyehzad, H., Badakhshian, M., Dabestani, R., Panjehfouladgaran, H. R. (2010). Fuzzy FMEA analysis for identification and control of failure preferences in ERP implementation. 4th International Conference of Fuzzy Information and Engineering, Amol, Iran.",
+        "Shirouyehzad, H., Panjehfouladgaran, H. R., Dabestani, R., Badakhshian, M. (2010). Vendor performance measurement using fuzzy logic controller. 4th International Conference of Fuzzy Information and Engineering, Amol, Iran.",
+        "Tahanian, A. R., Pakbaz, A., Badakhshian, M. (2010). Prioritizing of bike stands installation using analytical hierarchy process. 10th International Conference on Traffic and Transportation Engineering, Tehran, Iran.",
+        "Badakhshian, M., Shirouyehzad, H., Sulaiman, S. B., Ariffin, M. K. (2009). Job-based genetic algorithm for integrated machine and automated guided vehicles scheduling. 1st International Conference on Industrial Automation, Tehran, Iran.",
+        "Shirouyehzad, H., Badakhshian, M., Dabestani, R. (2009). The FMEA approach to identification of failure preferences in ERP implementation using area chart. 4th Conference on E-commerce with Focus on Developing Countries, Penang, Malaysia.",
+        "Shirouyehzad, H., Badakhshian, M., Dabestani, R. (2009). The identification and control of failure preferences in ERP implementation using FMEA. World Multi-Conference on Systemics, Cybernetics and Informatics, Florida, USA.",
+        "Badakhshian, M., Sulaiman, S. B., Ariffin, M. K. A. (2008). Fuzzy genetic algorithm model for optimization of automated guided vehicle scheduling. 38th International Conference on Computers and Industrial Engineering, Beijing, China, 1791–1797.",
+        "Ariffin, M. K. A., Badakhshian, M., Sulaiman, S. B. (2008). Automated guided vehicles scheduling optimization by fuzzy genetic algorithm. World Multi-Conference on Systemics, Cybernetics and Informatics, Florida, USA.",
+        "Badakhshian, M., Sulaiman, S. B., Ariffin, M. K. A. (2008). Performance optimization of automated guided vehicles using fuzzy genetic algorithm. International Conference on Mechanical and Manufacturing Engineering, Johor, Malaysia."
+      ]
+    },
+    {
+      title: ["Teaching", "Enseignement", "التدريس"],
+      type: "timeline",
+      items: [
+        ["2012–2017", ["Teaching Assistant · Concordia University, Canada", "Assistant d'enseignement · Université Concordia, Canada", "مساعد تدريس · جامعة كونكورديا، كندا"],
+          ["Undergraduate: beer game for supply chain courses (JMSB), supply chain planning and control, decision models for the services sector, introduction to production and manufacturing, transform calculus and differential equations. Graduate: statistical software for data management and analysis (MBA), value creation through business processes (MBA), quality assurance in supply chain management, total quality methodologies in engineering (Six Sigma)",
+           "Premier cycle : jeu de la bière pour les cours de chaîne logistique (JMSB), planification et contrôle de la chaîne logistique, modèles de décision pour le secteur des services, introduction à la production et à la fabrication, transformées et équations différentielles. Cycles supérieurs : logiciels statistiques pour la gestion et l'analyse des données (MBA), création de valeur par les processus d'affaires (MBA), assurance qualité dans la chaîne logistique, méthodologies de qualité totale en ingénierie (Six Sigma)",
+           "البكالوريوس: لعبة البيرة لمقررات سلسلة الإمداد (JMSB)، تخطيط سلسلة الإمداد ومراقبتها، نماذج القرار لقطاع الخدمات، مقدمة في الإنتاج والتصنيع، التحويلات والمعادلات التفاضلية. الدراسات العليا: البرمجيات الإحصائية لإدارة البيانات وتحليلها (MBA)، خلق القيمة عبر عمليات الأعمال (MBA)، ضمان الجودة في إدارة سلسلة الإمداد، منهجيات الجودة الشاملة في الهندسة (ستة سيغما)"]],
+        ["2013–2015", ["Invigilator · Concordia University, Exam Office", "Surveillant d'examens · Université Concordia, bureau des examens", "مراقب امتحانات · جامعة كونكورديا، مكتب الامتحانات"], null],
+        ["2009–2011", ["Lecturer · Islamic Azad University, Najafabad Branch", "Chargé de cours · Université islamique Azad, campus de Najafabad", "محاضر · جامعة آزاد الإسلامية، فرع نجف آباد"],
+          ["Operations management, systems analysis, computer applications in industrial engineering", "Gestion des opérations, analyse des systèmes, informatique appliquée au génie industriel", "إدارة العمليات، تحليل النظم، تطبيقات الحاسوب في الهندسة الصناعية"]],
+        ["2009–2011", ["Lecturer · Payame Noor University, Iran", "Chargé de cours · Université Payame Noor, Iran", "محاضر · جامعة پيام نور، إيران"],
+          ["Computer applications in industrial engineering, English for industrial engineers", "Informatique appliquée au génie industriel, anglais pour ingénieurs industriels", "تطبيقات الحاسوب في الهندسة الصناعية، اللغة الإنجليزية للمهندسين الصناعيين"]],
+        ["2009–2010", ["Lecturer · Islamic Azad University, Lenjan Branch", "Chargé de cours · Université islamique Azad, campus de Lenjan", "محاضر · جامعة آزاد الإسلامية، فرع لنجان"],
+          ["Systems analysis, English for industrial engineers", "Analyse des systèmes, anglais pour ingénieurs industriels", "تحليل النظم، اللغة الإنجليزية للمهندسين الصناعيين"]]
+      ]
+    },
+    {
+      title: ["Awards", "Distinctions", "الجوائز والمنح"],
+      type: "list",
+      items: [
+        ["Partial Tuition Remission Award, Concordia University, 2013–2014", "Bourse d'exonération partielle des droits de scolarité, Université Concordia, 2013–2014", "منحة الإعفاء الجزئي من الرسوم الدراسية، جامعة كونكورديا، 2013–2014"],
+        ["GSSP bursary, Concordia University, 2012–2015", "Bourse GSSP, Université Concordia, 2012–2015", "منحة GSSP، جامعة كونكورديا، 2012–2015"],
+        ["Acceleration Award, Concordia University, 2015", "Bourse Acceleration, Université Concordia, 2015", "منحة Acceleration، جامعة كونكورديا، 2015"]
+      ]
+    },
+    {
+      title: ["Professional memberships", "Affiliations professionnelles", "العضويات المهنية"],
+      type: "list",
+      items: [
+        ["CIRRELT (Interuniversity Research Centre on Enterprise Networks, Logistics and Transportation), team member", "CIRRELT (Centre interuniversitaire de recherche sur les réseaux d'entreprise, la logistique et le transport), membre d'équipe", "CIRRELT (المركز البيني الجامعي لأبحاث شبكات المؤسسات واللوجستيات والنقل)، عضو فريق"],
+        ["CORS (Canadian Operational Research Society)", "SCRO (Société canadienne de recherche opérationnelle)", "الجمعية الكندية لبحوث العمليات (CORS)"],
+        ["INFORMS (Institute for Operations Research and the Management Sciences)", "INFORMS (Institute for Operations Research and the Management Sciences)", "INFORMS (معهد بحوث العمليات وعلوم الإدارة)"],
+        ["American Society for Quality (ASQ)", "American Society for Quality (ASQ)", "الجمعية الأمريكية للجودة (ASQ)"],
+        ["Isfahan House of Industry and Mine, trainer and consultant", "Maison de l'industrie et des mines d'Ispahan, formateur et consultant", "بيت الصناعة والمناجم في أصفهان، مدرّب ومستشار"],
+        ["Isfahan Organization of Industry and Mines, consulting license holder", "Organisation de l'industrie et des mines d'Ispahan, titulaire d'une licence de conseil", "منظمة الصناعة والمناجم في أصفهان، حاصل على رخصة استشارية"]
+      ]
+    },
+    {
+      title: ["Software skills", "Compétences logicielles", "المهارات البرمجية"],
+      type: "chips",
+      groups: [
+        {
+          items: [
+            ["ERP inventory and logistics modules", "Modules ERP de stocks et de logistique", "وحدات المخزون واللوجستيات في ERP"],
+            "MS Project", "MS Excel", "Minitab", "SQL", "MS Access", "MATLAB", "CPLEX", "LINGO", "Java", "Balsamiq", "MS Office", "Visio", "LaTeX"
+          ]
+        }
+      ]
+    }
   ]
 };
