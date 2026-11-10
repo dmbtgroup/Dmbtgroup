@@ -219,5 +219,129 @@ window.DMBT_CV = {
         [["Civilica", "Civilica", "سيويليكا"], "https://www.civilica.com/Person-1076=%D8%A2%D9%82%D8%A7%DB%8C-%D8%AF%DA%A9%D8%AA%D8%B1-%D9%87%D8%A7%D8%AF%DB%8C-%D8%B4%DB%8C%D8%B1%D9%88%DB%8C%D9%87-%D8%B2%D8%A7%D8%AF.html"]
       ]
     }
+  ],
+  e2: [
+    {
+      title: ["Academic positions", "Postes universitaires", "المناصب الأكاديمية"],
+      type: "timeline",
+      items: [
+        ["2026–present", ["Assistant Professor, Center of Marketing and Supply Chain Management · Nyenrode Business University, the Netherlands", "Professeur adjoint, Centre de marketing et de gestion de la chaîne logistique · Nyenrode Business University, Pays-Bas", "أستاذ مساعد، مركز التسويق وإدارة سلسلة الإمداد · جامعة نيينرود للأعمال، هولندا"],
+          ["Research: data-driven business models, technology innovation, operational excellence · Teaching: information systems and emerging technologies",
+           "Recherche : modèles d'affaires fondés sur les données, innovation technologique, excellence opérationnelle · Enseignement : systèmes d'information et technologies émergentes",
+           "البحث: نماذج الأعمال القائمة على البيانات، الابتكار التكنولوجي، التميز التشغيلي · التدريس: نظم المعلومات والتقنيات الناشئة"]],
+        ["2021–2026", ["PhD Researcher in Business Administration, Center of Marketing and Supply Chain Management · Nyenrode Business University, the Netherlands", "Doctorant-chercheur en administration des affaires, Centre de marketing et de gestion de la chaîne logistique · Nyenrode Business University, Pays-Bas", "باحث دكتوراه في إدارة الأعمال، مركز التسويق وإدارة سلسلة الإمداد · جامعة نيينرود للأعمال، هولندا"],
+          ["Data-driven business models · Thesis: The Business Value of (Big) Data: A Business Model Perspective",
+           "Modèles d'affaires fondés sur les données · Thèse : The Business Value of (Big) Data: A Business Model Perspective",
+           "نماذج الأعمال القائمة على البيانات · الأطروحة: The Business Value of (Big) Data: A Business Model Perspective"]]
+      ]
+    },
+    {
+      title: ["Industry experience", "Expérience en entreprise", "الخبرة في الصناعة"],
+      type: "timeline",
+      items: [
+        ["2019–2021", ["Tolidaru Pharmaceutical Company", "Tolidaru Pharmaceutical Company", "شركة توليدارو للأدوية"],
+          ["Industrial Engineering and Productivity Manager: business excellence systems and quality standards; product portfolio optimization; systems and methods; organizational process improvement; project control and management; production budgets; productivity; work and time study",
+           "Responsable du génie industriel et de la productivité : systèmes d'excellence et normes qualité ; optimisation du portefeuille de produits ; systèmes et méthodes ; amélioration des processus ; pilotage de projets ; budgets de production ; productivité ; étude des temps et des méthodes",
+           "مدير الهندسة الصناعية والإنتاجية: أنظمة التميز المؤسسي ومعايير الجودة؛ تحسين محفظة المنتجات؛ النظم والأساليب؛ تحسين العمليات التنظيمية؛ إدارة المشاريع ومراقبتها؛ موازنات الإنتاج؛ الإنتاجية؛ دراسة العمل والوقت"]],
+        ["2014–2019", ["Alborz Investment Group", "Alborz Investment Group", "مجموعة البرز الاستثمارية"],
+          ["Senior Expert, Project Development and Investment, and Business Excellence Representative: managing pharmaceutical company projects; business excellence (EFQM) and quality standards across the group; optimizing subsidiaries' product portfolios; negotiations with international partners; executive committee member for Cell Tech Pharmed (cellular and molecular technologies), for building Alborz Pharmaceutical's solid-dose plant (nervous system, cardiovascular and diabetes products) and for a joint venture with Sanofi-Aventis to produce insulin pens; member of the R&D committee for subsidiaries' new products",
+           "Expert senior en développement de projets et investissement, représentant de l'excellence : pilotage de projets de laboratoires pharmaceutiques ; excellence (EFQM) et normes qualité dans le groupe ; optimisation des portefeuilles de produits des filiales ; négociations avec des partenaires internationaux ; membre des comités exécutifs de Cell Tech Pharmed (technologies cellulaires et moléculaires), de la construction de l'usine de formes sèches d'Alborz Pharmaceutical (système nerveux, cardiovasculaire, diabète) et d'une coentreprise avec Sanofi-Aventis pour la production de stylos à insuline ; membre du comité R&D des nouveaux produits des filiales",
+           "خبير أول في تطوير المشاريع والاستثمار وممثل التميز المؤسسي: إدارة مشاريع الشركات الدوائية ومراقبتها؛ تطبيق التميز المؤسسي (EFQM) ومعايير الجودة في المجموعة؛ تحسين محافظ منتجات الشركات التابعة؛ التفاوض مع شركاء دوليين؛ عضو اللجان التنفيذية لشركة سل تك فارمد (التقنيات الخلوية والجزيئية) ولمشروع إنشاء مصنع الأشكال الصلبة لشركة البرز للأدوية (أدوية الجهاز العصبي والقلب والسكري) ولمشروع مشترك مع سانوفي أفنتيس لإنتاج أقلام الأنسولين؛ عضو لجنة البحث والتطوير لمنتجات الشركات التابعة الجديدة"]],
+        ["2013–2014", ["Hamsoo Company", "Hamsoo Company", "شركة همسو"],
+          ["Systems and Methods Analyst: systems analysis; management information system projects", "Analyste systèmes et méthodes : analyse des systèmes ; projets de systèmes d'information de gestion", "محلل النظم والأساليب: تحليل النظم؛ مشاريع نظم المعلومات الإدارية"]],
+        ["2009–2010", ["Padidavaran Company", "Padidavaran Company", "شركة پديدآوران"],
+          ["Systems and Methods Analyst: systems analysis; methods and instructions", "Analyste systèmes et méthodes : analyse des systèmes ; méthodes et instructions", "محلل النظم والأساليب: تحليل النظم؛ إعداد الأساليب والتعليمات"]]
+      ]
+    },
+    {
+      title: ["Board memberships", "Conseils d'administration", "عضوية مجالس الإدارة"],
+      type: "timeline",
+      items: [
+        ["2019–2021", ["Alborz Pharmaceutical Company", "Alborz Pharmaceutical Company", "شركة البرز للأدوية"],
+          ["Listed on the Tehran Stock Exchange; manufacturer of cardiovascular products", "Cotée à la Bourse de Téhéran ; fabricant de médicaments cardiovasculaires", "مدرجة في بورصة طهران؛ مصنّعة لأدوية القلب والأوعية الدموية"]],
+        ["2017–2020", ["Alborzpharmed Pharmaceutical Company", "Alborzpharmed Pharmaceutical Company", "شركة البرز فارمد للأدوية"],
+          ["Manufacturer of active pharmaceutical ingredients for narcotic products", "Fabricant de principes actifs pour médicaments stupéfiants", "مصنّعة للمواد الفعالة للأدوية المخدرة"]]
+      ]
+    },
+    {
+      title: ["Education", "Formation", "التعليم"],
+      type: "timeline",
+      items: [
+        ["2012–2017", ["PhD, Production and Operations Management · Tarbiat Modares University, Tehran", "Doctorat en gestion de la production et des opérations · Université Tarbiat Modares, Téhéran", "دكتوراه في إدارة الإنتاج والعمليات · جامعة تربيت مدرس، طهران"],
+          ["Lean and agile project management, data envelopment analysis · Thesis: Proposing a Model for Performance Evaluation of Project Management Based on a Lean-Agile Approach · GPA 17.83/20",
+           "Gestion de projet lean et agile, analyse d'enveloppement des données · Thèse : modèle d'évaluation de la performance de la gestion de projet selon une approche lean-agile · Moyenne 17,83/20",
+           "إدارة المشاريع الرشيقة والمرنة، تحليل مغلف البيانات · الأطروحة: نموذج لتقييم أداء إدارة المشاريع بمنهج رشيق ومرن · المعدل 17.83/20"]],
+        ["2009–2011", ["MSc, Industrial Management (Production) · University of Isfahan", "Master en management industriel (production) · Université d'Ispahan", "ماجستير في الإدارة الصناعية (الإنتاج) · جامعة أصفهان"],
+          ["Service quality, multi-criteria decision making · Thesis: Evaluation and Prioritization of Service Quality Dimensions in Four-Star Hotels Based on Gap Analysis with the Analytic Network Process · GPA 17.74/20",
+           "Qualité de service, aide à la décision multicritère · Mémoire : évaluation et hiérarchisation des dimensions de la qualité de service dans les hôtels quatre étoiles par l'analyse des écarts et le processus d'analyse en réseau · Moyenne 17,74/20",
+           "جودة الخدمة، اتخاذ القرار متعدد المعايير · الرسالة: تقييم أبعاد جودة الخدمة في فنادق الأربع نجوم وترتيبها بتحليل الفجوة وعملية التحليل الشبكي · المعدل 17.74/20"]],
+        ["2001–2007", ["BEng, Industrial Engineering (Industrial Production) · Islamic Azad University, Najafabad Branch", "Diplôme d'ingénieur en génie industriel (production industrielle) · Université islamique Azad, campus de Najafabad", "بكالوريوس الهندسة الصناعية (الإنتاج الصناعي) · جامعة آزاد الإسلامية، فرع نجف آباد"],
+          ["Group technology, production planning, work and time study · GPA 15.07/20", "Technologie de groupe, planification de la production, étude des temps et des méthodes · Moyenne 15,07/20", "تكنولوجيا المجموعات، تخطيط الإنتاج، دراسة العمل والوقت · المعدل 15.07/20"]]
+      ]
+    },
+    {
+      title: ["Selected research papers", "Articles de recherche sélectionnés", "أبحاث مختارة"],
+      type: "list",
+      items: [
+        "Dabestani, R., Solaimani, S., Ajroemjan, G., Koelemeijer, K. (2025). Exploring the enablers of data-driven business models: A mixed-methods approach. Technological Forecasting and Social Change, 213, 124036.",
+        "Solaimani, S., Dabestani, R., Harrison-Prentice, T., Ellis, E., Kerr, M., Choudhury, A., Bakhshi, N. (2024). Exploration and prioritisation of critical success factors in adoption of artificial intelligence: A mixed-methods study. International Journal of Business Information Systems, 45(4), 429–453.",
+        "Dabestani, R., Shahin, A., Saljoughian, M. (2017). Evaluation and prioritization of service quality dimensions based on gap analysis with Analytic Network Process. International Journal of Quality & Reliability Management, 34(4), 530–548.",
+        "Dabestani, R., Baerz, A. M., Azar, A., Shahin, A. (2017). Proposing a model for evaluating lean project management performance using grounded theory. International Journal of Productivity and Quality Management, 22(4), 521–535.",
+        "Dabestani, R., Shahin, A., Saljoughian, M., Shirouyehzad, H. (2016). Importance-performance analysis of service quality dimensions for the customer groups segmented by DEA: The case of four-star hotels. International Journal of Quality & Reliability Management, 33(2), 160–177.",
+        "Dabestani, R., Shahin, A., Shirouyehzad, H., Saljoughian, M. (2015). A comparative study of ordinary and fastidious customers' priorities in service quality dimensions: The case of four-star hotels. Total Quality Management and Business Excellence, 28(3/4), 331–350."
+      ]
+    },
+    {
+      title: ["Teaching", "Enseignement", "التدريس"],
+      type: "timeline",
+      items: [
+        ["2018–2020", ["Tehran University of Medical Sciences, School of Advanced Technologies in Medicine", "Université des sciences médicales de Téhéran, École des technologies avancées en médecine", "جامعة طهران للعلوم الطبية، كلية التقنيات المتقدمة في الطب"],
+          ["Part-time lecturer: economics and innovation in biotechnology", "Chargé de cours à temps partiel : économie et innovation en biotechnologie", "محاضر بدوام جزئي: الاقتصاد والابتكار في التقنية الحيوية"]],
+        ["2013–2014", ["Islamic Azad University, Najafabad Branch", "Université islamique Azad, campus de Najafabad", "جامعة آزاد الإسلامية، فرع نجف آباد"],
+          ["Operations research, operations management, facility design", "Recherche opérationnelle, gestion des opérations, conception d'installations", "بحوث العمليات، إدارة العمليات، تصميم المنشآت"]],
+        ["2013", ["Islamic Azad University, Lenjan Branch", "Université islamique Azad, campus de Lenjan", "جامعة آزاد الإسلامية، فرع لنجان"],
+          ["Operations research", "Recherche opérationnelle", "بحوث العمليات"]],
+        ["2009–2011", ["Industrial Management Institute", "Institut de management industriel", "مؤسسة الإدارة الصناعية"],
+          ["Operations research, work and time study", "Recherche opérationnelle, étude des temps et des méthodes", "بحوث العمليات، دراسة العمل والوقت"]]
+      ]
+    },
+    {
+      title: ["Awards", "Distinctions", "الجوائز والمنح"],
+      type: "list",
+      items: [
+        ["PhD scholarship, Nyenrode Business University, 2021–2025", "Bourse doctorale, Nyenrode Business University, 2021–2025", "منحة الدكتوراه، جامعة نيينرود للأعمال، 2021–2025"],
+        ["PhD scholarship, Tarbiat Modares University, 2012–2017", "Bourse doctorale, Université Tarbiat Modares, 2012–2017", "منحة الدكتوراه، جامعة تربيت مدرس، 2012–2017"]
+      ]
+    },
+    {
+      title: ["Academic service", "Activités académiques", "الخدمات الأكاديمية"],
+      type: "list",
+      items: [
+        ["Reviewer since 2013 for the International Journal of Production Research, Computers & Industrial Engineering, the International Journal of Quality & Reliability Management and Management Decision",
+         "Relecteur depuis 2013 pour International Journal of Production Research, Computers & Industrial Engineering, International Journal of Quality & Reliability Management et Management Decision",
+         "محكّم منذ 2013 لمجلات International Journal of Production Research وComputers & Industrial Engineering وInternational Journal of Quality & Reliability Management وManagement Decision"],
+        ["Research project with the Quality Research Center, University of Isfahan: diagnosing the processes of Mobtaker Wood Industries",
+         "Projet de recherche avec le Centre de recherche sur la qualité de l'Université d'Ispahan : diagnostic des processus de Mobtaker Wood Industries",
+         "مشروع بحثي مع مركز أبحاث الجودة في جامعة أصفهان: تشخيص عمليات شركة مبتكر للصناعات الخشبية"]
+      ]
+    },
+    {
+      title: ["Skills and languages", "Compétences et langues", "المهارات واللغات"],
+      type: "chips",
+      groups: [
+        {
+          title: ["Software", "Logiciels", "البرمجيات"],
+          items: ["SPSS", "AMOS", "Minitab", "MATLAB", "Microsoft Office", "Microsoft Project", "NVivo"]
+        },
+        {
+          title: ["Languages", "Langues", "اللغات"],
+          items: [
+            ["English: fluent", "Anglais : courant", "الإنجليزية: بطلاقة"],
+            ["Persian: native", "Persan : langue maternelle", "الفارسية: اللغة الأم"],
+            ["Dutch: B2", "Néerlandais : B2", "الهولندية: مستوى B2"]
+          ]
+        }
+      ]
+    }
   ]
 };
