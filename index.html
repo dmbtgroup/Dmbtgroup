@@ -22,7 +22,7 @@
   <meta name="twitter:image" content="https://dmbtgroup.com/assets/og-dmbt.jpg">
   <link rel="canonical" href="https://dmbtgroup.com/">
   <link rel="preload" as="image" href="/assets/dmbt-logo-transparent.png">
-  <link rel="stylesheet" href="/assets/site.css?v=3">
+  <link rel="stylesheet" href="/assets/site.css?v=4">
   <script>
     // Runs before the page paints: picks the language direction and decides whether to play the intro
     // (first visit in this browser session only, not when opening a link to a section, and never when the
@@ -56,6 +56,7 @@
     <nav class="nav" id="nav">
       <a href="#services" data-i18n="nav.services">Services</a>
       <a href="#approach" data-i18n="nav.approach">Approach</a>
+      <a href="#experts" data-i18n="nav.experts">Experts</a>
       <a href="#industries" data-i18n="nav.industries">Industries</a>
       <a href="#products" data-i18n="nav.products">Products</a>
       <a href="#contact" class="btn btn-primary btn-sm" data-i18n="nav.contact">Contact us</a>
@@ -184,6 +185,54 @@
     </div>
   </section>
 
+  <section class="section experts-bg" id="experts">
+    <div class="wrap">
+      <div class="section-head inview"><span class="eyebrow" data-i18n="experts.kicker">Our experts</span><h2 data-i18n="experts.title">The people behind the work</h2></div>
+      <!-- One <article class="expert"> per expert; their French and Arabic text is in assets/site.js. -->
+      <div class="experts">
+        <article class="expert inview">
+          <div class="expert-side">
+            <div class="avatar" aria-hidden="true">HS</div>
+            <h3 class="expert-name" data-i18n="e1.name">Dr. Hadi Shirouyehzad</h3>
+            <p class="expert-role" data-i18n="e1.role">Associate Professor of Industrial Engineering</p>
+            <p class="expert-org" data-i18n="e1.org">Islamic Azad University, Najafabad Branch · Isfahan, Iran</p>
+            <a class="btn btn-ghost btn-sm" href="https://www.shirouyehzad.ir" target="_blank" rel="noopener"><span data-i18n="e.site">Personal website</span> <span class="arrow">→</span></a>
+          </div>
+          <div class="expert-main">
+            <p class="expert-bio" data-i18n="e1.bio">A faculty member in industrial engineering since 2001 and head of the department's graduate program, he has also held management roles in industry, in planning and technology, industrial engineering and productivity improvement. He advises companies on strategic planning, organizational structure, process management and productivity, and was Editor-in-Chief of the International Journal of Applied Research on Industrial Engineering (2014–2019).</p>
+            <dl class="facts">
+              <div><dt dir="ltr">25+</dt><dd data-i18n="e1.f1">years in industry and teaching</dd></div>
+              <div><dt dir="ltr">350+</dt><dd data-i18n="e1.f2">scientific papers</dd></div>
+              <div><dt dir="ltr">4</dt><dd data-i18n="e1.f3">books written or translated</dd></div>
+              <div><dt dir="ltr">14</dt><dd data-i18n="e1.f4">consulting engagements</dd></div>
+            </dl>
+            <h4 data-i18n="e.expertise">Areas of expertise</h4>
+            <ul class="chips">
+              <li data-i18n="e1.x1">Strategic planning</li>
+              <li data-i18n="e1.x2">Productivity improvement &amp; work study</li>
+              <li data-i18n="e1.x3">Production planning &amp; operations management</li>
+              <li data-i18n="e1.x4">Quality management &amp; control</li>
+              <li data-i18n="e1.x5">Warehouse management &amp; inventory control</li>
+              <li data-i18n="e1.x6">Multi-criteria decision making</li>
+              <li data-i18n="e1.x7">Data envelopment analysis</li>
+              <li data-i18n="e1.x8">Operations research</li>
+              <li data-i18n="e1.x9">Facility planning</li>
+              <li data-i18n="e1.x10">Organizational structure &amp; excellence</li>
+              <li data-i18n="e1.x11">Performance evaluation</li>
+              <li data-i18n="e1.x12">Project management &amp; control</li>
+            </ul>
+            <h4 data-i18n="e.education">Education</h4>
+            <ul class="edu">
+              <li><strong data-i18n="e1.d1">PhD, Industrial Engineering</strong><span class="yr" dir="ltr">2007–2011</span><span data-i18n="e1.d1u">Islamic Azad University, Science and Research Branch, Tehran</span></li>
+              <li><strong data-i18n="e1.d2">MSc, Industrial Engineering</strong><span class="yr" dir="ltr">1998–2001</span><span data-i18n="e1.d2u">Islamic Azad University, Najafabad Branch</span></li>
+              <li><strong data-i18n="e1.d3">BSc, Industrial Engineering (Industrial Production)</strong><span class="yr" dir="ltr">1994–1998</span><span data-i18n="e1.d3u">Islamic Azad University, Najafabad Branch</span></li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <section class="section" id="industries">
     <div class="wrap">
       <div class="section-head inview"><span class="eyebrow" data-i18n="industries.kicker">Where we work</span><h2 data-i18n="industries.title">Built for operations of every size</h2></div>
@@ -222,6 +271,6 @@
   </div>
 </footer>
 
-<script src="/assets/site.js?v=3" defer></script>
+<script src="/assets/site.js?v=4" defer></script>
 </body>
 </html>
