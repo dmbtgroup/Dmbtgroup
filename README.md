@@ -7,6 +7,8 @@ The DMBT website: an industrial engineering company page with links to DMBT's pr
 - **TactHR** — HR and payroll management: https://tacthr.dmbtgroup.com
 
 It is a static site (no build step): `index.html`, with styles, script and images in `assets/`.
+Browsers keep files in `assets/` for a day, so after changing `site.css` or `site.js`, raise the `?v=` number
+where `index.html` loads them.
 
 **The logo.** The page opens on a screen with the DMBT logo alone in the middle. Scrolling down moves it
 into the header corner, and scrolling back to the top (or clicking the header logo) brings it back to the
