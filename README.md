@@ -21,7 +21,7 @@ EN / FR / ع switch in the header, which is remembered in a `lang` cookie. Engli
 
 **Contact.** The contact section has no email button for now; add one in `index.html` once the address is confirmed.
 
-Any other address, such as a company link `dmbtgroup.com/cmtb`, forwards to the same address on
+`www.dmbtgroup.com` redirects to `dmbtgroup.com` (same path). Any other address, such as a company link `dmbtgroup.com/cmtb`, forwards to the same address on
 tactime.dmbtgroup.com (see `vercel.json`).
 
 Pushing to `main` deploys to Vercel (`.github/workflows/deploy.yml`); it needs a `VERCEL_TOKEN` secret.
