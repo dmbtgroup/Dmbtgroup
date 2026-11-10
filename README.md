@@ -4,6 +4,7 @@ The DMBT website: an industrial engineering company page with links to DMBT's pr
 
 - **TactLab** — lab and shop management: https://tactime.dmbtgroup.com
 - **Domora** — condominium management: https://condo.dmbtgroup.com
+- **TactHR** — HR and payroll management: https://tacthr.dmbtgroup.com
 
 It is a static site (no build step): `index.html`, with styles, script and images in `assets/`.
 
