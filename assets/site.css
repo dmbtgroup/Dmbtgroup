@@ -235,7 +235,34 @@ section[id] { scroll-margin-top: 72px; } /* keep the sticky header from covering
   .facts div:nth-child(n+3) { border-top: 1px solid var(--line); }
 }
 @media (max-width: 760px) { .expert { padding: 24px; } }
+.cv-toggle { display: none; }
+html.js .cv-toggle { display: inline-flex; }
+.cv-toggle .chev { transition: transform 0.25s; }
+.cv-toggle[aria-expanded="true"] .chev { transform: rotate(180deg); }
+
+/* Full CV: sections flow in two columns on wide screens. */
+.cv { grid-column: 1 / -1; border-top: 1px solid var(--line); padding-top: 36px; columns: 2; column-gap: 56px; scroll-margin-top: 88px; }
+.cv[hidden] { display: none; }
+.cv-sec { break-inside: avoid; margin-bottom: 36px; }
+.cv-sec.cv-chips { column-span: all; }
+.cv h4 { padding-bottom: 10px; border-bottom: 2px solid var(--orange); display: inline-block; margin-bottom: 16px; }
+.cv h5 { margin: 4px 0 10px; font-size: 15px; }
+.cv-intro { margin: -4px 0 12px; color: var(--muted); font-size: 14.5px; }
+.cv-tl, .cv-list { list-style: none; padding: 0; margin: 0; }
+.cv-tl li { display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-bottom: 1px dashed var(--line); }
+.cv-tl li:last-child { border-bottom: 0; }
+.cv-tl strong { display: block; font-size: 15px; }
+.cv-tl span:not(.yr) { display: block; color: var(--muted); font-size: 14px; }
+.cv-tl .yr { flex: none; font: 600 12.5px var(--mono); color: var(--muted); padding-top: 2px; white-space: nowrap; }
+.cv-books strong { font-style: italic; }
+.cv-list li { position: relative; padding: 8px 0; padding-inline-start: 18px; font-size: 15px; }
+.cv-list li::before { content: ""; position: absolute; inset-inline-start: 0; top: 17px; width: 7px; height: 7px; border-radius: 2px; background: var(--orange); }
+.cv .chips { margin-bottom: 20px; }
+.cv-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+@media (max-width: 960px) { .cv { columns: 1; padding-top: 28px; } }
+
 [dir="rtl"] .expert h4 { letter-spacing: 0; font-family: var(--sans); font-size: 14px; }
+[dir="rtl"] .cv-books strong { font-style: normal; }
 
 /* ---------- Contact ---------- */
 .contact { background: var(--orange); color: #fff; position: relative; overflow: hidden; }

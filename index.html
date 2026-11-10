@@ -22,7 +22,7 @@
   <meta name="twitter:image" content="https://dmbtgroup.com/assets/og-dmbt.jpg">
   <link rel="canonical" href="https://dmbtgroup.com/">
   <link rel="preload" as="image" href="/assets/dmbt-logo-transparent.png">
-  <link rel="stylesheet" href="/assets/site.css?v=5">
+  <link rel="stylesheet" href="/assets/site.css?v=6">
   <script>
     // Runs before the page paints: picks the language direction and decides whether to play the intro
     // (first visit in this browser session only, not when opening a link to a section, and never when the
@@ -196,7 +196,7 @@
             <h3 class="expert-name" data-i18n="e1.name">Dr. Hadi Shirouyehzad</h3>
             <p class="expert-role" data-i18n="e1.role">Associate Professor of Industrial Engineering</p>
             <p class="expert-org" data-i18n="e1.org">Islamic Azad University, Najafabad Branch · Isfahan, Iran</p>
-            <a class="btn btn-ghost btn-sm" href="https://www.shirouyehzad.ir" target="_blank" rel="noopener"><span data-i18n="e.site">Personal website</span> <span class="arrow">→</span></a>
+            <button class="btn btn-primary btn-sm cv-toggle" type="button" data-cv="e1" aria-expanded="false" aria-controls="cv-e1"><span data-i18n="e.cv">Full CV</span> <span class="chev" aria-hidden="true">▾</span></button>
           </div>
           <div class="expert-main">
             <p class="expert-bio" data-i18n="e1.bio">A faculty member in industrial engineering since 2001 and head of the department's graduate program, he has also held management roles in industry, in planning and technology, industrial engineering and productivity improvement. He advises companies on strategic planning, organizational structure, process management and productivity, and was Editor-in-Chief of the International Journal of Applied Research on Industrial Engineering (2014–2019).</p>
@@ -228,6 +228,8 @@
               <li><strong data-i18n="e1.d3">BSc, Industrial Engineering (Industrial Production)</strong><span class="yr" dir="ltr">1994–1998</span><span data-i18n="e1.d3u">Islamic Azad University, Najafabad Branch</span></li>
             </ul>
           </div>
+          <!-- The full CV, filled from assets/cv.js when the visitor opens it. -->
+          <div class="cv" id="cv-e1" hidden></div>
         </article>
       </div>
     </div>
@@ -271,6 +273,7 @@
   </div>
 </footer>
 
-<script src="/assets/site.js?v=5" defer></script>
+<script src="/assets/cv.js?v=6" defer></script>
+<script src="/assets/site.js?v=6" defer></script>
 </body>
 </html>

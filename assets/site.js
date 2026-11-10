@@ -73,7 +73,8 @@
       "e1.name": "Dr Hadi Shirouyehzad",
       "e1.role": "Professeur associé en génie industriel",
       "e1.org": "Université islamique Azad, campus de Najafabad · Ispahan, Iran",
-      "e.site": "Site personnel",
+      "e.cv": "CV complet",
+      "e.cvHide": "Masquer le CV",
       "e1.bio": "Enseignant-chercheur en génie industriel depuis 2001 et responsable du programme de master et doctorat du département, il a aussi occupé des fonctions de direction dans l'industrie, en planification et technologie, en génie industriel et en amélioration de la productivité. Il conseille les entreprises en planification stratégique, structure organisationnelle, gestion des processus et productivité, et a été rédacteur en chef de l'International Journal of Applied Research on Industrial Engineering (2014–2019).",
       "e1.f1": "ans d'expérience en industrie et en enseignement",
       "e1.f2": "articles scientifiques",
@@ -174,7 +175,8 @@
       "e1.name": "د. هادي شيرويه زاد",
       "e1.role": "أستاذ مشارك في الهندسة الصناعية",
       "e1.org": "جامعة آزاد الإسلامية، فرع نجف آباد · أصفهان، إيران",
-      "e.site": "الموقع الشخصي",
+      "e.cv": "السيرة الذاتية الكاملة",
+      "e.cvHide": "إخفاء السيرة الذاتية",
       "e1.bio": "عضو هيئة التدريس في الهندسة الصناعية منذ عام 2001 ومدير برنامج الدراسات العليا في القسم، وشغل أيضًا مناصب إدارية في الصناعة في مجالات التخطيط والتكنولوجيا والهندسة الصناعية وتحسين الإنتاجية. يقدّم الاستشارات للشركات في التخطيط الاستراتيجي والهيكل التنظيمي وإدارة العمليات والإنتاجية، وكان رئيس تحرير المجلة الدولية للبحوث التطبيقية في الهندسة الصناعية (2014–2019).",
       "e1.f1": "عامًا من الخبرة في الصناعة والتدريس",
       "e1.f2": "بحثًا علميًا",
@@ -362,6 +364,84 @@
     }, { threshold: 0.12 });
     els.forEach(function (el, i) { el.style.transitionDelay = (i % 4) * 80 + "ms"; io.observe(el); });
   }
+
+  // ---- Experts: "Full CV" opens the expert's complete CV (data in assets/cv.js) ----
+  var LI = { en: 0, fr: 1, ar: 2 }[lang] || 0;
+  var PRESENT = ["present", "aujourd'hui", "حتى الآن"];
+  var CV_LABEL = {
+    open: [["Full CV", "Hide CV"], ["CV complet", "Masquer le CV"], ["السيرة الذاتية الكاملة", "إخفاء السيرة الذاتية"]][LI]
+  };
+  function tx(v) { return v == null ? "" : typeof v === "string" ? v : v[LI]; }
+  function node(tag, cls, text) {
+    var n = document.createElement(tag);
+    if (cls) n.className = cls;
+    if (text) n.textContent = text;
+    return n;
+  }
+  function years(s) {
+    // In Arabic, "2001–present" reads as "منذ 2001" (since 2001).
+    var ongoing = /–present$/.test(s);
+    var n = node("span", "yr", LI === 2 && ongoing ? "منذ " + s.replace("–present", "") : s.replace("present", PRESENT[LI]));
+    n.dir = LI === 2 && ongoing ? "rtl" : "ltr";
+    return n;
+  }
+  function renderCV(sections, box) {
+    sections.forEach(function (sec) {
+      var wrap = node("section", "cv-sec cv-" + sec.type);
+      wrap.appendChild(node("h4", null, tx(sec.title)));
+      if (sec.intro) wrap.appendChild(node("p", "cv-intro", tx(sec.intro)));
+      if (sec.type === "chips") {
+        sec.groups.forEach(function (g) {
+          wrap.appendChild(node("h5", null, tx(g.title)));
+          var ul = node("ul", "chips");
+          g.items.forEach(function (c) { ul.appendChild(node("li", null, tx(c))); });
+          wrap.appendChild(ul);
+        });
+      } else {
+        var ul = node("ul", sec.type === "list" ? "cv-list" : "cv-tl");
+        sec.items.forEach(function (it) {
+          var li = node("li");
+          if (sec.type === "list") { li.textContent = tx(it); ul.appendChild(li); return; }
+          var body = node("div");
+          var main = sec.type === "books" ? it[1] : (it[1] || it[2]);
+          var sub = sec.type === "books" ? it[2] : (it[1] ? it[2] : null);
+          body.appendChild(node("strong", null, tx(main)));
+          if (sub) body.appendChild(node("span", null, tx(sub)));
+          li.appendChild(body);
+          if (it[0]) li.appendChild(years(it[0]));
+          ul.appendChild(li);
+        });
+        wrap.appendChild(ul);
+      }
+      if (sec.links) {
+        var row = node("div", "cv-links");
+        sec.links.forEach(function (l) {
+          var a = node("a", "btn btn-ghost btn-sm");
+          a.href = l[1]; a.target = "_blank"; a.rel = "noopener";
+          a.appendChild(node("span", null, tx(l[0])));
+          a.appendChild(document.createTextNode(" "));
+          a.appendChild(node("span", "arrow", "→"));
+          row.appendChild(a);
+        });
+        wrap.appendChild(row);
+      }
+      box.appendChild(wrap);
+    });
+  }
+  document.querySelectorAll(".cv-toggle").forEach(function (btn) {
+    var box = document.getElementById(btn.getAttribute("aria-controls"));
+    var data = window.DMBT_CV && window.DMBT_CV[btn.getAttribute("data-cv")];
+    if (!box || !data) { btn.hidden = true; return; }
+    var label = btn.querySelector("[data-i18n]");
+    btn.addEventListener("click", function () {
+      var open = btn.getAttribute("aria-expanded") !== "true";
+      if (open && !box.childElementCount) renderCV(data, box);
+      box.hidden = !open;
+      btn.setAttribute("aria-expanded", open ? "true" : "false");
+      label.textContent = CV_LABEL.open[open ? 1 : 0];
+      if (open) box.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  });
 
   // ---- Phone menu ----
   var toggle = document.getElementById("menuToggle");
