@@ -8,11 +8,13 @@ The DMBT website: an industrial engineering company page with links to DMBT's pr
 
 It is a static site (no build step): `index.html`, with styles, script and images in `assets/`.
 
-**Intro.** On the first visit in a browser session, the DMBT logo shows alone in the centre, glides into
-the header, and then the page appears. Later page loads in the same session (and visitors who prefer
-reduced motion) go straight to the page. Visitors can skip it with "Skip" or Esc.
+**The logo.** The page opens on a screen with the DMBT logo alone in the middle. Scrolling down moves it
+into the header corner, and scrolling back to the top (or clicking the header logo) brings it back to the
+middle. On the first visit in a browser session the logo appears and the page then scrolls down by itself;
+visitors can skip that with "Skip" or Esc. Later page loads in the same session, links to a section
+(such as `#products`) and visitors who prefer reduced motion open straight on the content.
 
-**Sections.** Header · hero with a line-study drawing · the D-M-B-T principles · services · how we work ·
+**Sections.** Header · logo screen · hero with a line-study drawing · the D-M-B-T principles · services · how we work ·
 industries · products · contact · footer.
 
 **Languages.** English, French or Arabic (right to left), following the visitor's browser language or the

@@ -1,11 +1,13 @@
-// dmbtgroup.com: translates the page (English is in index.html, French and Arabic are here), plays the
-// logo intro once per browser session, fades sections in on scroll and runs the phone menu.
+// dmbtgroup.com: translates the page (English is in index.html, French and Arabic are here), moves the DMBT
+// logo between the middle of the first screen and the header as the page scrolls, plays the intro once per
+// browser session, fades sections in on scroll and runs the phone menu.
 // The language and whether to play the intro are decided by the small script in <head>.
 (function () {
   var TEXT = {
     fr: {
       "meta.title": "DMBT — Génie industriel et opérations",
       skip: "Passer ›",
+      cue: "Défiler",
       "nav.services": "Services",
       "nav.approach": "Démarche",
       "nav.industries": "Secteurs",
@@ -74,6 +76,7 @@
     ar: {
       "meta.title": "DMBT — الهندسة الصناعية والعمليات",
       skip: "تخطي ‹",
+      cue: "مرّر للأسفل",
       "nav.services": "الخدمات",
       "nav.approach": "منهجيتنا",
       "nav.industries": "القطاعات",
@@ -164,41 +167,116 @@
   });
   document.getElementById("year").textContent = new Date().getFullYear();
 
-  // ---- Intro: the big centred logo flies onto the header logo, then the page appears ----
-  var intro = document.getElementById("intro");
-  var introLogo = document.getElementById("introLogo");
-  var brandLogo = document.getElementById("brandLogo");
-  var finished = false;
+  // ---- The logo: in the middle of the first screen at the top, in the header corner once scrolled ----
+  var stage = document.getElementById("stage");
+  var header = document.querySelector(".site-header");
+  var logo = document.getElementById("floatLogo");
+  var slot = document.getElementById("brandLogo");
+  var geo = null;
+  if ("scrollRestoration" in history) history.scrollRestoration = "manual";
 
+  // Where the logo sits at both ends, and how far the page scrolls between them.
+  function measure() {
+    var w = logo.offsetWidth, h = logo.offsetHeight;
+    var y0 = scrollY;
+    var s = stage.getBoundingClientRect();
+    var to = slot.getBoundingClientRect();
+    geo = {
+      x0: s.left + s.width / 2 - w / 2,
+      y0: s.top + y0 + s.height / 2 - h / 2,       // page coordinates; the page is at the top when it applies
+      x1: to.left,
+      y1: to.top,                                   // the header is sticky, so this spot does not move
+      s1: to.width / w,
+      end: Math.max(1, s.top + y0 + s.height - header.offsetHeight)
+    };
+    place();
+  }
+
+  function place() {
+    if (!geo) return;
+    var p = Math.min(1, Math.max(0, scrollY / geo.end));
+    var e = p * p * (3 - 2 * p);                    // ease in and out
+    var x = geo.x0 + (geo.x1 - geo.x0) * e;
+    var y = geo.y0 + (geo.y1 - geo.y0) * e;
+    var k = 1 + (geo.s1 - 1) * e;
+    logo.style.transform = "translate(" + x.toFixed(1) + "px," + y.toFixed(1) + "px) scale(" + k.toFixed(4) + ")";
+    root.style.setProperty("--p", p.toFixed(3));
+  }
+
+  var ticking = false;
+  window.addEventListener("scroll", function () {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(function () { ticking = false; place(); });
+  }, { passive: true });
+  window.addEventListener("resize", measure);
+  window.addEventListener("load", measure);
+  measure();
+
+  // Scroll the page to `top` over `ms` milliseconds, then call `done`.
+  var scrollAnim = null;
+  function glideTo(top, ms, done) {
+    var from = scrollY, t0 = performance.now();
+    root.style.scrollBehavior = "auto";
+    function step(now) {
+      var t = Math.min(1, (now - t0) / ms);
+      var e = t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+      window.scrollTo(0, from + (top - from) * e);
+      if (t < 1) scrollAnim = requestAnimationFrame(step);
+      else { scrollAnim = null; root.style.scrollBehavior = ""; if (done) done(); }
+    }
+    scrollAnim = requestAnimationFrame(step);
+  }
+
+  document.getElementById("cue").addEventListener("click", function () { glideTo(geo.end, 900); });
+  // The header logo takes the page back to the top, where the logo returns to the middle.
+  document.querySelector(".brand").addEventListener("click", function (e) {
+    e.preventDefault();
+    glideTo(0, Math.min(1400, 500 + scrollY / 6));
+  });
+
+  var finished = false;
   function showPage() {
     if (finished) return;
     finished = true;
-    var played = root.classList.contains("play-intro");
-    root.classList.remove("play-intro");
-    if (played) root.classList.add("ready");
-    intro.remove();
-    introLogo.remove();
+    if (scrollAnim) { cancelAnimationFrame(scrollAnim); scrollAnim = null; root.style.scrollBehavior = ""; }
+    if (root.classList.contains("play-intro")) {
+      root.classList.add("ready");
+      root.classList.remove("play-intro");
+      if (scrollY < geo.end) window.scrollTo(0, geo.end);
+    }
     watchSections();
   }
 
-  function land() {
-    if (finished) return;
-    var from = introLogo.getBoundingClientRect();
-    var to = brandLogo.getBoundingClientRect();
-    // transform-origin is the top-left corner, so undo the -50%/-50% centring in pixels.
-    introLogo.style.transition = "transform 1s cubic-bezier(0.7, 0, 0.2, 1)";
-    introLogo.style.transform = "translate(" + (to.left - from.left - from.width / 2) + "px," +
-      (to.top - from.top - from.height / 2) + "px) scale(" + to.width / from.width + ")";
-    intro.classList.add("leaving");
-    setTimeout(showPage, 1050);
-  }
-
   if (root.classList.contains("play-intro")) {
+    // First visit in this session: the logo appears in the middle, then the page scrolls down by itself
+    // and the logo travels into the header corner.
     try { sessionStorage.setItem("dmbt-intro", "1"); } catch (e) {}
-    setTimeout(land, 1900);
+    window.scrollTo(0, 0);
+    place();
+    setTimeout(function () {
+      if (finished) return;
+      root.classList.add("ready");
+      glideTo(geo.end, 1200, showPage);
+    }, 1900);
     document.getElementById("skip").addEventListener("click", showPage);
     window.addEventListener("keydown", function (e) { if (e.key === "Escape") showPage(); });
   } else {
+    // Later visits open straight on the content; scrolling back to the top brings the logo to the middle.
+    // Done again once the page has loaded, because a reload can put the page back at the top afterwards.
+    var touched = false;
+    ["wheel", "touchstart", "keydown", "pointerdown"].forEach(function (ev) {
+      window.addEventListener(ev, function () { touched = true; }, { once: true, passive: true });
+    });
+    var toContent = function () {
+      if (location.hash || touched || scrollY > 1) return;
+      root.style.scrollBehavior = "auto";
+      window.scrollTo(0, geo.end);
+      root.style.scrollBehavior = "";
+      place();
+    };
+    toContent();
+    window.addEventListener("load", function () { setTimeout(toContent, 0); });
     showPage();
   }
 

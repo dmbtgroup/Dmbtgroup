@@ -1,6 +1,7 @@
-/* dmbtgroup.com: DMBT industrial engineering site. On the first visit of a browser session the logo
-   shows alone in the centre, glides into the header, then the page appears (see assets/site.js).
-   Colours follow the logo: orange #f5821f and charcoal #474747 on warm paper. */
+/* dmbtgroup.com: DMBT industrial engineering site. The page opens on a screen with the DMBT logo alone in
+   the middle; scrolling down moves the logo into the header corner, and scrolling back to the top brings it
+   back to the middle (see assets/site.js). On the first visit of a browser session the page scrolls down by
+   itself after the logo appears. Colours follow the logo: orange #f5821f and charcoal #474747 on warm paper. */
 :root {
   --orange: #f5821f;
   --orange-dk: #d96a0b;
@@ -24,13 +25,12 @@ a { color: inherit; text-decoration: none; }
 img { max-width: 100%; }
 .wrap { width: min(1180px, 100% - 32px); margin-inline: auto; }
 
-/* ---------- Intro: logo alone, then it glides into the header ---------- */
-.intro {
-  position: fixed; inset: 0; z-index: 100; display: none; place-items: center;
-  background: var(--paper);
-  transition: opacity 0.7s ease 0.35s;
-}
-.intro::before { content: ""; position: absolute; inset: 0; opacity: 0.7;
+/* ---------- Logo stage: the first screen, with the logo alone in the middle ---------- */
+/* --p runs from 0 (page at the top, logo in the middle) to 1 (logo in the header corner); set by site.js. */
+:root { --p: 1; --logo-w: min(78vw, 620px, 120vh); }
+.stage { display: none; position: relative; height: calc(100vh - 72px); height: calc(100svh - 72px); min-height: 360px; overflow: hidden; }
+html.js .stage { display: block; }
+.stage::before { content: ""; position: absolute; inset: 0; opacity: calc(0.75 - var(--p) * 0.5);
   background-image:
     linear-gradient(var(--line) 1px, transparent 1px),
     linear-gradient(90deg, var(--line) 1px, transparent 1px);
@@ -38,47 +38,48 @@ img { max-width: 100%; }
   mask-image: radial-gradient(circle at center, #000 0%, transparent 70%);
   -webkit-mask-image: radial-gradient(circle at center, #000 0%, transparent 70%);
 }
-.intro.leaving { opacity: 0; pointer-events: none; }
-html.play-intro .intro { display: grid; }
-.intro-logo {
-  position: fixed; left: 50%; top: 50%; width: min(78vw, 620px); height: auto;
-  transform: translate(-50%, -50%); transform-origin: 0 0; z-index: 101; display: none;
-  animation: intro-reveal 1.3s var(--ease) both;
-}
-.intro-line {
-  position: fixed; left: 50%; top: calc(50% + min(78vw, 620px) * 0.2); height: 3px; width: min(26vw, 210px);
-  transform: translateX(-50%) scaleX(0); border-radius: 9px; z-index: 101;
+.stage-line {
+  position: absolute; left: 50%; top: calc(50% + var(--logo-w) * 0.215); height: 3px; width: calc(var(--logo-w) * 0.34);
+  transform: translateX(-50%); border-radius: 9px; opacity: calc(1 - var(--p) * 2.5);
   background: linear-gradient(90deg, transparent, var(--orange), transparent);
-  animation: intro-line 1s 0.7s cubic-bezier(0.65, 0, 0.35, 1) forwards;
-  transition: opacity 0.3s;
 }
-.intro.leaving .intro-line { opacity: 0; }
-.intro-skip { position: fixed; bottom: 24px; right: 24px; z-index: 102; font: 600 12px var(--mono); letter-spacing: 0.08em;
+html.play-intro .stage-line { animation: stage-line 1s 0.7s cubic-bezier(0.65, 0, 0.35, 1) both; }
+.stage-cue { position: absolute; left: 50%; bottom: 28px; transform: translateX(-50%); display: flex; flex-direction: column;
+  align-items: center; gap: 6px; border: 0; background: none; cursor: pointer; color: var(--muted);
+  font: 600 12px var(--mono); letter-spacing: 0.12em; text-transform: uppercase; opacity: calc(1 - var(--p) * 3); }
+.stage-cue::after { content: "↓"; font-size: 16px; color: var(--orange); animation: cue 1.8s ease-in-out infinite; }
+html.play-intro .stage-cue { visibility: hidden; }
+@keyframes cue { 50% { transform: translateY(5px); } }
+.stage-skip { display: none; position: absolute; bottom: 24px; right: 24px; font: 600 12px var(--mono); letter-spacing: 0.08em;
   color: var(--muted); background: none; border: 0; cursor: pointer; text-transform: uppercase; }
-html.play-intro .intro-logo { display: block; }
-@keyframes intro-reveal { from { opacity: 0; filter: blur(14px); margin-top: 18px; } to { opacity: 1; filter: blur(0); margin-top: 0; } }
-@keyframes intro-line { to { transform: translateX(-50%) scaleX(1); } }
+html.play-intro .stage-skip { display: block; }
+[dir="rtl"] .stage-skip { right: auto; left: 24px; }
+/* The one logo that travels between the middle of the first screen and the header. */
+.float-logo { display: none; position: fixed; left: 0; top: 0; z-index: 60; width: var(--logo-w); height: auto; max-width: none;
+  transform-origin: 0 0; pointer-events: none; will-change: transform; }
+html.js .float-logo { display: block; }
+html.play-intro .float-logo { animation: logo-reveal 1.3s var(--ease) both; }
+@keyframes logo-reveal { from { opacity: 0; filter: blur(14px); } to { opacity: 1; filter: blur(0); } }
+@keyframes stage-line { from { transform: translateX(-50%) scaleX(0); } to { transform: translateX(-50%) scaleX(1); } }
 
-/* ---------- Page reveal once the logo has landed ---------- */
+/* ---------- Page reveal as the first-visit intro scrolls down ---------- */
 html.play-intro .reveal { opacity: 0; transform: translateY(18px); }
 html.ready .reveal { animation: rise 0.9s var(--ease) both; animation-delay: calc(var(--d, 0) * 110ms); }
-html.ready .site-header { animation: header-in 0.6s var(--ease) forwards; }
 @keyframes rise { to { opacity: 1; transform: none; } }
-@keyframes header-in { from { background-color: transparent; border-color: transparent; box-shadow: none; } }
 /* Sections further down fade in as they scroll into view. */
 html.js .inview { opacity: 0; transform: translateY(24px); transition: opacity 0.8s var(--ease), transform 0.8s var(--ease); }
 html.js .inview.seen { opacity: 1; transform: none; }
 
 /* ---------- Header ---------- */
 .site-header {
-  position: sticky; top: 0; z-index: 50; background: rgba(246, 243, 239, 0.86);
-  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid var(--line);
+  position: sticky; top: 0; z-index: 50; background: rgba(246, 243, 239, calc(0.86 * var(--p)));
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid rgba(71, 71, 71, calc(0.14 * var(--p)));
 }
 .header-in { display: flex; align-items: center; gap: 28px; height: 72px; }
 .brand { display: block; flex: none; }
 .brand img { display: block; height: 36px; width: auto; }
-html.play-intro .brand img { visibility: hidden; }
-html.play-intro .nav, html.play-intro .lang, html.play-intro .menu-toggle { opacity: 0; }
+html.js .brand img { visibility: hidden; } /* the travelling logo is drawn over this spot */
+html.play-intro:not(.ready) .nav, html.play-intro:not(.ready) .lang, html.play-intro:not(.ready) .menu-toggle { opacity: 0; }
 .nav, .lang, .menu-toggle { transition: opacity 0.6s ease 0.15s; }
 .nav { display: flex; align-items: center; gap: 26px; margin-inline-start: auto; font-size: 15px; font-weight: 500; }
 .nav a:not(.btn) { color: var(--charcoal); position: relative; }
@@ -148,6 +149,7 @@ html.play-intro .nav, html.play-intro .lang, html.play-intro .menu-toggle { opac
 
 /* ---------- Sections ---------- */
 .section { padding: 104px 0; }
+section[id] { scroll-margin-top: 72px; } /* keep the sticky header from covering a section opened by a link */
 .section-head { max-width: 640px; margin-bottom: 52px; }
 .section-head h2 { font-size: clamp(1.9rem, 3.4vw, 2.75rem); line-height: 1.12; letter-spacing: -0.03em; margin: 14px 0 0; }
 .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
@@ -255,5 +257,5 @@ footer { padding: 40px 0; }
 [dir="rtl"] .btn:hover .arrow, [dir="rtl"] .product:hover .arrow { transform: scaleX(-1) translateX(3px); }
 [dir="rtl"] .card::before { transform-origin: right; }
 [dir="rtl"] .hero h1, [dir="rtl"] .section-head h2, [dir="rtl"] .contact h2 { letter-spacing: 0; line-height: 1.25; }
-[dir="rtl"] .eyebrow, [dir="rtl"] .footer-tag, [dir="rtl"] .intro-skip { letter-spacing: 0; font-family: var(--sans); font-size: 14px; }
+[dir="rtl"] .eyebrow, [dir="rtl"] .footer-tag, [dir="rtl"] .stage-skip, [dir="rtl"] .stage-cue { letter-spacing: 0; font-family: var(--sans); font-size: 14px; }
 .drawing svg { direction: ltr; }

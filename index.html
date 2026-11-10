@@ -25,7 +25,8 @@
   <link rel="stylesheet" href="/assets/site.css">
   <script>
     // Runs before the page paints: picks the language direction and decides whether to play the intro
-    // (first visit in this browser session only, and never when the visitor prefers reduced motion).
+    // (first visit in this browser session only, not when opening a link to a section, and never when the
+    // visitor prefers reduced motion).
     (function () {
       var d = document.documentElement, lang = "en";
       d.className += " js";
@@ -41,20 +42,13 @@
       d.lang = lang;
       d.dir = lang === "ar" ? "rtl" : "ltr";
       try {
-        if (!sessionStorage.getItem("dmbt-intro") && !matchMedia("(prefers-reduced-motion: reduce)").matches) d.className += " play-intro";
+        if (!location.hash && !sessionStorage.getItem("dmbt-intro") && !matchMedia("(prefers-reduced-motion: reduce)").matches) d.className += " play-intro";
       } catch (e) {}
     })();
   </script>
 </head>
 <body>
 
-
-<!-- Intro: the logo alone, which then flies into the header -->
-<div class="intro" id="intro" aria-hidden="true">
-  <span class="intro-line"></span>
-  <button class="intro-skip" id="skip" type="button" data-i18n="skip">Skip ›</button>
-</div>
-<img class="intro-logo" id="introLogo" src="/assets/dmbt-logo-transparent.png" alt="" aria-hidden="true">
 
 <header class="site-header" id="top">
   <div class="wrap header-in">
@@ -72,8 +66,15 @@
     <button class="menu-toggle" id="menuToggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
   </div>
 </header>
+<!-- The DMBT logo: in the middle of the first screen at the top of the page, in the header corner once scrolled. -->
+<img class="float-logo" id="floatLogo" src="/assets/dmbt-logo-transparent.png" alt="" aria-hidden="true" width="1523" height="513">
 
 <main>
+  <section class="stage" id="stage">
+    <span class="stage-line" aria-hidden="true"></span>
+    <button class="stage-cue" id="cue" type="button" data-i18n="cue">Scroll</button>
+    <button class="stage-skip" id="skip" type="button" data-i18n="skip">Skip ›</button>
+  </section>
   <section class="hero">
     <div class="wrap hero-grid">
       <div>
