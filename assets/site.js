@@ -218,6 +218,10 @@
       var k = el.getAttribute("data-i18n");
       if (k in t) el.textContent = t[k];
     });
+    document.querySelectorAll("[data-i18n-alt]").forEach(function (el) {
+      var k = el.getAttribute("data-i18n-alt");
+      if (k in t) el.alt = t[k];
+    });
     document.title = t["meta.title"];
   }
   document.querySelectorAll("[data-lang]").forEach(function (btn) {

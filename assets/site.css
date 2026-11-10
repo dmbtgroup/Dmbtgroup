@@ -206,8 +206,10 @@ section[id] { scroll-margin-top: 72px; } /* keep the sticky header from covering
 .experts { display: grid; gap: 24px; }
 .expert { display: grid; grid-template-columns: 290px 1fr; gap: 52px; background: var(--paper); border: 1px solid var(--line);
   border-radius: 20px; padding: 44px; }
-.avatar { width: 96px; height: 96px; border-radius: 50%; display: grid; place-items: center; background: var(--charcoal); color: #fff;
-  font-size: 32px; font-weight: 800; letter-spacing: -0.02em; box-shadow: inset 0 0 0 4px var(--paper), 0 0 0 2px var(--orange); }
+/* Expert photo: square, shown as a circle; without a photo, a <div class="avatar"> with initials works too. */
+.avatar { display: grid; place-items: center; width: 128px; height: 128px; border-radius: 50%; object-fit: cover;
+  background: var(--charcoal); color: #fff; font-size: 40px; font-weight: 800; letter-spacing: -0.02em;
+  border: 4px solid var(--paper); box-shadow: 0 0 0 2px var(--orange), 0 14px 30px -14px rgba(35, 39, 42, 0.45); }
 .expert-name { font-size: 24px; letter-spacing: -0.02em; line-height: 1.2; margin: 22px 0 6px; }
 .expert-role { margin: 0; color: var(--orange-dk); font-weight: 650; }
 .expert-org { margin: 4px 0 22px; color: var(--muted); font-size: 15px; }

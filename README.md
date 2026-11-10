@@ -21,6 +21,7 @@ experts · industries · products · contact · footer.
 
 **Experts.** Each expert is one `<article class="expert">` in the `#experts` section of `index.html`, with keys
 `e1.*` for the first expert, `e2.*` for the next, and so on; add their French and Arabic text to `assets/site.js`.
+Photos go in `assets/experts/` as square JPEGs.
 Only professional details go on the site (no phone numbers, personal emails or dates of birth).
 
 **Languages.** English, French or Arabic (right to left), following the visitor's browser language or the
