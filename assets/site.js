@@ -185,6 +185,7 @@
       "e3.d3": "Licence en génie industriel",
       "e3.d3u": "Université islamique Azad, campus de Najafabad",
       "e3.f5": "articles de revues et communications",
+      "e2.link": "Profil sur le site de Nyenrode",
       "contact.title": "Étudions ensemble votre activité.",
       "footer.tag": "Développement. Management. Business. Tact.",
       "footer.rights": "Tous droits réservés."
@@ -370,6 +371,7 @@
       "e3.d3": "بكالوريوس في الهندسة الصناعية",
       "e3.d3u": "جامعة آزاد الإسلامية، فرع نجف آباد",
       "e3.f5": "بحثًا في المجلات والمؤتمرات",
+      "e2.link": "صفحته في جامعة نيينرود",
       "contact.title": "لندرس عملياتك معًا.",
       "footer.tag": "التطوير. الإدارة. الأعمال. اللباقة.",
       "footer.rights": "جميع الحقوق محفوظة."
