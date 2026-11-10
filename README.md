@@ -31,7 +31,11 @@ EN / FR / ع switch in the header, which is remembered in a `lang` cookie. Engli
 `index.html`; each translated element has a `data-i18n` key whose French and Arabic text is in
 `assets/site.js`. To change wording, edit both places.
 
-**Contact.** The contact section has no email button for now; add one in `index.html` once the address is confirmed.
+**Contact.** The contact band shows sales@dmbtgroup.com and +1 647 873 9585 and has a discovery-call form
+(name, company, country, what to improve). The site has no server, so the form opens the visitor's email app
+with the request addressed to sales@dmbtgroup.com; to receive requests without that step, connect it to a form
+service. The footer repeats the contact details (with support@dmbtgroup.com) and links to every section and
+the three product sites.
 
 `www.dmbtgroup.com` redirects to `dmbtgroup.com` (same path). Any other address (apart from `/experts`), such as a company link `dmbtgroup.com/cmtb`, forwards to the same address on
 tactime.dmbtgroup.com (see `vercel.json`).

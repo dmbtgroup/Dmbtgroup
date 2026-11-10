@@ -22,7 +22,7 @@
   <meta name="twitter:image" content="https://dmbtgroup.com/assets/og-dmbt.jpg">
   <link rel="canonical" href="https://dmbtgroup.com/">
   <link rel="preload" as="image" href="/assets/dmbt-logo-transparent.png">
-  <link rel="stylesheet" href="/assets/site.css?v=8">
+  <link rel="stylesheet" href="/assets/site.css?v=9">
   <script>
     // Runs before the page paints: picks the language direction and decides whether to play the intro
     // (first visit in this browser session only, not when opening a link to a section, and never when the
@@ -194,6 +194,7 @@
         <div class="industry inview"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M3 21V8l9-5 9 5v13"/><path d="M7 21v-8h10v8M7 17h10"/></svg></div><h3 data-i18n="i3.t">Warehousing &amp; logistics</h3><p data-i18n="i3.b">Storage, picking and distribution centers.</p></div>
         <div class="industry inview"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="1"/><path d="M9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2M11 21v-3h2v3"/></svg></div><h3 data-i18n="i4.t">Facilities &amp; property</h3><p data-i18n="i4.b">Building operations, maintenance and condominium management.</p></div>
       </div>
+      <a class="text-link inview" href="#contact"><span data-i18n="industries.cta">Tell us about your operation</span> <span class="arrow">→</span></a>
     </div>
   </section>
 
@@ -201,28 +202,111 @@
     <div class="wrap">
       <div class="section-head inview"><span class="eyebrow" data-i18n="products.kicker">Our software</span><h2 data-i18n="products.title">Tools we build and run</h2></div>
       <div class="products">
-        <a class="product inview" href="https://tactime.dmbtgroup.com"><div><small>tactime.dmbtgroup.com</small><div class="product-name">TactLab</div><p data-i18n="tactlab">Lab and shop management for your team.</p></div><span class="arrow">→</span></a>
-        <a class="product inview" href="https://condo.dmbtgroup.com"><div><small>condo.dmbtgroup.com</small><div class="product-name">Domora</div><p data-i18n="domora">Smarter management for your condominium.</p></div><span class="arrow">→</span></a>
-        <a class="product inview" href="https://tacthr.dmbtgroup.com"><div><small>tacthr.dmbtgroup.com</small><div class="product-name">TactHR</div><p data-i18n="tacthr">Human resources and payroll management for your company.</p></div><span class="arrow">→</span></a>
+        <a class="product inview" href="https://tactime.dmbtgroup.com">
+          <small>tactime.dmbtgroup.com</small>
+          <div class="product-name">TactLab</div>
+          <p class="product-line" data-i18n="tactlab">Lab and shop management for your team.</p>
+          <p class="product-for" data-i18n="tactlab.for">For testing labs and machine shops</p>
+          <ul class="product-feats">
+            <li data-i18n="tactlab.f1">Service offers with cost estimates, sent as PDF and turned into orders in one click</li>
+            <li data-i18n="tactlab.f2">Work orders with routes and steps, and a barcode for every piece</li>
+            <li data-i18n="tactlab.f3">Shop-floor time by barcode scan, timer or quick entry, with manager approvals</li>
+            <li data-i18n="tactlab.f4">Reports by employee, job and step, with CSV export for payroll and billing</li>
+          </ul>
+          <span class="product-go"><span data-i18n="prod.visit">Visit</span> TactLab <span class="arrow">→</span></span>
+        </a>
+        <a class="product inview" href="https://condo.dmbtgroup.com">
+          <small>condo.dmbtgroup.com</small>
+          <div class="product-name">Domora</div>
+          <p class="product-line" data-i18n="domora">Smarter management for your condominium.</p>
+          <p class="product-for" data-i18n="domora.for">For condominium boards, owners and residents</p>
+          <ul class="product-feats">
+            <li data-i18n="domora.f1">Condo fees, special contributions and payments for every unit</li>
+            <li data-i18n="domora.f2">Repair requests, projects with budgets, and routine work with reminders</li>
+            <li data-i18n="domora.f3">Online owner votes, weighted by each unit's share</li>
+            <li data-i18n="domora.f4">Documents, insurance certificates and notices, in English and French</li>
+          </ul>
+          <span class="product-go"><span data-i18n="prod.visit">Visit</span> Domora <span class="arrow">→</span></span>
+        </a>
+        <a class="product inview" href="https://tacthr.dmbtgroup.com">
+          <small>tacthr.dmbtgroup.com</small>
+          <div class="product-name">TactHR</div>
+          <p class="product-line" data-i18n="tacthr">Human resources and payroll management for your company.</p>
+          <p class="product-for" data-i18n="tacthr.for">For companies that want fair, transparent pay</p>
+          <ul class="product-feats">
+            <li data-i18n="tacthr.f1">Staff performance reviews twice a year, with weighted indicators</li>
+            <li data-i18n="tacthr.f2">Salaries and bonuses set from education, experience, skills, job hardship, job grade and performance</li>
+            <li data-i18n="tacthr.f3">Each company has its own space, found by its name or address</li>
+          </ul>
+          <span class="product-go"><span data-i18n="prod.visit">Visit</span> TactHR <span class="arrow">→</span></span>
+        </a>
       </div>
     </div>
   </section>
 
   <section class="contact" id="contact">
     <div class="wrap contact-in">
-      <div class="inview"><h2 data-i18n="contact.title">Let's look at your operation together.</h2><p data-i18n="contact.lead">Tell us about your process, site or project. We'll reply with a first assessment and the next steps.</p></div>
+      <div class="contact-text inview">
+        <h2 data-i18n="contact.title">Let's look at your operation together.</h2>
+        <p data-i18n="contact.lead">Tell us about your process, site or project. We'll reply with a first assessment and the next steps.</p>
+        <ul class="contact-lines">
+          <li><span data-i18n="contact.sales">Sales</span><a href="mailto:sales@dmbtgroup.com">sales@dmbtgroup.com</a></li>
+          <li><span data-i18n="contact.phone">Phone</span><a href="tel:+16478739585" dir="ltr">+1 647 873 9585</a></li>
+        </ul>
+      </div>
+      <!-- Discovery-call form: opens the visitor's email app with the request addressed to sales@dmbtgroup.com. -->
+      <form class="contact-form inview" id="contactForm" action="mailto:sales@dmbtgroup.com" method="post" enctype="text/plain">
+        <h3 data-i18n="form.title">Book a discovery call</h3>
+        <div class="form-row">
+          <label><span data-i18n="form.name">Name</span><input name="name" required autocomplete="name"></label>
+          <label><span data-i18n="form.company">Company</span><input name="company" autocomplete="organization"></label>
+        </div>
+        <label><span data-i18n="form.country">Country</span><input name="country" autocomplete="country-name"></label>
+        <label><span data-i18n="form.problem">What would you like to improve?</span><textarea name="problem" rows="4" required></textarea></label>
+        <button class="btn btn-dark" type="submit"><span data-i18n="form.send">Send request</span> <span class="arrow">→</span></button>
+        <p class="form-note" data-i18n="form.note">This opens your email app with your request ready to send to sales@dmbtgroup.com.</p>
+      </form>
     </div>
   </section>
 </main>
 
-<footer>
-  <div class="wrap footer-in">
-    <img src="/assets/dmbt-logo-transparent.png" alt="DMBT" width="1523" height="513">
-    <span class="footer-tag" data-i18n="footer.tag">Development. Management. Business. Tact.</span>
-    <span>© <span id="year">2026</span> DMBT. <span data-i18n="footer.rights">All rights reserved.</span></span>
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <img src="/assets/dmbt-logo-transparent.png" alt="DMBT" width="1523" height="513">
+      <span class="footer-tag" data-i18n="footer.tag">Development. Management. Business. Tact.</span>
+    </div>
+    <nav aria-label="Explore">
+      <h4 data-i18n="footer.explore">Explore</h4>
+      <ul>
+        <li><a href="#services" data-i18n="nav.services">Services</a></li>
+        <li><a href="#approach" data-i18n="nav.approach">Approach</a></li>
+        <li><a href="/experts" data-i18n="nav.experts">Experts</a></li>
+        <li><a href="#industries" data-i18n="nav.industries">Industries</a></li>
+        <li><a href="#products" data-i18n="nav.products">Products</a></li>
+        <li><a href="#contact" data-i18n="nav.contact">Contact us</a></li>
+      </ul>
+    </nav>
+    <nav aria-label="Products">
+      <h4 data-i18n="nav.products">Products</h4>
+      <ul>
+        <li><a href="https://tactime.dmbtgroup.com">TactLab</a></li>
+        <li><a href="https://condo.dmbtgroup.com">Domora</a></li>
+        <li><a href="https://tacthr.dmbtgroup.com">TactHR</a></li>
+      </ul>
+    </nav>
+    <div>
+      <h4 data-i18n="footer.contact">Contact</h4>
+      <ul class="footer-contact">
+        <li><span data-i18n="contact.sales">Sales</span> <a href="mailto:sales@dmbtgroup.com">sales@dmbtgroup.com</a></li>
+        <li><span data-i18n="contact.phone">Phone</span> <a href="tel:+16478739585" dir="ltr">+1 647 873 9585</a></li>
+        <li><span data-i18n="footer.support">Support</span> <a href="mailto:support@dmbtgroup.com">support@dmbtgroup.com</a></li>
+      </ul>
+    </div>
   </div>
+  <div class="wrap footer-bottom">© <span id="year">2026</span> DMBT. <span data-i18n="footer.rights">All rights reserved.</span></div>
 </footer>
 
-<script src="/assets/site.js?v=8" defer></script>
+<script src="/assets/site.js?v=9" defer></script>
 </body>
 </html>

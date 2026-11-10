@@ -128,9 +128,37 @@
       "e2.d2u": "Université d'Ispahan",
       "e2.d3": "Diplôme d'ingénieur en génie industriel (production industrielle)",
       "e2.d3u": "Université islamique Azad, campus de Najafabad",
-      "contact.title": "Étudions ensemble votre activité.",
+      "industries.cta": "Parlez-nous de votre activité",
+      "prod.visit": "Découvrir",
+      "tactlab.for": "Pour les laboratoires d'essais et les ateliers d'usinage",
+      "tactlab.f1": "Offres de service avec estimation des coûts, envoyées en PDF et transformées en commandes en un clic",
+      "tactlab.f2": "Ordres de travail avec gammes et étapes, et un code-barres pour chaque pièce",
+      "tactlab.f3": "Temps d'atelier par lecture de code-barres, chronomètre ou saisie rapide, avec validation du responsable",
+      "tactlab.f4": "Rapports par employé, travail et étape, avec export CSV pour la paie et la facturation",
+      "domora.for": "Pour les conseils de copropriété, les copropriétaires et les résidents",
+      "domora.f1": "Charges de copropriété, cotisations spéciales et paiements pour chaque lot",
+      "domora.f2": "Demandes de réparation, projets budgétés et travaux récurrents avec rappels",
+      "domora.f3": "Votes des copropriétaires en ligne, pondérés selon la quote-part de chaque lot",
+      "domora.f4": "Documents, attestations d'assurance et avis, en anglais et en français",
+      "tacthr.for": "Pour les entreprises qui veulent une rémunération juste et transparente",
+      "tacthr.f1": "Évaluations de la performance du personnel deux fois par an, avec des indicateurs pondérés",
+      "tacthr.f2": "Salaires et primes fixés selon la formation, l'expérience, les compétences, la pénibilité, la classe d'emploi et la performance",
+      "tacthr.f3": "Chaque entreprise dispose de son propre espace, accessible par son nom ou son adresse",
+      "contact.sales": "Ventes",
+      "contact.phone": "Téléphone",
+      "form.title": "Réservez un premier échange",
+      "form.name": "Nom",
+      "form.company": "Entreprise",
+      "form.country": "Pays",
+      "form.problem": "Que souhaitez-vous améliorer ?",
+      "form.send": "Envoyer la demande",
+      "form.note": "Votre messagerie s'ouvre avec votre demande prête à être envoyée à sales@dmbtgroup.com.",
+      "form.subject": "Demande de premier échange",
+      "footer.explore": "Explorer",
+      "footer.contact": "Contact",
+      "footer.support": "Assistance",
       "contact.lead": "Parlez-nous de votre processus, de votre site ou de votre projet. Nous vous répondrons avec une première analyse et les prochaines étapes.",
-      "contact.cta": "Écrivez-nous",
+      "contact.title": "Étudions ensemble votre activité.",
       "footer.tag": "Développement. Management. Business. Tact.",
       "footer.rights": "Tous droits réservés."
     },
@@ -258,9 +286,37 @@
       "e2.d2u": "جامعة أصفهان",
       "e2.d3": "بكالوريوس الهندسة الصناعية (الإنتاج الصناعي)",
       "e2.d3u": "جامعة آزاد الإسلامية، فرع نجف آباد",
-      "contact.title": "لندرس عملياتك معًا.",
+      "industries.cta": "أخبرنا عن عملياتك",
+      "prod.visit": "زيارة",
+      "tactlab.for": "لمختبرات الاختبار وورش التشغيل",
+      "tactlab.f1": "عروض خدمات مع تقدير التكلفة، تُرسل بصيغة PDF وتتحول إلى طلبات بنقرة واحدة",
+      "tactlab.f2": "أوامر عمل بمسارات وخطوات، ورمز شريطي لكل قطعة",
+      "tactlab.f3": "تسجيل وقت العمل بمسح الرمز الشريطي أو المؤقت أو الإدخال السريع، مع موافقة المدير",
+      "tactlab.f4": "تقارير حسب الموظف والعمل والخطوة، مع تصدير CSV للرواتب والفوترة",
+      "domora.for": "لمجالس إدارة المباني السكنية والمالكين والسكان",
+      "domora.f1": "رسوم الملكية المشتركة والمساهمات الخاصة والمدفوعات لكل وحدة",
+      "domora.f2": "طلبات الإصلاح والمشاريع بميزانياتها والأعمال الدورية مع التذكيرات",
+      "domora.f3": "تصويت المالكين عبر الإنترنت، مرجّح بحصة كل وحدة",
+      "domora.f4": "المستندات وشهادات التأمين والإشعارات، بالإنجليزية والفرنسية",
+      "tacthr.for": "للشركات التي تريد أجورًا عادلة وشفافة",
+      "tacthr.f1": "تقييم أداء الموظفين مرتين في السنة بمؤشرات مرجّحة",
+      "tacthr.f2": "تحديد الرواتب والمكافآت بناءً على التعليم والخبرة والمهارة وصعوبة العمل والدرجة الوظيفية والأداء",
+      "tacthr.f3": "لكل شركة مساحتها الخاصة، يُوصل إليها باسمها أو عنوانها",
+      "contact.sales": "المبيعات",
+      "contact.phone": "الهاتف",
+      "form.title": "احجز مكالمة تعارف",
+      "form.name": "الاسم",
+      "form.company": "الشركة",
+      "form.country": "البلد",
+      "form.problem": "ما الذي تودّ تحسينه؟",
+      "form.send": "إرسال الطلب",
+      "form.note": "سيفتح تطبيق البريد لديك وفيه طلبك جاهزًا للإرسال إلى sales@dmbtgroup.com.",
+      "form.subject": "طلب مكالمة تعارف",
+      "footer.explore": "استكشف",
+      "footer.contact": "تواصل",
+      "footer.support": "الدعم",
       "contact.lead": "أخبرنا عن عمليتك أو موقعك أو مشروعك، وسنرد عليك بتقييم أولي والخطوات التالية.",
-      "contact.cta": "راسلنا",
+      "contact.title": "لندرس عملياتك معًا.",
       "footer.tag": "التطوير. الإدارة. الأعمال. اللباقة.",
       "footer.rights": "جميع الحقوق محفوظة."
     }
@@ -388,7 +444,7 @@
       if (finished) return;
       root.classList.add("ready");
       glideTo(geo.end, 1200, showPage);
-    }, 1900);
+    }, 1500);
     document.getElementById("skip").addEventListener("click", showPage);
     window.addEventListener("keydown", function (e) { if (e.key === "Escape") showPage(); });
   } else {
@@ -538,6 +594,22 @@
       }
     });
     syncSheet();
+  }
+
+  // ---- Contact form: opens the visitor's email app with the request addressed to sales ----
+  var form = document.getElementById("contactForm");
+  if (form) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var lines = [], name = form.elements.name.value.trim(), company = form.elements.company.value.trim();
+      form.querySelectorAll("label").forEach(function (l) {
+        var f = l.querySelector("input, textarea");
+        var q = l.querySelector("span").textContent.trim();
+        if (f && f.value.trim()) lines.push(/[?؟]$/.test(q) ? q + "\n" + f.value.trim() : q + ": " + f.value.trim());
+      });
+      var subject = (TEXT[lang] ? TEXT[lang]["form.subject"] : "Discovery call request") + " — " + (company || name);
+      location.href = "mailto:sales@dmbtgroup.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(lines.join("\n\n"));
+    });
   }
 
   // ---- Phone menu ----
