@@ -1,4 +1,4 @@
-// ARTRA — a piece's own page (/royal/piece?p=<slug>), filled from products.js.
+// ARTRA — a piece's own page (/piece?p=<slug>), filled from products.js.
 (function () {
   "use strict";
   var reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -27,6 +27,10 @@
     return;
   }
   document.title = p.name + " — ARTRA";
+  var canon = document.createElement("link");
+  canon.rel = "canonical";
+  canon.href = "https://artraland.com/piece?p=" + encodeURIComponent(p.slug);
+  document.head.appendChild(canon);
   var meta = document.querySelector('meta[name="description"]');
   if (meta && p.description) meta.content = p.description;
 

@@ -1,4 +1,6 @@
-# Deploys dmbtgroup.com to Vercel on every push to main.
+# Deploys both sites to Vercel on every push to main:
+#   dmbtgroup.com  — the repository root (artraland/ is left out by .vercelignore)
+#   artraland.com  — the artraland/ folder, to its own Vercel project
 # Needs a repository secret holding a Vercel access token for the artedelara team: VERCEL_TOKEN (or DMBETGROUP).
 name: Deploy to Vercel
 
@@ -14,11 +16,32 @@ concurrency:
 env:
   VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN || secrets.DMBETGROUP }}
   VERCEL_ORG_ID: team_nXwzNgaNC6ot9TwAgTTYmUkv
-  VERCEL_PROJECT_ID: prj_bzBoMIdVbBlCNevqJ8hzE4ioUrm0
 
 jobs:
   deploy:
+    name: dmbtgroup.com
     runs-on: ubuntu-latest
+    env:
+      VERCEL_PROJECT_ID: prj_bzBoMIdVbBlCNevqJ8hzE4ioUrm0
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check for the Vercel token
+        run: |
+          if [ -z "$VERCEL_TOKEN" ]; then
+            echo "::error::Add a VERCEL_TOKEN repository secret (Settings → Secrets and variables → Actions)."
+            exit 1
+          fi
+      - run: npm install --global vercel@latest
+      - run: vercel deploy --prod --yes --token="$VERCEL_TOKEN"
+
+  deploy-artraland:
+    name: artraland.com
+    runs-on: ubuntu-latest
+    env:
+      VERCEL_PROJECT_ID: prj_dYYJZKiPYHSeLJp2aLpezqwFMy94
+    defaults:
+      run:
+        working-directory: artraland
     steps:
       - uses: actions/checkout@v4
       - name: Check for the Vercel token

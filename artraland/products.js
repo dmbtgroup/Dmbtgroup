@@ -4,7 +4,7 @@
 //
 //   key          which animated drawing to show when there is no photo (vase, box, tray, lantern, mirror, carpet);
 //                leave it "" for a piece shown from its photo
-//   slug         the piece's address, /royal/piece?p=<slug> (optional; otherwise made from key, ID or name)
+//   slug         the piece's address, /piece?p=<slug> (optional; otherwise made from key, ID or name)
 //   name         Product Name
 //   category     Product Category
 //   id           Product ID
@@ -33,8 +33,8 @@ window.ARTRA_PRODUCTS = [
     name: "Engraved Lidded Vase",
     category: "Engraved metal",
     id: "",
-    photo: "/royal/photos/engraved-lidded-vase.jpg",
-    cutout: "/royal/photos/engraved-lidded-vase-cutout.webp",
+    photo: "/photos/engraved-lidded-vase.jpg",
+    cutout: "/photos/engraved-lidded-vase-cutout.webp",
     artist: "",
     origin: "",
     history: "Ghalamzani is the engraving of metal with a small hammer and fine steel chisels, a craft long associated with the bazaars of Isfahan. The pattern is drawn onto the metal, then cut into it line by line, so that light catches every stroke.",

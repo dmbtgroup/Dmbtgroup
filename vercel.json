@@ -13,12 +13,22 @@
       "permanent": true
     },
     {
+      "source": "/royal",
+      "destination": "https://artraland.com/",
+      "permanent": false
+    },
+    {
+      "source": "/royal/:path*",
+      "destination": "https://artraland.com/:path*",
+      "permanent": false
+    },
+    {
       "source": "/favicon.ico",
       "destination": "/assets/dmbt-icon.png",
       "permanent": false
     },
     {
-      "source": "/:path((?!assets/|index\\.html$|robots\\.txt$|experts(?:\\.html)?$|royal(?:/.*)?$).+)",
+      "source": "/:path((?!assets/|index\\.html$|robots\\.txt$|experts(?:\\.html)?$).+)",
       "destination": "https://tactime.dmbtgroup.com/:path",
       "permanent": true
     }

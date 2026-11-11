@@ -108,7 +108,7 @@
 
   // An old #piece-<slug> link opens that piece's page.
   var old = location.hash.match(/^#piece-(.+)$/);
-  if (old) location.replace("/royal/piece?p=" + old[1]);
+  if (old) location.replace("/piece?p=" + old[1]);
 
   // Fill each drawn card from its product, and add a photo card for any product without a drawing.
   PRODUCTS.forEach(function (p) {

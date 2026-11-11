@@ -78,7 +78,7 @@
       // drive.google.com/file/d/<id>/view or ...open?id=<id>; the file must be shared as "Anyone with the link".
       var drive = String(p.photo || "").match(/drive\.google\.com\/(?:file\/d\/|open\?id=|uc\?(?:export=\w+&)?id=)([\w-]+)/);
       if (drive) p.photo = "https://lh3.googleusercontent.com/d/" + drive[1];
-      p.url = "/royal/piece?p=" + encodeURIComponent(p.slug);
+      p.url = "/piece?p=" + encodeURIComponent(p.slug);
       return p;
     });
   }
