@@ -1,4 +1,4 @@
-// Zarrin Atelier — motion and interaction.
+// ARTRA — motion and interaction.
 (function () {
   "use strict";
 
@@ -137,71 +137,160 @@
     });
   }
 
-  // ---- Showcase ----
-  var PIECES = {
-    vase: { story: "Raised from a single sheet of copper, fired in enamel seven times and banded with burnished gold leaf. The pattern turns all the way round without a seam.", mat: "Copper, enamel, gold", hours: "640", ed: "1 of 7" },
-    box: { story: "Thousands of slivers of walnut, bone and brass are bundled, sliced and laid into stars. Lift the lid and the lining glows like a lamp.", mat: "Walnut, bone, brass", hours: "420", ed: "1 of 12" },
-    tray: { story: "A court tray chased with a hammer and steel point, ring within ring, until the brass catches light like water.", mat: "Brass, hand-chased", hours: "260", ed: "1 of 9" },
-    lantern: { story: "Silver wire twisted by hand into vines and teardrops, then gilded, so candlelight falls through it as lace.", mat: "Silver, gold gilding", hours: "380", ed: "1 of 10" },
-    mirror: { story: "Hundreds of hand-cut mirror facets set in gilded plaster, each angled a little differently to scatter a single flame across a room.", mat: "Mirror, plaster, gold", hours: "520", ed: "1 of 5" },
-    carpet: { story: "Silk on a silk foundation, dyed with madder, indigo and saffron and knotted row by row on a vertical loom.", mat: "Silk, natural dyes", hours: "1,200", ed: "Unique" }
-  };
-  var order = Object.keys(PIECES), current = 0;
-  var stageArt = $("#stageArt"), copy = $(".stage-copy");
+  // ---- Products (from products.js, which mirrors the ARTRA Product Detail form) ----
+  var PRODUCTS = (window.ARTRA_PRODUCTS || []).map(function (p, i) {
+    p.slug = String(p.key || p.id || "piece-" + (i + 1)).toLowerCase().replace(/[^a-z0-9]+/g, "-");
+    // A Google Drive share link (drive.google.com/file/d/<id>/view or ...open?id=<id>) becomes a direct image link.
+    // The file must be shared as "Anyone with the link".
+    var drive = String(p.photo || "").match(/drive\.google\.com\/(?:file\/d\/|open\?id=|uc\?(?:export=\w+&)?id=)([\w-]+)/);
+    if (drive) p.photo = "https://lh3.googleusercontent.com/d/" + drive[1];
+    return p;
+  });
+  var grid = $("#grid");
+  function esc(s) { var d = document.createElement("div"); d.textContent = s; return d.innerHTML; }
 
-  function show(i, scroll) {
-    current = (i + order.length) % order.length;
-    var key = order[current], card = $('.piece[data-piece="' + key + '"]'), data = PIECES[key];
-    var clone = $(".art", card).cloneNode(true);
+  // Fill each drawn card from its product, and add a photo card for any product without a drawing.
+  PRODUCTS.forEach(function (p) {
+    var card = $('.piece[data-piece="' + p.key + '"]');
+    if (!card) {
+      card = document.createElement("button");
+      card.className = "piece reveal in";
+      card.setAttribute("data-piece", p.slug);
+      card.innerHTML = '<div class="piece-art piece-photo"></div><div class="piece-info"><span class="piece-craft"></span><h3></h3><span class="piece-meta"></span></div>';
+      if (p.photo) {
+        var img = new Image(); img.src = p.photo; img.alt = p.name; img.loading = "lazy";
+        $(".piece-art", card).appendChild(img);
+      }
+      grid.appendChild(card);
+    } else {
+      card.setAttribute("data-piece", p.slug);
+    }
+    $(".piece-craft", card).textContent = p.category || "";
+    $("h3", card).textContent = p.name || "";
+    $(".piece-meta", card).textContent = p.medium || "";
+    p.card = card;
+  });
+  // Drawn cards with no product entry are hidden.
+  $$(".piece").forEach(function (c) { if (!PRODUCTS.some(function (p) { return p.card === c; })) c.hidden = true; });
+
+  // The art for a product: its photo if it has one, otherwise a live copy of its animated drawing.
+  function artFor(p, preferPhoto) {
+    var art = p.card && $(".art", p.card);
+    if ((preferPhoto || !art) && p.photo) {
+      var img = new Image(); img.src = p.photo; img.alt = p.name; img.className = "photo";
+      return img;
+    }
+    if (!art) return document.createElement("div");
+    var clone = art.cloneNode(true), tag = "-" + Math.random().toString(36).slice(2, 7);
     clone.classList.remove("paused");
     // Give the copy its own ids (and point its references at them) so it animates on its own.
     $$("[id]", clone).forEach(function (n) {
       var old = n.id;
-      n.id = old + "-stage";
+      n.id = old + tag;
       $$('[clip-path="url(#' + old + ')"]', clone).forEach(function (r) { r.setAttribute("clip-path", "url(#" + n.id + ")"); });
     });
+    return clone;
+  }
+
+  // ---- Showcase ----
+  var current = 0, stageArt = $("#stageArt"), copy = $(".stage-copy");
+
+  function show(i, scroll) {
+    if (!PRODUCTS.length) return;
+    current = (i + PRODUCTS.length) % PRODUCTS.length;
+    var p = PRODUCTS[current];
     stageArt.innerHTML = "";
-    stageArt.appendChild(clone);
+    stageArt.appendChild(artFor(p, false));
     stageArt.classList.remove("swap"); void stageArt.offsetWidth; stageArt.classList.add("swap");
 
-    $("#sCraft").textContent = $(".piece-craft", card).textContent;
-    $("#sName").textContent = $("h3", card).textContent;
-    $("#sStory").textContent = data.story;
-    $("#sMat").textContent = data.mat;
-    $("#sHours").textContent = data.hours;
-    $("#sEd").textContent = data.ed;
-    $("#sCount").textContent = String(current + 1).padStart(2, "0") + " / " + String(order.length).padStart(2, "0");
+    $("#sCraft").textContent = p.category || "";
+    $("#sName").textContent = p.name || "";
+    $("#sStory").textContent = p.description || "";
+    var specs = [["Medium", p.medium], ["Origin", p.origin], ["Dimensions", p.dimensions], ["Product ID", p.id]]
+      .filter(function (f) { return f[1]; }).slice(0, 3);
+    $("#sSpecs").innerHTML = specs.map(function (f) { return "<div><dt>" + f[0] + "</dt><dd>" + esc(f[1]) + "</dd></div>"; }).join("");
+    $("#sSpecs").hidden = !specs.length;
+    $("#sCount").textContent = String(current + 1).padStart(2, "0") + " / " + String(PRODUCTS.length).padStart(2, "0");
     copy.classList.remove("fade"); void copy.offsetWidth; copy.classList.add("fade");
-    $$(".piece").forEach(function (p) { p.classList.toggle("is-active", p === card); });
+    $$(".piece").forEach(function (c) { c.classList.toggle("is-active", c === p.card); });
     if (scroll) $("#showcase").scrollIntoView({ behavior: reduced ? "auto" : "smooth" });
   }
 
-  $$(".piece").forEach(function (card) {
-    card.addEventListener("click", function () { show(order.indexOf(card.getAttribute("data-piece")), true); });
+  // ---- Product detail ----
+  var detail = $("#detail"), opener = null;
+  var FIELDS = [
+    ["Artist", "artist"], ["Origin", "origin"], ["Medium", "medium"], ["Dimensions", "dimensions"],
+    ["Packaging dimensions", "packaging"], ["History", "history", true], ["Additional information", "additional", true],
+    ["Care instructions", "care", true], ["Returns and exchanges", "returns", true]
+  ];
+
+  function openDetail(p, fromHash) {
+    opener = document.activeElement;
+    $("#dMedia").innerHTML = "";
+    $("#dMedia").appendChild(artFor(p, true));
+    $("#dCat").textContent = p.category || "";
+    $("#dName").textContent = p.name || "";
+    $("#dId").textContent = p.id ? "Product ID " + p.id : "";
+    $("#dId").hidden = !p.id;
+    $("#dDesc").textContent = p.description || "";
+    $("#dFields").innerHTML = FIELDS.filter(function (f) { return p[f[1]]; }).map(function (f) {
+      return '<div class="' + (f[2] ? "wide" : "") + '"><dt>' + f[0] + "</dt><dd>" + esc(p[f[1]]) + "</dd></div>";
+    }).join("");
+    $("#dUpdated").textContent = p.updated ? "Last updated " + p.updated : "";
+    $("#dAsk").onclick = function () { closeDetail(); preselect(p.category); };
+    if (!detail.open) detail.showModal();
+    detail.scrollTop = 0;
+    document.body.classList.add("locked");
+    if (!fromHash) history.replaceState(null, "", "#piece-" + p.slug);
+  }
+  function closeDetail() {
+    if (detail.open) detail.close();
+  }
+  detail.addEventListener("close", function () {
+    document.body.classList.remove("locked");
+    if (/^#piece-/.test(location.hash)) history.replaceState(null, "", location.pathname + location.search);
+    if (opener && opener.focus) opener.focus();
+  });
+  detail.addEventListener("click", function (ev) { if (ev.target === detail) closeDetail(); });
+  $("#dClose").addEventListener("click", closeDetail);
+
+  function fromHash() {
+    var m = location.hash.match(/^#piece-(.+)$/);
+    var p = m && PRODUCTS.filter(function (x) { return x.slug === m[1]; })[0];
+    if (p) { show(PRODUCTS.indexOf(p)); openDetail(p, true); }
+  }
+  addEventListener("hashchange", fromHash);
+
+  function preselect(craft) {
+    var sel = $('#form select[name="craft"]');
+    $$("option", sel).forEach(function (o, i) { if (o.textContent === craft) sel.selectedIndex = i; });
+  }
+
+  PRODUCTS.forEach(function (p, i) {
+    p.card.addEventListener("click", function () { show(i); openDetail(p); });
   });
   $("#prev").addEventListener("click", function () { show(current - 1); });
   $("#next").addEventListener("click", function () { show(current + 1); });
-  $("#sAsk").addEventListener("click", function () {
-    var sel = $('#form select[name="craft"]'), craft = $("#sCraft").textContent;
-    $$("option", sel).forEach(function (o, i) { if (o.textContent === craft) sel.selectedIndex = i; });
-  });
+  $("#sMore").addEventListener("click", function () { openDetail(PRODUCTS[current]); });
+  $("#sAsk").addEventListener("click", function () { preselect(PRODUCTS[current].category); });
   show(0);
+  fromHash();
 
   // Turn through the pieces by themselves while the showcase is in view and idle.
   var auto = null, stage = $("#stage");
   new IntersectionObserver(function (entries) {
     var vis = entries[0].isIntersecting;
     clearInterval(auto);
-    if (vis && !reduced) auto = setInterval(function () { show(current + 1); }, 7000);
+    if (vis && !reduced) auto = setInterval(function () { if (!detail.open) show(current + 1); }, 7000);
   }, { threshold: 0.4 }).observe(stage);
-  $$("#prev, #next").forEach(function (b) { b.addEventListener("click", function () { clearInterval(auto); }); });
+  $$("#prev, #next, #sMore").forEach(function (b) { b.addEventListener("click", function () { clearInterval(auto); }); });
 
   // ---- Commission form ----
   $("#form").addEventListener("submit", function (ev) {
     ev.preventDefault();
     var f = ev.target;
     var body = "Name: " + f.name.value + "\nEmail: " + f.email.value + "\nCraft: " + f.craft.value + "\n\n" + f.idea.value;
-    location.href = "mailto:" + ATELIER_EMAIL + "?subject=" + encodeURIComponent("Commission request — " + f.craft.value) + "&body=" + encodeURIComponent(body);
+    location.href = "mailto:" + ATELIER_EMAIL + "?subject=" + encodeURIComponent("ARTRA commission request — " + f.craft.value) + "&body=" + encodeURIComponent(body);
     $("#formNote").textContent = "Thank you — your email app should now open with the request.";
   });
 

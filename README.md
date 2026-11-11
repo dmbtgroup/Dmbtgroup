@@ -44,11 +44,20 @@ The product cards show each app's logo mark from `assets/products/` (taken from 
 
 Pushing to `main` deploys to Vercel (`.github/workflows/deploy.yml`); it needs a `VERCEL_TOKEN` secret.
 
-**Royal handicrafts page.** `royal/` (served at `dmbtgroup.com/royal`) is a standalone site for *Zarrin Atelier*, a
-showcase of royal handicraft pieces in gold, dark gray, dark beige and black. It has its own `royal.css` and
-`royal.js` and shares nothing with the DMBT pages, so it can move to its own domain as is. Every piece is drawn in SVG
-and animated (the enamel vase turns, the inlaid casket opens, the brass tray's engraving rotates, the filigree lantern
-swings, the mirror mosaic glints, the silk rug weaves itself); clicking a piece shows it large in the showcase.
-Animations stop off screen and are switched off for visitors who prefer reduced motion. The commission form opens
-an email to the address in `ATELIER_EMAIL` at the top of `royal/royal.js`. After changing the CSS or JS, raise the
-`?v=` number where `royal/index.html` loads them.
+**ARTRA — royal handicrafts page.** `royal/` (served at `dmbtgroup.com/royal`) is a standalone site for ARTRA, a
+showcase of royal handicraft pieces in gold, dark gray, dark beige and black. It has its own `royal.css`, `royal.js`
+and `products.js` and shares nothing with the DMBT pages, so it can move to its own domain as is. The six sample pieces
+are drawn in SVG and animated (the enamel vase turns, the inlaid casket opens, the brass tray's engraving rotates, the
+filigree lantern swings, the mirror mosaic glints, the silk rug weaves itself). Animations stop off screen and are
+switched off for visitors who prefer reduced motion. After changing a file in `royal/`, raise its `?v=` number in
+`royal/index.html`.
+
+*Product details* come from `royal/products.js`, one entry per piece, whose fields follow the
+"ARTRA Product Detail" Google Form question by question (name, category, ID, photo link, artist, origin, history,
+description, medium, dimensions, packaging dimensions, additional information, care, returns, last update). Copy a
+form response into an entry; empty fields are not shown, and the form's internal fields (document provider, creation
+date) stay off the site. Clicking a piece opens its full details, with its own address such as
+`dmbtgroup.com/royal#piece-vase`. A piece with a photo link shows the photo in its details (Google Drive links work
+if the file is shared with "Anyone with the link"); a new entry without a `key` gets its own photo card. The sample
+wording in `products.js` should be replaced with the real responses. The commission form opens an email to the
+address in `ATELIER_EMAIL` at the top of `royal/royal.js`.
