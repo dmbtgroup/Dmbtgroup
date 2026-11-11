@@ -2,11 +2,15 @@
 // Each field matches a question on the "ARTRA Product Detail" Google Form, in the same order, so a form
 // response can be copied straight in. Leave a field as "" until it is known: empty fields are not shown.
 //
-//   key          which animated drawing to show when there is no photo (vase, box, tray, lantern, mirror, carpet)
+//   key          which animated drawing to show when there is no photo (vase, box, tray, lantern, mirror, carpet);
+//                leave it "" for a piece shown from its photo
+//   slug         the piece's address, /royal/piece?p=<slug> (optional; otherwise made from key, ID or name)
 //   name         Product Name
 //   category     Product Category
 //   id           Product ID
-//   photo        Photo link (a direct link to the high-quality image; replaces the drawing in the detail view)
+//   photo        Photo link (a direct link to the high-quality image; replaces the drawing)
+//   cutout       optional: the same photo with its background removed (PNG or WebP with transparency); when set,
+//                the pages show it in place of the photo, and keep the full photo for the close-up
 //   artist       Artist
 //   origin       Origin of art piece (City / Country)
 //   history      Art Piece history
@@ -22,6 +26,27 @@
 // The form's "Document Provider name" and "Date of document creation" are internal and are not shown on the site.
 // The text below is sample wording for the six drawn pieces; replace it with the real form responses.
 window.ARTRA_PRODUCTS = [
+  {
+    // A real piece, shown from its photo. Fill in the empty fields from its form response.
+    key: "",
+    slug: "engraved-lidded-vase",
+    name: "Engraved Lidded Vase",
+    category: "Engraved metal",
+    id: "",
+    photo: "/royal/photos/engraved-lidded-vase.jpg",
+    cutout: "/royal/photos/engraved-lidded-vase-cutout.webp",
+    artist: "",
+    origin: "",
+    history: "Ghalamzani is the engraving of metal with a small hammer and fine steel chisels, a craft long associated with the bazaars of Isfahan. The pattern is drawn onto the metal, then cut into it line by line, so that light catches every stroke.",
+    description: "A lidded vase on a slender stem, chased all over with arabesques and floral medallions. The main panels are picked out in gold tone against the silver-toned metal, and a tall finial crowns the domed lid.",
+    medium: "Hand-engraved metal, two-tone finish",
+    dimensions: "",
+    packaging: "",
+    additional: "",
+    care: "Dust with a soft dry cloth and handle by the base, not the lid or finial. Avoid abrasive polish, which wears down the engraving and the gold-toned panels; keep away from damp.",
+    returns: "",
+    updated: ""
+  },
   {
     key: "vase",
     name: "The Sovereign Vase",

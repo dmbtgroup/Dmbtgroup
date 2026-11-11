@@ -62,7 +62,9 @@ so it can move to its own domain as is.
   engraving rotates, the filigree lantern swings, the mirror mosaic glints, the silk rug weaves itself), and `EMAIL`,
   the address enquiries and commission requests open in the visitor's email app.
 
-A piece with a photo link shows its photo in the hero and close-up (Google Drive links work if the file is shared
+Photos of pieces live in `royal/photos/` (strip location metadata before adding one). A piece with a `cutout` (its photo with
+the background removed, as a transparent WebP or PNG) shows the cut-out everywhere and keeps the full photo for the
+close-up. Otherwise a piece with a photo link shows its photo in the hero and close-up (Google Drive links work if the file is shared
 with "Anyone with the link"); a new entry without a `key` uses its photo everywhere and gets its own card. Animations
 stop off screen and are switched off for visitors who prefer reduced motion. After changing a file in `royal/`,
 raise its `?v=` number where the pages load it.

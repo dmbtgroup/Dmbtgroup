@@ -206,11 +206,11 @@ main, .foot, .top { position: relative; z-index: 1; }
 .fade { animation: fade .6s var(--ease); }
 @keyframes fade { from { opacity: 0; transform: translateY(10px); } }
 
-.stage-art .photo, .stage-art > img { width: 100%; height: 100%; object-fit: contain; }
+.stage-art .photo, .stage-art > img { width: 100%; height: 100%; object-fit: contain; -webkit-mask-image: radial-gradient(ellipse 70% 76% at 50% 50%, #000 60%, transparent 100%); mask-image: radial-gradient(ellipse 70% 76% at 50% 50%, #000 60%, transparent 100%); }
 
 /* Photo cards (products added from the form with a photo and no drawing) */
 .piece-photo { padding: 0; overflow: hidden; }
-.piece-photo img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s var(--ease); }
+.piece-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 42%; transition: transform .8s var(--ease); }
 .piece:hover .piece-photo img { transform: scale(1.05); }
 
 /* Craft steps */
@@ -289,3 +289,11 @@ main, .foot, .top { position: relative; z-index: 1; }
   .js .reveal { opacity: 1; transform: none; }
   #dust { display: none; }
 }
+
+/* Cut-out photos (background removed) sit free like the drawings */
+.piece-photo.cutout { padding: 26px; }
+.piece-photo { position: relative; }
+.piece-photo img { position: absolute; inset: 0; }
+.piece-photo.cutout img { inset: 26px; width: calc(100% - 52px); height: calc(100% - 52px); object-fit: contain; filter: drop-shadow(0 24px 22px rgba(0, 0, 0, .55)); }
+.stage-art .photo { position: absolute; inset: 0; }
+.stage-art .photo.cutout { -webkit-mask-image: none; mask-image: none; filter: drop-shadow(0 30px 40px rgba(0, 0, 0, .6)); }

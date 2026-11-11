@@ -30,20 +30,35 @@
   var meta = document.querySelector('meta[name="description"]');
   if (meta && p.description) meta.content = p.description;
 
-  // The piece's art: its animated drawing, or its photo when it has one (preferPhoto) or no drawing.
-  function art(preferPhoto) {
-    if (p.photo && (preferPhoto || !ARTRA_ART.has(p.key))) {
-      var img = new Image(); img.src = p.photo; img.alt = preferPhoto ? p.name : ""; img.className = "photo";
+  // The piece's art: its cut-out photo when it has one, else its photo (when preferred, or when it has no
+  // drawing), else its animated drawing. "scene" asks for the full photo, background and all.
+  function art(preferPhoto, scene) {
+    var src = scene ? p.photo : (p.cutout || ((preferPhoto || !ARTRA_ART.has(p.key)) ? p.photo : ""));
+    if (src) {
+      var img = new Image(); img.src = src; img.alt = preferPhoto ? p.name : "";
+      img.className = src === p.cutout ? "photo cutout" : "photo";
       return img;
     }
     return ARTRA_ART.make(p.key) || document.createElement("div");
+  }
+  // Put the art in a container, marking photos (framed and feathered) and cut-outs (free-standing).
+  function place(sel, preferPhoto, scene) {
+    var box = $(sel), a = art(preferPhoto, scene), cut = a.classList.contains("cutout");
+    box.appendChild(a);
+    box.classList.toggle("is-photo", a.tagName === "IMG" && !cut);
+    box.classList.toggle("is-cutout", cut);
   }
 
   // ---- Hero ----
   $("#pCat").textContent = p.category || "";
   $("#pName").textContent = p.name;
   $("#pbarName").textContent = p.name;
-  $("#heroArt").appendChild(art(true));
+  place("#heroArt", true);
+  if (p.photo && !p.cutout) {
+    // A soft, darkened copy of the photo fills the hero behind the sharp one.
+    $(".p-hero-ambient").style.backgroundImage = "url(\"" + p.photo.replace(/"/g, "%22") + "\")";
+    $("#overview").classList.add("has-photo");
+  }
   var facts = [["Product ID", p.id], ["Medium", p.medium], ["Origin", p.origin]].filter(function (f) { return f[1]; });
   $("#heroFacts").innerHTML = facts.map(function (f) { return "<div>" + f[0] + "<b>" + esc(f[1]) + "</b></div>"; }).join("");
 
@@ -67,18 +82,19 @@
     return '<article class="chapter"><div class="inner"><p class="num">' + ["I", "II", "III", "IV"][i] + "</p><h2>" + c.title + "</h2>" + c.body + "</div></article>";
   }).join("");
   $("#storyDots").innerHTML = chapters.map(function () { return "<span></span>"; }).join("");
-  $("#storyArt").appendChild(art(false));
+  place("#storyArt", false);
   var chapterEls = $$(".chapter"), dotEls = $$("#storyDots span");
 
   // ---- Up close ----
-  $("#closeArt").appendChild(art(true));
+  place("#closeArt", true, true);
+  if (p.photo) $("#closeup").classList.add("has-photo");
   $("#closeText").textContent = p.medium
     ? p.medium + (p.artist ? ", worked by " + p.artist : "") + ". Come closer: every motif was drawn, cut and finished by hand, and no two pieces are quite alike."
     : "Every motif was drawn, cut and finished by hand, and no two pieces are quite alike.";
 
   // ---- Specifications ----
   $("#specName").textContent = p.name;
-  $("#specArt").appendChild(art(false));
+  place("#specArt", false);
   var specs = [
     ["Product ID", p.id], ["Category", p.category], ["Artist", p.artist], ["Origin", p.origin], ["Medium", p.medium, true],
     ["Dimensions", p.dimensions, true], ["Packaging dimensions", p.packaging, true], ["Last update", p.updated]
@@ -103,7 +119,7 @@
     a.innerHTML = '<div class="m-art"></div><div class="m-info"><span></span><b></b></div>';
     var d = ARTRA_ART.make(x.key);
     if (d) $(".m-art", a).appendChild(d);
-    else if (x.photo) { var img = new Image(); img.src = x.photo; img.alt = ""; img.loading = "lazy"; $(".m-art", a).appendChild(img); }
+    else if (x.cutout || x.photo) { var img = new Image(); img.src = x.cutout || x.photo; img.alt = ""; img.loading = "lazy"; if (x.cutout) img.className = "cutout"; $(".m-art", a).appendChild(img); }
     $(".m-info span", a).textContent = x.category || "";
     $(".m-info b", a).textContent = x.name || "";
     track.appendChild(a);
@@ -115,7 +131,7 @@
 
   // ---- Enquire ----
   $("#ctaTitle").textContent = "Enquire about " + p.name;
-  $("#ctaArt").appendChild(art(false));
+  place("#ctaArt", false);
   var subject = "Enquiry — " + p.name + (p.id ? " (" + p.id + ")" : "");
   var body = "Hello ARTRA,\n\nI would like to know more about " + p.name + (p.id ? " (product ID " + p.id + ")" : "") + ".\n\n" + location.href + "\n";
   $("#ctaMail").href = "mailto:" + ARTRA_ART.email + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);

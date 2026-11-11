@@ -117,8 +117,8 @@
       card = document.createElement("a");
       card.className = "piece reveal in";
       card.innerHTML = '<div class="piece-art piece-photo"></div><div class="piece-info"><span class="piece-craft"></span><h3></h3><span class="piece-meta"></span></div>';
-      if (p.photo) {
-        var img = new Image(); img.src = p.photo; img.alt = p.name; img.loading = "lazy";
+      if (p.cutout || p.photo) {
+        var img = new Image(); img.src = p.cutout || p.photo; if (p.cutout) $(".piece-art", card).classList.add("cutout"); img.alt = p.name; img.loading = "lazy";
         $(".piece-art", card).appendChild(img);
       }
       grid.appendChild(card);
@@ -131,6 +131,8 @@
     p.card = card;
   });
   $$(".piece").forEach(function (c) { if (!PRODUCTS.some(function (p) { return p.card === c; })) c.hidden = true; });
+  // Cards follow the order of products.js.
+  PRODUCTS.forEach(function (p) { grid.appendChild(p.card); });
 
   // ---- Showcase ----
   var current = 0, stageArt = $("#stageArt"), copy = $(".stage-copy");
@@ -141,7 +143,7 @@
     var p = PRODUCTS[current], art = ARTRA_ART.make(p.key);
     stageArt.innerHTML = "";
     if (art) stageArt.appendChild(art);
-    else if (p.photo) { var img = new Image(); img.src = p.photo; img.alt = p.name; img.className = "photo"; stageArt.appendChild(img); }
+    else if (p.cutout || p.photo) { var img = new Image(); img.src = p.cutout || p.photo; img.alt = p.name; img.className = p.cutout ? "photo cutout" : "photo"; stageArt.appendChild(img); }
     stageArt.classList.remove("swap"); void stageArt.offsetWidth; stageArt.classList.add("swap");
 
     $("#sCraft").textContent = p.category || "";

@@ -74,7 +74,7 @@
   // Products from products.js, with a page slug and Google Drive photo links turned into direct image links.
   function products() {
     return (window.ARTRA_PRODUCTS || []).map(function (p, i) {
-      p.slug = String(p.key || p.id || "piece-" + (i + 1)).toLowerCase().replace(/[^a-z0-9]+/g, "-");
+      p.slug = String(p.slug || p.key || p.id || p.name || "piece-" + (i + 1)).toLowerCase().replace(/[^a-z0-9]+/g, "-");
       // drive.google.com/file/d/<id>/view or ...open?id=<id>; the file must be shared as "Anyone with the link".
       var drive = String(p.photo || "").match(/drive\.google\.com\/(?:file\/d\/|open\?id=|uc\?(?:export=\w+&)?id=)([\w-]+)/);
       if (drive) p.photo = "https://lh3.googleusercontent.com/d/" + drive[1];
