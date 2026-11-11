@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Zarrin Atelier — Royal handicrafts</title>
+  <meta name="description" content="Zarrin Atelier: royal art pieces made by hand — gilded enamel, inlaid khatam, engraved brass, filigree, mirror mosaic and silk.">
+  <meta name="theme-color" content="#0b0a09">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0a09'/%3E%3Cpath d='M12 44 L16 22 L26 32 L32 16 L38 32 L48 22 L52 44 Z' fill='%23c9a24a'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/royal/royal.css?v=1">
+  <script>document.documentElement.className += " js";</script>
+</head>
+<body>
+
+<!-- Shared gold gradients and patterns used by every piece -->
+<svg class="defs" aria-hidden="true" width="0" height="0">
+  <defs>
+    <linearGradient id="gGold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f6e3a1"/>
+      <stop offset=".35" stop-color="#c9a24a"/>
+      <stop offset=".65" stop-color="#8a6a24"/>
+      <stop offset="1" stop-color="#e8c873"/>
+    </linearGradient>
+    <linearGradient id="gGoldV" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f1d98e"/>
+      <stop offset=".5" stop-color="#b48a35"/>
+      <stop offset="1" stop-color="#6e531c"/>
+    </linearGradient>
+    <linearGradient id="gCylinder" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#000" stop-opacity=".78"/>
+      <stop offset=".3" stop-color="#000" stop-opacity="0"/>
+      <stop offset=".42" stop-color="#fff3d0" stop-opacity=".28"/>
+      <stop offset=".55" stop-color="#000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000" stop-opacity=".82"/>
+    </linearGradient>
+    <linearGradient id="gSheen" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#fff" stop-opacity="0"/>
+      <stop offset=".5" stop-color="#fff6d8" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="gGlow" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#ffe3a0" stop-opacity=".95"/>
+      <stop offset=".5" stop-color="#d9a441" stop-opacity=".35"/>
+      <stop offset="1" stop-color="#d9a441" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="gBrass" cx=".38" cy=".32" r=".75">
+      <stop offset="0" stop-color="#f3dc98"/>
+      <stop offset=".45" stop-color="#b98f3b"/>
+      <stop offset="1" stop-color="#4f3b12"/>
+    </radialGradient>
+    <pattern id="pEnamel" width="40" height="40" patternUnits="userSpaceOnUse">
+      <rect width="40" height="40" fill="#15110c"/>
+      <circle cx="20" cy="20" r="9" fill="none" stroke="#d4af5a" stroke-width="1.4"/>
+      <circle cx="20" cy="20" r="3" fill="#d4af5a"/>
+      <path d="M20 8 q4 6 0 12 q-4 -6 0 -12 M20 32 q4 -6 0 -12 q-4 6 0 12 M8 20 q6 4 12 0 q-6 -4 -12 0 M32 20 q-6 4 -12 0 q6 -4 12 0" fill="#7a2a24" opacity=".85"/>
+      <circle cx="0" cy="0" r="2.4" fill="#d4af5a"/><circle cx="40" cy="0" r="2.4" fill="#d4af5a"/>
+      <circle cx="0" cy="40" r="2.4" fill="#d4af5a"/><circle cx="40" cy="40" r="2.4" fill="#d4af5a"/>
+      <circle cx="20" cy="0" r="1.2" fill="#2f5f5a"/><circle cx="20" cy="40" r="1.2" fill="#2f5f5a"/>
+    </pattern>
+    <pattern id="pKhatam" width="16" height="16" patternUnits="userSpaceOnUse">
+      <rect width="16" height="16" fill="#2a2119"/>
+      <polygon points="8,1 9.8,6.2 15,8 9.8,9.8 8,15 6.2,9.8 1,8 6.2,6.2" fill="#d6b56a"/>
+      <polygon points="8,4.5 9,7 11.5,8 9,9 8,11.5 7,9 4.5,8 7,7" fill="#1a140e"/>
+      <circle cx="0" cy="0" r="1.6" fill="#efe2c2"/><circle cx="16" cy="0" r="1.6" fill="#efe2c2"/>
+      <circle cx="0" cy="16" r="1.6" fill="#efe2c2"/><circle cx="16" cy="16" r="1.6" fill="#efe2c2"/>
+    </pattern>
+    <pattern id="pWeave" width="14" height="14" patternUnits="userSpaceOnUse">
+      <rect width="14" height="14" fill="#5a1f1b"/>
+      <path d="M7 1 L13 7 L7 13 L1 7 Z" fill="none" stroke="#c9a24a" stroke-width="1"/>
+      <circle cx="7" cy="7" r="1.4" fill="#e8d6a8"/>
+    </pattern>
+    <clipPath id="cVase">
+      <path d="M86 22 h28 v6 c0 10 -6 14 -6 24 c0 14 46 34 46 86 c0 40 -28 62 -36 70 h12 v12 h-60 v-12 h12 c-8 -8 -36 -30 -36 -70 c0 -52 46 -72 46 -86 c0 -10 -6 -14 -6 -24 z"/>
+    </clipPath>
+    <clipPath id="cTray"><circle cx="100" cy="120" r="88"/></clipPath>
+  </defs>
+</svg>
+
+<canvas id="dust" aria-hidden="true"></canvas>
+
+<header class="top" id="top">
+  <div class="wrap top-in">
+    <a href="#top" class="mark" aria-label="Zarrin Atelier home">
+      <svg viewBox="0 0 64 40" aria-hidden="true"><path d="M6 34 L10 10 L22 22 L32 4 L42 22 L54 10 L58 34 Z" fill="url(#gGold)"/><rect x="6" y="35" width="52" height="3" fill="url(#gGold)"/></svg>
+      <span>Zarrin <em>Atelier</em></span>
+    </a>
+    <nav class="nav" id="nav">
+      <a href="#collection">Collection</a>
+      <a href="#showcase">Showcase</a>
+      <a href="#craft">The craft</a>
+      <a href="#commission" class="nav-cta">Commission</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="nav"><span></span><span></span></button>
+  </div>
+</header>
+
+<main>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="wrap hero-in">
+    <div class="hero-copy">
+      <p class="eyebrow reveal">Royal handicrafts · Made by hand</p>
+      <h1 class="reveal"><span class="gold-text">Heirlooms</span> fit for a palace.</h1>
+      <p class="lede reveal">Each piece is drawn, cut, gilded and finished by a master artisan over weeks or months — enamel, inlay, filigree and silk, in editions no larger than a single hand can make.</p>
+      <div class="hero-actions reveal">
+        <a class="btn btn-gold" href="#collection">View the collection</a>
+        <a class="btn btn-ghost" href="#commission">Commission a piece</a>
+      </div>
+    </div>
+
+    <div class="medallion" aria-hidden="true">
+      <svg viewBox="-200 -200 400 400">
+        <circle r="190" fill="url(#gGlow)" opacity=".18"/>
+        <g class="m-ring m-ring-1" id="ringDots"></g>
+        <circle r="168" fill="none" stroke="url(#gGold)" stroke-width="1"/>
+        <g class="m-ring m-ring-2" id="ringPetals"></g>
+        <circle r="118" fill="none" stroke="url(#gGold)" stroke-width="1.2" stroke-dasharray="2 6"/>
+        <g class="m-ring m-ring-3" id="ringArcs"></g>
+        <path class="m-star draw" pathLength="1" d="M0 -92 L26 -26 L92 0 L26 26 L0 92 L-26 26 L-92 0 L-26 -26 Z M-65 -65 L0 -36 L65 -65 L36 0 L65 65 L0 36 L-65 65 L-36 0 Z" fill="none" stroke="url(#gGold)" stroke-width="2"/>
+        <circle class="m-core" r="22" fill="url(#gGold)"/>
+        <circle r="12" fill="#0b0a09"/>
+        <circle r="5" fill="url(#gGold)"/>
+      </svg>
+    </div>
+  </div>
+  <a href="#collection" class="scroll-cue" aria-label="Scroll to the collection"><span></span></a>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Gilded enamel</span><i>✦</i><span>Khatam inlay</span><i>✦</i><span>Engraved brass</span><i>✦</i><span>Silver filigree</span><i>✦</i><span>Mirror mosaic</span><i>✦</i><span>Hand-knotted silk</span><i>✦</i>
+    <span>Gilded enamel</span><i>✦</i><span>Khatam inlay</span><i>✦</i><span>Engraved brass</span><i>✦</i><span>Silver filigree</span><i>✦</i><span>Mirror mosaic</span><i>✦</i><span>Hand-knotted silk</span><i>✦</i>
+  </div>
+</div>
+
+<!-- Collection -->
+<section class="section" id="collection">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">The collection</p>
+      <h2>Six crafts, one standard.</h2>
+      <p class="muted">Select a piece to see it turn in the showcase.</p>
+    </div>
+
+    <div class="grid" id="grid">
+
+      <button class="piece reveal" data-piece="vase">
+        <div class="piece-art">
+          <svg viewBox="0 0 200 240" class="art art-vase">
+            <ellipse cx="100" cy="226" rx="56" ry="6" fill="#000" opacity=".5"/>
+            <g clip-path="url(#cVase)">
+              <g class="spin"><rect x="40" y="0" width="170" height="240" fill="url(#pEnamel)"/></g>
+              <rect x="40" y="56" width="120" height="5" fill="url(#gGoldV)"/>
+              <rect x="40" y="96" width="120" height="3" fill="url(#gGoldV)"/>
+              <rect x="40" y="182" width="120" height="4" fill="url(#gGoldV)"/>
+              <rect x="40" y="0" width="120" height="240" fill="url(#gCylinder)"/>
+              <rect class="sheen" x="-60" y="0" width="50" height="240" fill="url(#gSheen)"/>
+            </g>
+            <path d="M86 22 h28 v6 c0 10 -6 14 -6 24 c0 14 46 34 46 86 c0 40 -28 62 -36 70 h12 v12 h-60 v-12 h12 c-8 -8 -36 -30 -36 -70 c0 -52 46 -72 46 -86 c0 -10 -6 -14 -6 -24 z" fill="none" stroke="url(#gGold)" stroke-width="2"/>
+            <rect x="82" y="16" width="36" height="7" rx="2" fill="url(#gGold)"/>
+          </svg>
+        </div>
+        <div class="piece-info">
+          <span class="piece-craft">Gilded enamel</span>
+          <h3>The Sovereign Vase</h3>
+          <span class="piece-meta">Copper, enamel, 24k gold leaf</span>
+        </div>
+      </button>
+
+      <button class="piece reveal" data-piece="box">
+        <div class="piece-art">
+          <svg viewBox="0 0 200 240" class="art art-box">
+            <ellipse cx="100" cy="206" rx="72" ry="7" fill="#000" opacity=".5"/>
+            <g class="box-glow"><ellipse cx="100" cy="112" rx="58" ry="22" fill="url(#gGlow)"/></g>
+            <rect x="38" y="120" width="124" height="80" fill="url(#pKhatam)"/>
+            <rect x="38" y="120" width="124" height="80" fill="url(#gCylinder)" opacity=".55"/>
+            <rect x="38" y="120" width="124" height="80" fill="none" stroke="url(#gGold)" stroke-width="2.5"/>
+            <rect x="92" y="130" width="16" height="20" rx="3" fill="url(#gGold)"/>
+            <circle cx="100" cy="140" r="2.4" fill="#1a140e"/>
+            <g class="lid">
+              <polygon points="34,120 166,120 156,98 44,98" fill="url(#pKhatam)"/>
+              <polygon points="34,120 166,120 156,98 44,98" fill="none" stroke="url(#gGold)" stroke-width="2.5"/>
+              <rect x="30" y="118" width="140" height="6" fill="url(#gGold)"/>
+              <circle cx="100" cy="94" r="6" fill="url(#gGold)"/>
+            </g>
+            <rect x="36" y="198" width="128" height="5" fill="url(#gGold)"/>
+          </svg>
+        </div>
+        <div class="piece-info">
+          <span class="piece-craft">Khatam inlay</span>
+          <h3>The Treasury Casket</h3>
+          <span class="piece-meta">Walnut, camel bone, brass — 400 pieces per cm²</span>
+        </div>
+      </button>
+
+      <button class="piece reveal" data-piece="tray">
+        <div class="piece-art">
+          <svg viewBox="0 0 200 240" class="art art-tray">
+            <ellipse cx="100" cy="216" rx="70" ry="7" fill="#000" opacity=".5"/>
+            <circle cx="100" cy="120" r="90" fill="url(#gBrass)"/>
+            <g clip-path="url(#cTray)">
+              <g class="tray-outer"></g>
+              <circle cx="100" cy="120" r="62" fill="none" stroke="#3a2a0c" stroke-width="1.2"/>
+              <g class="tray-inner"></g>
+              <circle cx="100" cy="120" r="34" fill="none" stroke="#3a2a0c" stroke-width="1.2"/>
+              <path d="M100 92 L108 112 L128 120 L108 128 L100 148 L92 128 L72 120 L92 112 Z" fill="none" stroke="#3a2a0c" stroke-width="1.6"/>
+              <circle cx="100" cy="120" r="5" fill="#3a2a0c"/>
+              <g class="tray-sheen"><path d="M100 120 L100 20 A100 100 0 0 1 160 40 Z" fill="#fff6d8" opacity=".22"/></g>
+            </g>
+            <circle cx="100" cy="120" r="88" fill="none" stroke="#f5e2a6" stroke-width="2"/>
+          </svg>
+        </div>
+        <div class="piece-info">
+          <span class="piece-craft">Engraved brass</span>
+          <h3>The Court Tray</h3>
+          <span class="piece-meta">Hand-chased brass, 52 cm</span>
+        </div>
+      </button>
+
+      <button class="piece reveal" data-piece="lantern">
+        <div class="piece-art">
+          <svg viewBox="0 0 200 240" class="art art-lantern">
+            <g class="swing">
+              <line x1="100" y1="0" x2="100" y2="40" stroke="url(#gGold)" stroke-width="2"/>
+              <circle cx="100" cy="44" r="5" fill="none" stroke="url(#gGold)" stroke-width="2"/>
+              <ellipse class="flame" cx="100" cy="132" rx="58" ry="64" fill="url(#gGlow)"/>
+              <path d="M84 52 h32 l10 22 h-52 z" fill="url(#gGold)"/>
+              <path d="M74 74 h52 c14 28 14 84 0 112 h-52 c-14 -28 -14 -84 0 -112 z" fill="#1b1610" stroke="url(#gGold)" stroke-width="2.5"/>
+              <g fill="none" stroke="url(#gGold)" stroke-width="1.4" class="filigree">
+                <path d="M100 82 c18 16 18 34 0 50 c-18 -16 -18 -34 0 -50 z"/>
+                <path d="M100 132 c18 16 18 34 0 48 c-18 -14 -18 -32 0 -48 z"/>
+                <path d="M78 96 c10 8 10 18 0 26 M122 96 c-10 8 -10 18 0 26 M78 142 c10 8 10 18 0 26 M122 142 c-10 8 -10 18 0 26"/>
+                <circle cx="100" cy="132" r="6"/>
+              </g>
+              <ellipse class="flame-core" cx="100" cy="132" rx="5" ry="9" fill="#ffe7a8"/>
+              <path d="M74 186 h52 l-8 14 h-36 z" fill="url(#gGold)"/>
+              <path d="M96 200 h8 l-4 16 z" fill="url(#gGold)"/>
+            </g>
+          </svg>
+        </div>
+        <div class="piece-info">
+          <span class="piece-craft">Silver filigree</span>
+          <h3>The Vigil Lantern</h3>
+          <span class="piece-meta">Gilded silver wire, hand-twisted</span>
+        </div>
+      </button>
+
+      <button class="piece reveal" data-piece="mirror">
+        <div class="piece-art">
+          <svg viewBox="0 0 200 240" class="art art-mirror">
+            <ellipse cx="100" cy="222" rx="60" ry="6" fill="#000" opacity=".5"/>
+            <circle cx="100" cy="120" r="92" fill="#16130f" stroke="url(#gGold)" stroke-width="3"/>
+            <g class="shards"></g>
+            <circle cx="100" cy="120" r="92" fill="none" stroke="url(#gGold)" stroke-width="1" stroke-dasharray="1 5"/>
+          </svg>
+        </div>
+        <div class="piece-info">
+          <span class="piece-craft">Mirror mosaic</span>
+          <h3>The Hall of Light</h3>
+          <span class="piece-meta">Hand-cut mirror on gilded plaster</span>
+        </div>
+      </button>
+
+      <button class="piece reveal" data-piece="carpet">
+        <div class="piece-art">
+          <svg viewBox="0 0 200 240" class="art art-carpet">
+            <defs>
+              <clipPath id="cWeave"><rect class="weave-mask" x="30" y="30" width="140" height="180"/></clipPath>
+            </defs>
+            <g stroke="#d8c7a0" stroke-width="1" opacity=".7">
+              <path d="M40 30 v-10 M50 30 v-10 M60 30 v-10 M70 30 v-10 M80 30 v-10 M90 30 v-10 M100 30 v-10 M110 30 v-10 M120 30 v-10 M130 30 v-10 M140 30 v-10 M150 30 v-10 M160 30 v-10"/>
+              <path d="M40 210 v10 M50 210 v10 M60 210 v10 M70 210 v10 M80 210 v10 M90 210 v10 M100 210 v10 M110 210 v10 M120 210 v10 M130 210 v10 M140 210 v10 M150 210 v10 M160 210 v10"/>
+            </g>
+            <rect x="30" y="30" width="140" height="180" fill="#231c15" stroke="#4a3e2e" stroke-width="1"/>
+            <g clip-path="url(#cWeave)">
+              <rect x="30" y="30" width="140" height="180" fill="#1a2430"/>
+              <rect x="40" y="40" width="120" height="160" fill="url(#pWeave)"/>
+              <rect x="40" y="40" width="120" height="160" fill="none" stroke="url(#gGold)" stroke-width="3"/>
+              <path d="M100 70 L140 120 L100 170 L60 120 Z" fill="#1a2430" stroke="url(#gGold)" stroke-width="2"/>
+              <path d="M100 92 L118 120 L100 148 L82 120 Z" fill="#c9a24a"/>
+              <circle cx="100" cy="120" r="6" fill="#5a1f1b"/>
+              <path d="M40 40 l18 0 l-18 18 z M160 40 l-18 0 l18 18 z M40 200 l18 0 l-18 -18 z M160 200 l-18 0 l18 -18 z" fill="#c9a24a"/>
+            </g>
+            <line class="shuttle" x1="26" x2="174" y1="30" y2="30" stroke="#f6e3a1" stroke-width="2"/>
+          </svg>
+        </div>
+        <div class="piece-info">
+          <span class="piece-craft">Hand-knotted silk</span>
+          <h3>The Throne Rug</h3>
+          <span class="piece-meta">Silk on silk, 1.2 million knots</span>
+        </div>
+      </button>
+
+    </div>
+  </div>
+</section>
+
+<!-- Showcase -->
+<section class="section showcase" id="showcase">
+  <div class="wrap showcase-in">
+    <div class="stage reveal" id="stage" aria-live="polite">
+      <div class="stage-plinth"></div>
+      <div class="stage-art" id="stageArt"></div>
+      <div class="stage-ring"></div>
+    </div>
+    <div class="stage-copy reveal">
+      <p class="eyebrow" id="sCraft">Gilded enamel</p>
+      <h2 id="sName">The Sovereign Vase</h2>
+      <p class="muted" id="sStory"></p>
+      <dl class="specs">
+        <div><dt>Materials</dt><dd id="sMat"></dd></div>
+        <div><dt>Hours of work</dt><dd id="sHours"></dd></div>
+        <div><dt>Edition</dt><dd id="sEd"></dd></div>
+      </dl>
+      <div class="stage-nav">
+        <button class="round" id="prev" aria-label="Previous piece">‹</button>
+        <span class="stage-count" id="sCount">01 / 06</span>
+        <button class="round" id="next" aria-label="Next piece">›</button>
+        <a class="btn btn-gold" href="#commission" id="sAsk">Enquire</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Craft -->
+<section class="section" id="craft">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">The craft</p>
+      <h2>From first line to final polish.</h2>
+    </div>
+    <ol class="steps">
+      <li class="step reveal">
+        <svg viewBox="0 0 64 64" aria-hidden="true"><g class="draw-on" fill="none" stroke="url(#gGold)" stroke-width="2" stroke-linecap="round"><circle cx="32" cy="12" r="5" pathLength="1"/><path d="M29 16 L14 54 M35 16 L50 54 M20 40 Q32 46 44 40" pathLength="1"/></g></svg>
+        <span class="step-n">I</span>
+        <h3>Design</h3>
+        <p>Every motif is drawn by hand with compass and pen, proportioned to the old geometric canons.</p>
+      </li>
+      <li class="step reveal">
+        <svg viewBox="0 0 64 64" aria-hidden="true"><g class="draw-on" fill="none" stroke="url(#gGold)" stroke-width="2" stroke-linecap="round"><path d="M10 54 L40 24 M36 20 L44 28 L54 18 L46 10 Z" pathLength="1"/><path d="M14 46 l4 4" pathLength="1"/></g></svg>
+        <span class="step-n">II</span>
+        <h3>Shape</h3>
+        <p>Metal is raised and chased, wood cut into slivers finer than a match, silk dyed with plants and roots.</p>
+      </li>
+      <li class="step reveal">
+        <svg viewBox="0 0 64 64" aria-hidden="true"><g class="draw-on" fill="none" stroke="url(#gGold)" stroke-width="2" stroke-linecap="round"><path d="M32 6 C46 20 50 34 32 58 C14 34 18 20 32 6 Z" pathLength="1"/><path d="M32 18 V50" pathLength="1"/></g></svg>
+        <span class="step-n">III</span>
+        <h3>Gild</h3>
+        <p>Leaves of 24-carat gold are laid on with a squirrel-hair brush and burnished with agate.</p>
+      </li>
+      <li class="step reveal">
+        <svg viewBox="0 0 64 64" aria-hidden="true"><g class="draw-on" fill="none" stroke="url(#gGold)" stroke-width="2" stroke-linecap="round"><circle cx="32" cy="28" r="18" pathLength="1"/><path d="M32 16 L35 25 L44 28 L35 31 L32 40 L29 31 L20 28 L29 25 Z M24 44 L20 58 L32 52 L44 58 L40 44" pathLength="1"/></g></svg>
+        <span class="step-n">IV</span>
+        <h3>Seal</h3>
+        <p>The master signs and numbers each piece, and it leaves with a certificate of its making.</p>
+      </li>
+    </ol>
+
+    <div class="stats reveal">
+      <div><strong data-count="38">0</strong><span>master artisans</span></div>
+      <div><strong data-count="6">0</strong><span>living crafts</span></div>
+      <div><strong data-count="1200">0</strong><span>hours, our longest piece</span></div>
+      <div><strong data-count="12">0</strong><span>pieces per edition, at most</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- Commission -->
+<section class="section commission" id="commission">
+  <div class="wrap commission-in">
+    <div class="reveal">
+      <p class="eyebrow">Private commission</p>
+      <h2>A piece made for one house.</h2>
+      <p class="muted">Tell us the room, the occasion or the story. A master artisan will reply with sketches, materials and a timeline.</p>
+    </div>
+    <form class="form reveal" id="form">
+      <label>Name<input name="name" required autocomplete="name"></label>
+      <label>Email<input name="email" type="email" required autocomplete="email"></label>
+      <label>Craft
+        <select name="craft">
+          <option>Gilded enamel</option><option>Khatam inlay</option><option>Engraved brass</option>
+          <option>Silver filigree</option><option>Mirror mosaic</option><option>Hand-knotted silk</option><option>Not sure yet</option>
+        </select>
+      </label>
+      <label>Your idea<textarea name="idea" rows="4" required></textarea></label>
+      <button class="btn btn-gold" type="submit">Send the request</button>
+      <p class="form-note" id="formNote">Opens your email app with the request ready to send.</p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <span class="mark mark-sm"><svg viewBox="0 0 64 40" aria-hidden="true"><path d="M6 34 L10 10 L22 22 L32 4 L42 22 L54 10 L58 34 Z" fill="url(#gGold)"/><rect x="6" y="35" width="52" height="3" fill="url(#gGold)"/></svg><span>Zarrin <em>Atelier</em></span></span>
+    <span class="muted">© <span id="year">2026</span> · Royal handicrafts, made by hand.</span>
+    <a href="#top" class="muted">Back to top ↑</a>
+  </div>
+</footer>
+
+<script src="/royal/royal.js?v=1"></script>
+</body>
+</html>

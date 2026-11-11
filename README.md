@@ -43,3 +43,12 @@ tactime.dmbtgroup.com (see `vercel.json`).
 The product cards show each app's logo mark from `assets/products/` (taken from the apps' own repositories).
 
 Pushing to `main` deploys to Vercel (`.github/workflows/deploy.yml`); it needs a `VERCEL_TOKEN` secret.
+
+**Royal handicrafts page.** `royal/` (served at `dmbtgroup.com/royal`) is a standalone site for *Zarrin Atelier*, a
+showcase of royal handicraft pieces in gold, dark gray, dark beige and black. It has its own `royal.css` and
+`royal.js` and shares nothing with the DMBT pages, so it can move to its own domain as is. Every piece is drawn in SVG
+and animated (the enamel vase turns, the inlaid casket opens, the brass tray's engraving rotates, the filigree lantern
+swings, the mirror mosaic glints, the silk rug weaves itself); clicking a piece shows it large in the showcase.
+Animations stop off screen and are switched off for visitors who prefer reduced motion. The commission form opens
+an email to the address in `ATELIER_EMAIL` at the top of `royal/royal.js`. After changing the CSS or JS, raise the
+`?v=` number where `royal/index.html` loads them.
