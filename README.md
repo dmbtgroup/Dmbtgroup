@@ -44,20 +44,25 @@ The product cards show each app's logo mark from `assets/products/` (taken from 
 
 Pushing to `main` deploys to Vercel (`.github/workflows/deploy.yml`); it needs a `VERCEL_TOKEN` secret.
 
-**ARTRA — royal handicrafts page.** `royal/` (served at `dmbtgroup.com/royal`) is a standalone site for ARTRA, a
-showcase of royal handicraft pieces in gold, dark gray, dark beige and black. It has its own `royal.css`, `royal.js`
-and `products.js` and shares nothing with the DMBT pages, so it can move to its own domain as is. The six sample pieces
-are drawn in SVG and animated (the enamel vase turns, the inlaid casket opens, the brass tray's engraving rotates, the
-filigree lantern swings, the mirror mosaic glints, the silk rug weaves itself). Animations stop off screen and are
-switched off for visitors who prefer reduced motion. After changing a file in `royal/`, raise its `?v=` number in
-`royal/index.html`.
+**ARTRA — royal handicrafts pages.** `royal/` (served at `dmbtgroup.com/royal`) is a standalone site for ARTRA, a
+showcase of royal handicraft pieces in gold, dark gray, dark beige and black. It shares nothing with the DMBT pages,
+so it can move to its own domain as is.
 
-*Product details* come from `royal/products.js`, one entry per piece, whose fields follow the
-"ARTRA Product Detail" Google Form question by question (name, category, ID, photo link, artist, origin, history,
-description, medium, dimensions, packaging dimensions, additional information, care, returns, last update). Copy a
-form response into an entry; empty fields are not shown, and the form's internal fields (document provider, creation
-date) stay off the site. Clicking a piece opens its full details, with its own address such as
-`dmbtgroup.com/royal#piece-vase`. A piece with a photo link shows the photo in its details (Google Drive links work
-if the file is shared with "Anyone with the link"); a new entry without a `key` gets its own photo card. The sample
-wording in `products.js` should be replaced with the real responses. The commission form opens an email to the
-address in `ATELIER_EMAIL` at the top of `royal/royal.js`.
+- `royal/index.html` — the collection: hero, the pieces, a showcase that turns through them, the craft, and a commission form.
+- `royal/piece.html` — one piece's own page, at `dmbtgroup.com/royal/piece?p=vase`: a full-screen hero, the description
+  lit word by word as you scroll, the story (heritage, artist and origin, material) with the piece pinned beside it,
+  a full-screen close-up, the specifications sheet, care and returns, other pieces, and an enquiry. A bar with the
+  piece's name, its sections and "Enquire" follows the visitor down the page.
+- `royal/products.js` — the product details, one entry per piece. Its fields follow the "ARTRA Product Detail" Google
+  Form question by question (name, category, ID, photo link, artist, origin, history, description, medium, dimensions,
+  packaging dimensions, additional information, care, returns, last update); copy a form response into an entry.
+  Empty fields and the sections that depend on them are not shown, and the form's internal fields (document provider,
+  creation date) stay off the site. The sample wording there should be replaced with the real responses.
+- `royal/art.js` — the six animated drawings (the enamel vase turns, the inlaid casket opens, the brass tray's
+  engraving rotates, the filigree lantern swings, the mirror mosaic glints, the silk rug weaves itself), and `EMAIL`,
+  the address enquiries and commission requests open in the visitor's email app.
+
+A piece with a photo link shows its photo in the hero and close-up (Google Drive links work if the file is shared
+with "Anyone with the link"); a new entry without a `key` uses its photo everywhere and gets its own card. Animations
+stop off screen and are switched off for visitors who prefer reduced motion. After changing a file in `royal/`,
+raise its `?v=` number where the pages load it.

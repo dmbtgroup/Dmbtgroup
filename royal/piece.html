@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ARTRA — Royal handicrafts</title>
+  <meta name="description" content="An ARTRA royal art piece: its story, the craft up close, and full specifications.">
+  <meta name="theme-color" content="#0b0a09">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0a09'/%3E%3Cpath d='M12 44 L16 22 L26 32 L32 16 L38 32 L48 22 L52 44 Z' fill='%23c9a24a'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/royal/royal.css?v=3">
+  <link rel="stylesheet" href="/royal/piece.css?v=1">
+  <script>document.documentElement.className += " js";</script>
+</head>
+<body class="piece-page">
+
+<header class="top" id="top">
+  <div class="wrap top-in">
+    <a href="/royal" class="mark" aria-label="ARTRA home">
+      <svg viewBox="0 0 64 40" aria-hidden="true"><path d="M6 34 L10 10 L22 22 L32 4 L42 22 L54 10 L58 34 Z" fill="url(#gGold)"/><rect x="6" y="35" width="52" height="3" fill="url(#gGold)"/></svg>
+      <span>ART<em>RA</em></span>
+    </a>
+    <nav class="nav" id="nav">
+      <a href="/royal#collection">Collection</a>
+      <a href="/royal#showcase">Showcase</a>
+      <a href="/royal#craft">The craft</a>
+      <a href="/royal#commission" class="nav-cta">Commission</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="nav"><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- Product bar: appears once the hero has scrolled away -->
+<div class="pbar" id="pbar">
+  <div class="wrap pbar-in">
+    <a href="#overview" class="pbar-name" id="pbarName"></a>
+    <nav class="pbar-links" id="pbarLinks">
+      <a href="#overview">Overview</a>
+      <a href="#story" data-needs="story">Story</a>
+      <a href="#closeup">Up close</a>
+      <a href="#specs">Specifications</a>
+      <a href="#care" data-needs="care">Care</a>
+    </nav>
+    <a class="btn btn-gold pbar-cta" id="pbarAsk" href="#enquire">Enquire</a>
+  </div>
+</div>
+
+<main id="main">
+
+  <!-- Hero -->
+  <section class="p-hero" id="overview">
+    <div class="p-hero-light" aria-hidden="true"></div>
+    <div class="p-hero-title" id="heroTitle">
+      <p class="eyebrow p-center" id="pCat"></p>
+      <h1 id="pName"></h1>
+    </div>
+    <div class="p-hero-art" id="heroArt"></div>
+    <div class="wrap p-hero-foot" id="heroFoot">
+      <div class="p-hero-facts" id="heroFacts"></div>
+      <a class="p-discover" href="#intro"><span>Discover</span><i aria-hidden="true"></i></a>
+    </div>
+  </section>
+
+  <!-- Statement -->
+  <section class="p-intro" id="intro">
+    <div class="wrap">
+      <p class="p-statement" id="statement"></p>
+    </div>
+  </section>
+
+  <!-- Story: the piece stays in view while its chapters scroll past -->
+  <section class="p-story" id="story">
+    <div class="p-story-stage" aria-hidden="true">
+      <div class="p-story-ring"></div>
+      <div class="p-story-art" id="storyArt"></div>
+      <div class="p-story-dots" id="storyDots"></div>
+    </div>
+    <div class="p-chapters" id="chapters"></div>
+  </section>
+
+  <!-- Up close -->
+  <section class="p-closeup" id="closeup">
+    <div class="p-closeup-art" id="closeArt" aria-hidden="true"></div>
+    <div class="p-closeup-veil" aria-hidden="true"></div>
+    <div class="wrap p-closeup-copy">
+      <p class="eyebrow">Up close</p>
+      <h2>Every line,<br><em>by hand.</em></h2>
+      <p id="closeText"></p>
+    </div>
+  </section>
+
+  <!-- Specifications -->
+  <section class="p-specs" id="specs">
+    <div class="wrap p-specs-in">
+      <div class="p-specs-head">
+        <p class="eyebrow">Specifications</p>
+        <h2 id="specName"></h2>
+        <div class="p-specs-art" id="specArt" aria-hidden="true"></div>
+      </div>
+      <dl class="p-spec-list" id="specList"></dl>
+    </div>
+  </section>
+
+  <!-- Care, returns, more -->
+  <section class="p-care" id="care">
+    <div class="wrap p-care-in">
+      <div>
+        <p class="eyebrow">Care &amp; service</p>
+        <h2>Kept for generations.</h2>
+      </div>
+      <div class="p-accordion" id="accordion"></div>
+    </div>
+  </section>
+
+  <!-- Other pieces -->
+  <section class="p-more">
+    <div class="wrap">
+      <div class="p-more-head">
+        <div>
+          <p class="eyebrow">The collection</p>
+          <h2>Discover more pieces</h2>
+        </div>
+        <div class="p-more-nav">
+          <button class="round" id="morePrev" aria-label="Scroll back">‹</button>
+          <button class="round" id="moreNext" aria-label="Scroll forward">›</button>
+        </div>
+      </div>
+    </div>
+    <div class="p-more-track" id="moreTrack"></div>
+  </section>
+
+  <!-- Enquire -->
+  <section class="p-cta" id="enquire">
+    <div class="p-cta-art" id="ctaArt" aria-hidden="true"></div>
+    <div class="wrap p-cta-in">
+      <p class="eyebrow p-center">Private enquiry</p>
+      <h2 id="ctaTitle"></h2>
+      <p class="muted">An artisan will reply with availability, delivery and the piece's certificate of making.</p>
+      <div class="p-cta-actions">
+        <a class="btn btn-gold" id="ctaMail" href="#">Enquire by email</a>
+        <a class="btn btn-ghost" href="/royal#collection">Back to the collection</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Shown when the address names no known piece -->
+  <section class="p-missing" id="missing" hidden>
+    <div class="wrap">
+      <p class="eyebrow p-center">Not found</p>
+      <h1>This piece is not in the collection.</h1>
+      <a class="btn btn-gold" href="/royal#collection">See the collection</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <span class="mark mark-sm"><svg viewBox="0 0 64 40" aria-hidden="true"><path d="M6 34 L10 10 L22 22 L32 4 L42 22 L54 10 L58 34 Z" fill="url(#gGold)"/><rect x="6" y="35" width="52" height="3" fill="url(#gGold)"/></svg><span>ART<em>RA</em></span></span>
+    <span class="muted">© <span id="year">2026</span> · Royal handicrafts, made by hand.</span>
+    <a href="/royal#collection" class="muted">The collection →</a>
+  </div>
+</footer>
+
+<script src="/royal/products.js?v=2"></script>
+<script src="/royal/art.js?v=1"></script>
+<script src="/royal/piece.js?v=1"></script>
+</body>
+</html>
