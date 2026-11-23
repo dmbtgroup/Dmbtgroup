@@ -23,7 +23,7 @@ industries · products · contact · footer.
 opens an overlay with the expert's full profile and CV and a "Back to experts" button; each overlay has its own
 address, such as `dmbtgroup.com/experts#hadi-shirouyehzad`. To add an expert, add a card and a
 `<div class="sheet">` overlay in `experts.html` (keys `e2.*` for the second expert, and so on), their French and
-Arabic text in `assets/site.js`, their full CV in `assets/cv.js`, and a square photo in `assets/experts/`.
+Arabic text in `assets/site.js`, their full CV in `assets/cv.js`, and a square photo in `assets/experts/` (if you replace a photo, raise the `?v=` number on its address).
 Only professional details go on the site (no phone numbers, personal emails or dates of birth).
 
 **Languages.** English, French or Arabic (right to left), following the visitor's browser language or the

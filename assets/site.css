@@ -222,6 +222,7 @@ section[id] { scroll-margin-top: 72px; } /* keep the sticky header from covering
 .expert-name { font-size: 24px; letter-spacing: -0.02em; line-height: 1.2; margin: 22px 0 6px; }
 .expert-role { margin: 0; color: var(--orange-dk); font-weight: 650; }
 .expert-org { margin: 4px 0 22px; color: var(--muted); font-size: 15px; }
+.expert-links { display: flex; flex-wrap: wrap; gap: 8px; }
 .expert-bio { margin: 0 0 28px; font-size: 17px; }
 .facts { display: grid; grid-template-columns: repeat(4, 1fr); margin: 0 0 34px; border-block: 1px solid var(--line); }
 .facts div { padding: 18px 18px; border-inline-start: 1px solid var(--line); }

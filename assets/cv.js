@@ -476,5 +476,183 @@ window.DMBT_CV = {
         }
       ]
     }
+  ],
+  e4: [
+    {
+      title: ["Academic positions and teaching", "Postes universitaires et enseignement", "المناصب الأكاديمية والتدريس"],
+      type: "timeline",
+      items: [
+        ["2019–present", ["Senior Lecturer in Operations Management · Liverpool Business School, Liverpool John Moores University", "Maître de conférences en gestion des opérations · Liverpool Business School, Université Liverpool John Moores", "محاضر أول في إدارة العمليات · كلية ليفربول للأعمال، جامعة ليفربول جون مورز"],
+          ["Development and validation of the MSc in Supply Chain Management and Logistics; operations and technology management; sustainable supply chains and undergraduate supply chain management; Business Process Excellence (Executive MBA) and Managing the Business (Executive MSc), with module development and curriculum design; linked tutor for Nelson and Colne College and YPC International College, Malaysia",
+           "Conception et validation du MSc Supply Chain Management and Logistics ; gestion des opérations et de la technologie ; chaînes logistiques durables et gestion de la chaîne logistique en licence ; Business Process Excellence (Executive MBA) et Managing the Business (Executive MSc), avec conception des modules et des programmes ; tuteur de liaison pour Nelson and Colne College et YPC International College, Malaisie",
+           "تطوير برنامج ماجستير إدارة سلسلة الإمداد واللوجستيات واعتماده؛ إدارة العمليات والتكنولوجيا؛ سلاسل الإمداد المستدامة وإدارة سلسلة الإمداد للبكالوريوس؛ مقررا Business Process Excellence (ماجستير إدارة الأعمال التنفيذي) وManaging the Business (الماجستير التنفيذي) مع تطوير المقررات وتصميم المناهج؛ مشرف ارتباط لكلية Nelson and Colne وكلية YPC الدولية في ماليزيا"]],
+        ["2016–2018", ["Lecturer · Sunway University, Malaysia", "Chargé de cours · Université Sunway, Malaisie", "محاضر · جامعة صنواي، ماليزيا"],
+          ["Operations management, supply chain management, project management and research projects (undergraduate and postgraduate)", "Gestion des opérations, gestion de la chaîne logistique, gestion de projet et projets de recherche (licence et master)", "إدارة العمليات وإدارة سلسلة الإمداد وإدارة المشاريع ومشاريع البحث (البكالوريوس والدراسات العليا)"]],
+        ["2013–2014", ["Lecturer · Binary University, Malaysia", "Chargé de cours · Université Binary, Malaisie", "محاضر · جامعة باينري، ماليزيا"],
+          ["Supply chain management and operations management (MBA and undergraduate)", "Gestion de la chaîne logistique et gestion des opérations (MBA et licence)", "إدارة سلسلة الإمداد وإدارة العمليات (ماجستير إدارة الأعمال والبكالوريوس)"]],
+        ["2012–2015", ["Teaching Assistant · Universiti Putra Malaysia", "Assistant d'enseignement · Université Putra Malaysia", "مساعد تدريس · جامعة بوترا الماليزية"],
+          ["Supply chain management, safety and health engineering, industrial ergonomics, total quality management (engineering management and manufacturing engineering programmes)", "Gestion de la chaîne logistique, ingénierie de la santé et de la sécurité, ergonomie industrielle, management de la qualité totale (programmes de management de l'ingénierie et de génie de fabrication)", "إدارة سلسلة الإمداد، هندسة السلامة والصحة، بيئة العمل الصناعية، إدارة الجودة الشاملة (برامج إدارة الهندسة وهندسة التصنيع)"]],
+        ["2012–2014", ["Lecturer · Universiti Putra Malaysia", "Chargé de cours · Université Putra Malaysia", "محاضر · جامعة بوترا الماليزية"],
+          ["Thesis writing with Microsoft Word, EndNote reference management, presentation skills (postgraduate)", "Rédaction de thèse avec Microsoft Word, gestion des références avec EndNote, présentation orale (master et doctorat)", "كتابة الأطروحات ببرنامج Microsoft Word، إدارة المراجع ببرنامج EndNote، مهارات العرض (الدراسات العليا)"]],
+        ["2013", ["Lecturer · Islamic Azad University, Iran", "Chargé de cours · Université islamique Azad, Iran", "محاضر · جامعة آزاد الإسلامية، إيران"],
+          ["Principles of management and organisation theory (industrial engineering)", "Principes de management et théorie des organisations (génie industriel)", "مبادئ الإدارة ونظرية المنظمة (الهندسة الصناعية)"]],
+        ["2011", ["Lecturer · Fan Avaran Hakim, Iran", "Chargé de cours · Fan Avaran Hakim, Iran", "محاضر · فن آوران حكيم، إيران"],
+          ["Supply chain management, project management, operations management (MBA and IT postgraduate)", "Gestion de la chaîne logistique, gestion de projet, gestion des opérations (MBA et master en informatique)", "إدارة سلسلة الإمداد وإدارة المشاريع وإدارة العمليات (ماجستير إدارة الأعمال وتقنية المعلومات)"]],
+        ["2010–2011", ["Lecturer · Academic Centre for Education, Culture and Research (ACECR), Iran", "Chargé de cours · Centre universitaire pour l'éducation, la culture et la recherche (ACECR), Iran", "محاضر · المركز الأكاديمي للتعليم والثقافة والبحث (ACECR)، إيران"],
+          ["Supply chain management, operations management, project management (MBA)", "Gestion de la chaîne logistique, gestion des opérations, gestion de projet (MBA)", "إدارة سلسلة الإمداد وإدارة العمليات وإدارة المشاريع (ماجستير إدارة الأعمال)"]],
+        ["2006–2007", ["Teaching Assistant · Industrial Management Institute, Iran", "Assistant d'enseignement · Institut de management industriel, Iran", "مساعد تدريس · مؤسسة الإدارة الصناعية، إيران"],
+          ["Project management and control, facility design and layout (management and quality management)", "Gestion et pilotage de projet, conception et implantation d'installations (management et management de la qualité)", "إدارة المشاريع ومراقبتها، تصميم المنشآت وتخطيطها (الإدارة وإدارة الجودة)"]]
+      ]
+    },
+    {
+      title: ["Teaching results at LJMU", "Résultats pédagogiques à LJMU", "نتائج التدريس في جامعة ليفربول جون مورز"],
+      intro: ["Students taught and student satisfaction, by module and year", "Étudiants et taux de satisfaction, par module et par année", "عدد الطلاب ونسبة رضاهم، حسب المقرر والسنة"],
+      type: "timeline",
+      items: [
+        ["2021–2024", ["Understanding Business Organisations and Operations · module lead, undergraduate", "Understanding Business Organisations and Operations · responsable du module, licence", "Understanding Business Organisations and Operations · منسق المقرر، البكالوريوس"],
+          ["2023–24: 110 students, 100% satisfaction; 2022–23: 138 students, 84%; 2021–22: 91 students, 94%", "2023-2024 : 110 étudiants, 100 % de satisfaction ; 2022-2023 : 138 étudiants, 84 % ; 2021-2022 : 91 étudiants, 94 %", "2023–2024: 110 طلاب ورضا 100%؛ 2022–2023: 138 طالبًا و84%؛ 2021–2022: 91 طالبًا و94%"]],
+        ["2022–2024", ["Supply Chain Management · module lead, undergraduate", "Supply Chain Management · responsable du module, licence", "Supply Chain Management · منسق المقرر، البكالوريوس"],
+          ["2023–24 and 2022–23: 35 students each, 100% satisfaction", "2023-2024 et 2022-2023 : 35 étudiants chaque année, 100 % de satisfaction", "2023–2024 و2022–2023: 35 طالبًا في كل عام ورضا 100%"]],
+        ["2021–2023", ["Sustainable Supply Chains · module lead, undergraduate", "Sustainable Supply Chains · responsable du module, licence", "Sustainable Supply Chains · منسق المقرر، البكالوريوس"],
+          ["2022–23: 35 students, 91% satisfaction; 2021–22: 35 students, 100%", "2022-2023 : 35 étudiants, 91 % de satisfaction ; 2021-2022 : 35 étudiants, 100 %", "2022–2023: 35 طالبًا ورضا 91%؛ 2021–2022: 35 طالبًا و100%"]],
+        ["2025–2026", ["Managing Processes · module lead, undergraduate", "Managing Processes · responsable du module, licence", "Managing Processes · منسق المقرر، البكالوريوس"],
+          ["210 students, 91% satisfaction", "210 étudiants, 91 % de satisfaction", "210 طلاب ورضا 91%"]],
+        ["2022–2026", ["Operations and Technology Management · tutor, undergraduate", "Operations and Technology Management · tuteur, licence", "Operations and Technology Management · مدرّس، البكالوريوس"],
+          ["2025–26: 260 students, 91.4% satisfaction; 2024–25: 230 students, 83%; 2023–24: 268 students, 93%; 2022–23: 297 students, 95%", "2025-2026 : 260 étudiants, 91,4 % de satisfaction ; 2024-2025 : 230 étudiants, 83 % ; 2023-2024 : 268 étudiants, 93 % ; 2022-2023 : 297 étudiants, 95 %", "2025–2026: 260 طالبًا ورضا 91.4%؛ 2024–2025: 230 طالبًا و83%؛ 2023–2024: 268 طالبًا و93%؛ 2022–2023: 297 طالبًا و95%"]],
+        ["2024–2026", ["Dissertation · tutor, undergraduate", "Mémoire · tuteur, licence", "مشروع التخرج · مشرف، البكالوريوس"],
+          ["2025–26: 88 students, 100% satisfaction; 2024–25: 134 students, 92%", "2025-2026 : 88 étudiants, 100 % de satisfaction ; 2024-2025 : 134 étudiants, 92 %", "2025–2026: 88 طالبًا ورضا 100%؛ 2024–2025: 134 طالبًا و92%"]]
+      ]
+    },
+    {
+      title: ["Visiting professorships and invited talks", "Postes de professeur invité et conférences", "الأستاذية الزائرة والمحاضرات المدعوة"],
+      type: "timeline",
+      items: [
+        ["2026", ["Visiting Professor · DHBW Karlsruhe, Germany", "Professeur invité · DHBW Karlsruhe, Allemagne", "أستاذ زائر · جامعة DHBW كارلسروه، ألمانيا"],
+          ["Innovation thinking and creative problem solving; supply chain and global operations strategy: managing disruptions and uncertainty in a connected world (40 international students each)", "Pensée innovante et résolution créative de problèmes ; stratégie de la chaîne logistique et des opérations mondiales : gérer les perturbations et l'incertitude dans un monde connecté (40 étudiants internationaux chacun)", "التفكير الابتكاري وحل المشكلات بإبداع؛ استراتيجية سلسلة الإمداد والعمليات العالمية: إدارة الاضطرابات وعدم اليقين في عالم مترابط (40 طالبًا دوليًا لكل منهما)"]],
+        ["2025", ["Visiting Professor · DHBW Karlsruhe, Germany", "Professeur invité · DHBW Karlsruhe, Allemagne", "أستاذ زائر · جامعة DHBW كارلسروه، ألمانيا"],
+          ["Motivation and performance management in operations", "Motivation et gestion de la performance dans les opérations", "التحفيز وإدارة الأداء في العمليات"]],
+        ["2025", ["Visiting Professor · Universitat Politècnica de València, Spain", "Professeur invité · Universitat Politècnica de València, Espagne", "أستاذ زائر · جامعة البوليتكنيك في فالنسيا، إسبانيا"],
+          ["From waste to value: reverse logistics risk management in circular supply chains (postgraduate)", "Des déchets à la valeur : gestion des risques de la logistique inverse dans les chaînes logistiques circulaires (master)", "من النفايات إلى القيمة: إدارة مخاطر اللوجستيات العكسية في سلاسل الإمداد الدائرية (الدراسات العليا)"]],
+        ["2025", ["Invited speaker · YPC International College, Malaysia", "Conférencier invité · YPC International College, Malaisie", "متحدث مدعو · كلية YPC الدولية، ماليزيا"],
+          ["From waste to value: reverse logistics and circular supply chains", "Des déchets à la valeur : logistique inverse et chaînes logistiques circulaires", "من النفايات إلى القيمة: اللوجستيات العكسية وسلاسل الإمداد الدائرية"]],
+        ["2024", ["Invited speaker · The OR Society (webinar and North West)", "Conférencier invité · The OR Society (webinaire et région North West)", "متحدث مدعو · جمعية بحوث العمليات البريطانية (ندوة عبر الإنترنت وفرع الشمال الغربي)"],
+          ["Reverse logistics resilience: a deep dive into navigating risk dynamics, for industry experts and academics", "Résilience de la logistique inverse : comprendre la dynamique des risques, pour des experts de l'industrie et des universitaires", "مرونة اللوجستيات العكسية: نظرة معمّقة في ديناميكيات المخاطر، لخبراء الصناعة والأكاديميين"]],
+        ["2024", ["Invited speaker · Edumundo webinar", "Conférencier invité · webinaire Edumundo", "متحدث مدعو · ندوة Edumundo عبر الإنترنت"],
+          ["Curriculum development in uncertain times: the role of management simulations", "Concevoir des programmes en période d'incertitude : le rôle des simulations de gestion", "تطوير المناهج في أوقات عدم اليقين: دور محاكاة الإدارة"]],
+        ["2023", ["Visiting Professor · Lille Catholic University, France", "Professeur invité · Université catholique de Lille, France", "أستاذ زائر · الجامعة الكاثوليكية في ليل، فرنسا"],
+          ["Circular supply chains and reverse logistics (postgraduate)", "Chaînes logistiques circulaires et logistique inverse (master)", "سلاسل الإمداد الدائرية واللوجستيات العكسية (الدراسات العليا)"]],
+        ["2022", ["Visiting Professor · The Hague University of Applied Sciences, the Netherlands", "Professeur invité · Université des sciences appliquées de La Haye, Pays-Bas", "أستاذ زائر · جامعة لاهاي للعلوم التطبيقية، هولندا"],
+          ["Sustainable supply chain management and reverse logistics", "Gestion durable de la chaîne logistique et logistique inverse", "الإدارة المستدامة لسلسلة الإمداد واللوجستيات العكسية"]]
+      ]
+    },
+    {
+      title: ["Grants and awards", "Financements et distinctions", "المنح والجوائز"],
+      type: "timeline",
+      items: [
+        ["2026", ["Horizon Europe (HORIZON-CL6-2026-02-FARM2FORK-01)", "Horizon Europe (HORIZON-CL6-2026-02-FARM2FORK-01)", "برنامج أفق أوروبا (HORIZON-CL6-2026-02-FARM2FORK-01)"],
+          ["Climate-resilient artificial intelligence for resilient and sustainable agrifood transformation systems: partner in a €4.5 million bid that passed stage 1", "Intelligence artificielle résiliente au climat pour des systèmes agroalimentaires résilients et durables : partenaire d'une candidature de 4,5 millions d'euros retenue à l'étape 1", "ذكاء اصطناعي متكيف مع المناخ لأنظمة غذائية زراعية مرنة ومستدامة: شريك في مقترح بقيمة 4.5 ملايين يورو اجتاز المرحلة الأولى"]],
+        ["2024", ["Liverpool Business School Teaching Excellence Award", "Prix d'excellence pédagogique de la Liverpool Business School", "جائزة التميز في التدريس من كلية ليفربول للأعمال"], null],
+        ["2017", ["Sunway University Annual Research Grant", "Subvention annuelle de recherche de l'Université Sunway", "منحة البحث السنوية من جامعة صنواي"],
+          ["Project leader and researcher", "Chef de projet et chercheur", "قائد المشروع وباحث"]],
+        ["2015", ["European Operations Management Association (EUROMA) scholarship", "Bourse de l'European Operations Management Association (EUROMA)", "منحة الجمعية الأوروبية لإدارة العمليات (EUROMA)"],
+          ["7th summer school, Operations Management in the Digital Economy, Porto, Portugal", "7e université d'été, Operations Management in the Digital Economy, Porto, Portugal", "المدرسة الصيفية السابعة، إدارة العمليات في الاقتصاد الرقمي، بورتو، البرتغال"]],
+        ["2014–2015", ["Postgraduate Research Assistant · Universiti Putra Malaysia", "Assistant de recherche · Université Putra Malaysia", "مساعد باحث في الدراسات العليا · جامعة بوترا الماليزية"],
+          ["University grants for his PhD research topic", "Financements universitaires pour son sujet de thèse", "منح جامعية لموضوع بحث الدكتوراه"]],
+        ["2013", ["Excellent and Influential Article", "Article d'excellence et d'influence", "جائزة المقال المتميز والمؤثر"],
+          ["1st National Conference on Industrial Engineering and Sustainable Management", "1re Conférence nationale de génie industriel et de management durable", "المؤتمر الوطني الأول للهندسة الصناعية والإدارة المستدامة"]]
+      ]
+    },
+    {
+      title: ["Research", "Recherche", "البحث العلمي"],
+      type: "timeline",
+      items: [
+        ["2011–2016", ["Universiti Putra Malaysia (PhD)", "Université Putra Malaysia (doctorat)", "جامعة بوترا الماليزية (الدكتوراه)"],
+          ["A risk management evaluation framework for reverse logistics organisations using failure mode and effect analysis and multi-criteria decision making: identifying, classifying and evaluating reverse logistics risks, to help organisations reduce investment costs", "Cadre d'évaluation de la gestion des risques pour les organisations de logistique inverse fondé sur l'AMDEC et l'aide à la décision multicritère : identifier, classer et évaluer les risques pour aider les organisations à réduire leurs coûts d'investissement", "إطار لتقييم إدارة المخاطر في منظمات اللوجستيات العكسية باستخدام تحليل أنماط الفشل واتخاذ القرار متعدد المعايير: تحديد المخاطر وتصنيفها وتقييمها لمساعدة المنظمات على خفض تكاليف الاستثمار"]],
+        ["2013–2014", ["Islamic Azad University, Iran", "Université islamique Azad, Iran", "جامعة آزاد الإسلامية، إيران"],
+          ["Critical success factors of reverse logistics, analysed with interpretive structural modelling", "Facteurs clés de succès de la logistique inverse, analysés par modélisation structurelle interprétative", "عوامل النجاح الحاسمة في اللوجستيات العكسية، بتحليل النمذجة الهيكلية التفسيرية"]],
+        ["2007–2010", ["Universiti Putra Malaysia (MSc)", "Université Putra Malaysia (master)", "جامعة بوترا الماليزية (الماجستير)"],
+          ["Performance measurement of supply chain management with a fuzzy logic controller, in Malaysian rubber glove manufacturing", "Mesure de la performance de la chaîne logistique par contrôleur à logique floue, dans la fabrication malaisienne de gants en caoutchouc", "قياس أداء إدارة سلسلة الإمداد بوحدة تحكم بالمنطق الضبابي، في صناعة القفازات المطاطية الماليزية"]],
+        ["2016–present", ["Research supervision", "Encadrement de recherche", "الإشراف على البحوث"],
+          ["PhD co-supervisor (2023–, expected 2027): digitalisation of niche marketing strategy in the UK food industry. DBA co-supervisor (2020–2023, graduated): socially responsible practices and competitive advantage of Malaysian SMEs. MSc dissertations: University of Birmingham (6 graduates) and University of Portsmouth (2 graduates) in 2023; Lancaster University MBA at Sunway University (2 graduates) in 2016–2018",
+           "Co-directeur de thèse (depuis 2023, soutenance prévue en 2027) : numérisation de la stratégie de marketing de niche dans l'industrie alimentaire britannique. Co-directeur de DBA (2020-2023, diplômé) : pratiques socialement responsables et avantage concurrentiel des PME malaisiennes. Mémoires de master : Université de Birmingham (6 diplômés) et Université de Portsmouth (2 diplômés) en 2023 ; MBA de l'Université de Lancaster à l'Université Sunway (2 diplômés) en 2016-2018",
+           "مشرف مشارك على دكتوراه (منذ 2023، التخرج المتوقع 2027): رقمنة استراتيجية التسويق المتخصص في صناعة الأغذية البريطانية. مشرف مشارك على دكتوراه إدارة الأعمال (2020–2023، تخرّج): الممارسات المسؤولة اجتماعيًا والميزة التنافسية للشركات الماليزية الصغيرة والمتوسطة. رسائل ماجستير: جامعة برمنغهام (6 خريجين) وجامعة بورتسموث (خريجان) في 2023؛ ماجستير إدارة الأعمال من جامعة لانكستر في جامعة صنواي (خريجان) في 2016–2018"]]
+      ]
+    },
+    {
+      title: ["Professional experience", "Expérience professionnelle", "الخبرة المهنية"],
+      type: "timeline",
+      items: [
+        ["2023–present", ["Business Operations Consultant · Jungle Fun Ltd and Area 51, Liverpool", "Consultant en opérations · Jungle Fun Ltd et Area 51, Liverpool", "مستشار عمليات الأعمال · Jungle Fun Ltd وArea 51، ليفربول"],
+          ["Staff scheduling, inventory optimisation and customer service; customer feedback analysis and service quality; feasibility study for business expansion", "Planification du personnel, optimisation des stocks et service client ; analyse des retours clients et qualité de service ; étude de faisabilité d'un développement", "جدولة الموظفين وتحسين المخزون وخدمة العملاء؛ تحليل آراء العملاء وجودة الخدمة؛ دراسة جدوى لتوسيع النشاط"]],
+        ["2005–2007", ["Executive Manager · Idea Tact Association (ITA), Iran", "Directeur exécutif · Idea Tact Association (ITA), Iran", "المدير التنفيذي · جمعية Idea Tact (ITA)، إيران"],
+          ["Coordinating engineering projects with industry; supervising design and construction, including plans, specifications, estimates and technical advice; organising workshops and industrial visits; liaison with universities; supervising staff", "Coordination de projets d'ingénierie avec l'industrie ; supervision de la conception et de la construction (plans, spécifications, devis, conseils techniques) ; organisation d'ateliers et de visites industrielles ; liaison avec les universités ; encadrement du personnel", "تنسيق المشاريع الهندسية مع الصناعة؛ الإشراف على التصميم والتنفيذ بما في ذلك المخططات والمواصفات والتقديرات والمشورة الفنية؛ تنظيم ورش العمل والزيارات الصناعية؛ التواصل مع الجامعات؛ الإشراف على الموظفين"]],
+        ["2006", ["Monitoring and Evaluation Advisor · Akhgar Industrial Group, Iran", "Conseiller en suivi et évaluation · Akhgar Industrial Group, Iran", "مستشار المتابعة والتقييم · مجموعة أخگر الصناعية، إيران"],
+          ["Monitoring plans and performance indicators; time and work study at manufacturing stations; activity-based costing", "Plans de suivi et indicateurs de performance ; étude des temps et des méthodes aux postes de fabrication ; comptabilité par activités", "خطط المتابعة ومؤشرات الأداء؛ دراسة العمل والوقت في محطات التصنيع؛ محاسبة التكاليف على أساس الأنشطة"]],
+        ["2004", ["Monitoring and Evaluation Advisor · Amin Pharmaceutical Factory, Iran", "Conseiller en suivi et évaluation · usine pharmaceutique Amin, Iran", "مستشار المتابعة والتقييم · مصنع أمين للأدوية، إيران"],
+          ["Monitoring plans and performance indicators; activity-based costing", "Plans de suivi et indicateurs de performance ; comptabilité par activités", "خطط المتابعة ومؤشرات الأداء؛ محاسبة التكاليف على أساس الأنشطة"]]
+      ]
+    },
+    {
+      title: ["Published papers", "Articles publiés", "الأبحاث المنشورة"],
+      type: "list",
+      items: [
+        "Valaei, N., Bressolles, G., Panjehfouladgaran, H., Shahgholian, A. (2026). Is collaborative consumption a remedy for sustainability? A cross-cultural investigation on branded second-hand online shopping. Asia Pacific Journal of Business Administration, 18(3), 698–724.",
+        "Panjehfouladgaran, H., Stavropoulou, F., Teimouri, M. (2025). How has the COVID-19 pandemic affected students' online social presence? INFORMS Transactions on Education, 25(2), 89–187.",
+        "Stavropoulou, F., Panjehfouladgaran, H., Teimouri, M. (2024). Operations management curriculum development under uncertain situations: Lessons learned from the pandemic. INFORMS Transactions on Education, 25(1), 1–88.",
+        "Memari, A., Panjehfouladgaran, H., Ahmad, R., Abdul Rahim, A. (2024). The impact of lean production on operational performance: A case study. Asia Pacific Journal of Business Administration, 16(3), 530–552.",
+        "Panjehfouladgaran, H., Lim, S. W. F. T. (2020). Reverse logistics risk management: Identification, clustering and risk mitigation strategies. Management Decision, 58(7), 1449–1474.",
+        "Khor, K. S., Ramayah, T., Panjehfouladgaran, H. (2020). Managing eco-design for reverse logistics. International Journal of Environment and Waste Management, 26(2), 125–146.",
+        "Panjehfouladgaran, H., Shirouyehzad, H. (2018). Classification of critical success factors for reverse logistics implementation based on importance-performance analysis. International Journal of Productivity and Quality Management, 25(2), 139–150.",
+        "Panjehfouladgaran, H., Bahiraie, N., Yusuff, R. (2018). Identification of critical success factors in reverse logistics: Analyzing the interrelationships by interpretive structural modelling. International Journal of Services and Operations Management, 30(4), 447–464.",
+        "Panjehfouladgaran, H., Yusuff, R. (2016). Fuzzy performance measurement for evaluation of qualitative metrics in supply chain management: Case study in a Malaysian rubber glove manufacturer. International Journal of Logistics Systems and Management, 24(2), 178–199.",
+        "Bahiraei, N., Panjehfouladgaran, H., Yusuff, R. M. (2015). Ranking of critical success factors in reverse logistics by TOPSIS. IEEE Xplore.",
+        "Panjehfouladgaran, H., Bahiraie, N. (2014). Role of critical success factors in sustainable supply chain management. International Journal of Applied Research on Industrial Engineering, 1(5/6), 320–328.",
+        "Shirouyehzad, H., Panjehfouladgaran, H., Dabestani, R., Badakhshian, M. (2011). Vendor performance measurement using fuzzy logic controller. The Journal of Mathematics and Computer Science, 2(2), 311–318.",
+        "Shirouyehzad, H., Badakhshian, M., Dabestani, R., Panjehfouladgaran, H. (2010). Fuzzy FMEA analysis for identification and control of failure preferences in ERP implementation. The Journal of Mathematics and Computer Science, 1(4), 366–376."
+      ],
+      links: [
+        ["Google Scholar", "https://scholar.google.com/citations?user=y-ftDvkAAAAJ&hl=en"],
+        ["ORCID", "https://orcid.org/0000-0002-2952-8007"]
+      ]
+    },
+    {
+      title: ["Conference papers", "Communications en conférence", "أبحاث المؤتمرات"],
+      type: "list",
+      items: [
+        "Shirouyehzad, A., Panjehfouladgaran, H., Shirouyehzad, H. (2024). Analysis of critical success factors for sustainable green supply chain management using interpretive structural modeling. 66th Annual Conference of The Operational Research Society, Bangor University, UK.",
+        "Valaei, N., Bressolles, G., Panjehfouladgaran, H., Shahgholian, A. (2022). A cross-cultural investigation on second-hand online shopping behaviour. AMS 2022, Academy of Marketing Science 46th Annual Conference.",
+        "Valaei, N., Bressolles, G., Shahgholian, A., Panjehfouladgaran, H. R. (2020). The online shopping behaviour of used products in a cross-cultural setting. 49th Annual Conference of the European Marketing Academy (EMAC).",
+        "Valaei, N., Bressolles, G., Shahgholian, A., Panjehfouladgaran, H. (2020). Customer behaviour towards second-hand online shopping. AMS 2020, Academy of Marketing Science 44th Annual Conference.",
+        "Panjehfouladgaran, H. R., Garcia, G. (2017). User intention towards cell-phone e-waste recycling. International Conference on Organization and Management.",
+        "Yusuff, R. M., Panjehfouladgaran, H. R. (2013). Environmental conscious manufacturing for sustainable growth. International Seminar on Industrial Engineering and Management (ISIEM), Batam, Indonesia.",
+        "Yusuff, R. B. M., Vahabzadeh, A. H., Panjehfouladgaran, H. R. (2012). Environmental conscious manufacturing for sustainable growth. International Seminar on Science and Technology Innovations (ISSTIN), Jakarta, Indonesia.",
+        "Panjehfouladgaran, H. R., Yusuff, R., Hong, T. S., Homayouni, S. M. (2010). Qualitative performance measurement of supply chain management using fuzzy logic controller. 11th Asia Pacific Industrial Engineering and Management Systems Conference."
+      ]
+    },
+    {
+      title: ["Certificates and training", "Certificats et formations", "الشهادات والتدريب"],
+      type: "timeline",
+      items: [
+        ["2020", ["Fellow of the Higher Education Academy (FHEA) · Advance HE", "Fellow of the Higher Education Academy (FHEA) · Advance HE", "زميل أكاديمية التعليم العالي (FHEA) · Advance HE"], null],
+        ["2020", ["Certified Management and Business Educator (CMBE) · Chartered Association of Business Schools", "Certified Management and Business Educator (CMBE) · Chartered Association of Business Schools", "معلم معتمد في الإدارة والأعمال (CMBE) · الرابطة المعتمدة لكليات الأعمال"], null],
+        ["2017", ["Educational Development Programme · Lancaster University, UK", "Programme de développement pédagogique · Université de Lancaster, Royaume-Uni", "برنامج التطوير التعليمي · جامعة لانكستر، المملكة المتحدة"], null],
+        ["2016", ["Mixed Method Research · Monash University, Malaysia campus", "Recherche par méthodes mixtes · Université Monash, campus de Malaisie", "البحث بالمناهج المختلطة · جامعة موناش، فرع ماليزيا"], null],
+        ["2015", ["Operations Management in the Digital Economy · Católica Porto, Portugal", "Gestion des opérations dans l'économie numérique · Católica Porto, Portugal", "إدارة العمليات في الاقتصاد الرقمي · الجامعة الكاثوليكية في بورتو، البرتغال"], null],
+        ["2012", ["Transformational and Visionary Leadership · Universiti Putra Malaysia", "Leadership transformationnel et visionnaire · Université Putra Malaysia", "القيادة التحويلية والرؤيوية · جامعة بوترا الماليزية"], null],
+        ["2004", ["ISO 9001:2000 internal audit and documentation · Moody International", "Audit interne et documentation ISO 9001:2000 · Moody International", "التدقيق الداخلي والتوثيق وفق ISO 9001:2000 · Moody International"], null]
+      ]
+    },
+    {
+      title: ["Academic service and memberships", "Activités académiques et affiliations", "الخدمات الأكاديمية والعضويات"],
+      type: "list",
+      items: [
+        ["PRME Champion (Principles for Responsible Management Education), 2023–2024", "PRME Champion (Principes pour une éducation responsable en management), 2023-2024", "سفير مبادئ التعليم الإداري المسؤول (PRME)، 2023–2024"],
+        ["Co-guest editor of a special issue of Sustainability, 2022–2023; editorial board of the International Journal of Applied Research on Industrial Engineering, 2014–2018", "Co-rédacteur invité d'un numéro spécial de Sustainability, 2022-2023 ; comité de rédaction de l'International Journal of Applied Research on Industrial Engineering, 2014-2018", "محرر ضيف مشارك لعدد خاص من مجلة Sustainability، 2022–2023؛ عضو هيئة تحرير المجلة الدولية للبحوث التطبيقية في الهندسة الصناعية، 2014–2018"],
+        ["Reviewer since 2014 for INFORMS Transactions on Education, Journal of Modelling in Management, Management Decision, Asia Pacific Journal of Business Administration and five international journals of manufacturing, productivity, logistics, services and product development", "Relecteur depuis 2014 pour INFORMS Transactions on Education, Journal of Modelling in Management, Management Decision, Asia Pacific Journal of Business Administration et cinq revues internationales de fabrication, productivité, logistique, services et développement de produits", "محكّم منذ 2014 لمجلات INFORMS Transactions on Education وJournal of Modelling in Management وManagement Decision وAsia Pacific Journal of Business Administration وخمس مجلات دولية في التصنيع والإنتاجية واللوجستيات والخدمات وتطوير المنتجات"],
+        ["Conference committees: 1st to 3rd National Conference on Industrial Engineering and Sustainable Management (IESM) and scientific committee of the 2nd National Conference on Industrial Engineering and Systems (NCIES 2013), Isfahan, 2013–2016", "Comités de conférence : 1re à 3e Conférence nationale de génie industriel et de management durable (IESM) et comité scientifique de la 2e Conférence nationale de génie industriel et des systèmes (NCIES 2013), Ispahan, 2013-2016", "لجان المؤتمرات: المؤتمرات الوطنية من الأول إلى الثالث للهندسة الصناعية والإدارة المستدامة (IESM) واللجنة العلمية للمؤتمر الوطني الثاني للهندسة الصناعية وهندسة النظم (NCIES 2013)، أصفهان، 2013–2016"],
+        ["Member of APICS (2017–2018), EUROMA (2014–2015), POMS (2014–2015) and the Young Researchers and Elite Club, Islamic Azad University (2013–2015)", "Membre de l'APICS (2017-2018), d'EUROMA (2014-2015), de POMS (2014-2015) et du Club des jeunes chercheurs et de l'élite de l'Université islamique Azad (2013-2015)", "عضو في APICS (2017–2018) وEUROMA (2014–2015) وPOMS (2014–2015) ونادي الباحثين الشباب والنخبة في جامعة آزاد الإسلامية (2013–2015)"],
+        ["Universiti Putra Malaysia: Vice President of the International Student Association and internal auditor of the Iranian Student Association, 2012–2016", "Université Putra Malaysia : vice-président de l'association des étudiants internationaux et auditeur interne de l'association des étudiants iraniens, 2012-2016", "جامعة بوترا الماليزية: نائب رئيس رابطة الطلاب الدوليين والمدقق الداخلي لرابطة الطلاب الإيرانيين، 2012–2016"]
+      ]
+    }
   ]
 };
